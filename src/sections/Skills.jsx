@@ -15,28 +15,38 @@ export default function Skills() {
         <div className="grid md:grid-cols-2 gap-8">
 
           <SkillGroup
-            title="Languages"
-            skills={["Python", "Java", "SQL", "C++"]}
+            title="Programming Languages"
+            skills={["Python", "Java", "SQL", "C++", "C"]}
           />
 
           <SkillGroup
-            title="Machine Learning & AI"
-            skills={["scikit-learn", "TensorFlow", "PyTorch", "Computer Vision"]}
+            title="Machine Learning & Deep Learning"
+            skills={["scikit-learn", "TensorFlow", "PyTorch", "Computer Vision", "Generative AI", "Model Evaluation", "Feature Engineering"]}
           />
 
           <SkillGroup
-            title="Data & Visualization"
-            skills={["Pandas", "NumPy", "Matplotlib", "Streamlit", "Tableau"]}
+            title="Data Engineering & Analysis"
+            skills={["Pandas", "NumPy", "Matplotlib", "Data Preprocessing", "Statistical Analysis"]}
           />
 
           <SkillGroup
-            title="Development"
-            skills={["React", "Node.js", "FastAPI", "Firebase", "HTML", "CSS", "JavaScript"]}
+            title="Databases"
+            skills={[" MySQL", " PostgreSQL"]}
           />
 
           <SkillGroup
-            title="Tools"
-            skills={["Git/GitHub", "Azure AI", "Figma", "Chart.js", "Vercel"]}
+            title="Backend & APIs"
+            skills={["FastAPI", "Node.js", "REST APIs"]}
+          />
+
+          <SkillGroup
+            title="Frontend"
+            skills={["React", "JavaScript", "HTML", "CSS"]}
+          />
+
+          <SkillGroup
+            title="Tools & Cloud"
+            skills={["Git", "GitHub", "Docker", "Jupyter Notebook", "Linux", "Azure AI", "Firebase", "Streamlit"]}
           />
 
         </div>
