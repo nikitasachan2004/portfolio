@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import ThemeToggle from "./ThemeToggle"
+import Switch from "./ui/sky-toggle"
 
 const navSections = [
   { id: "hero", label: null }, // special case
@@ -71,7 +71,7 @@ export default function Navbar() {
               )
             })}
 
-            <ThemeToggle />
+            <Switch />
 
             <a
               href="/Nikita_Sachan_Resume.pdf"

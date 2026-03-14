@@ -48,27 +48,27 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden min-h-screen bg-[#f6f4ef] flex items-center pt-16 dark:bg-[#1B1F1E]"
+      className="relative overflow-hidden min-h-screen bg-[#f6f4ef] flex items-center pt-16 dark:bg-[#1C1F1E]"
     >
-      <div className="absolute -top-72 -right-72 w-[900px] h-[900px] bg-[#cfdccf] rounded-full blur-[160px] opacity-45 z-0 dark:bg-[#232827] dark:opacity-20"></div>
+      <div className="absolute -top-72 -right-72 w-[900px] h-[900px] bg-[#cfdccf] rounded-full blur-[160px] opacity-45 z-0 dark:bg-[#232827] dark:opacity-15"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT SIDE TEXT */}
         <div>
           <h1
-            className="text-4xl sm:text-5xl font-semibold text-gray-800 mb-6"
+            className="text-4xl sm:text-5xl font-semibold text-gray-800 dark:text-[#E7ECE8] mb-6"
             style={{ fontFamily: "Playfair Display" }}
           >
             <span ref={typingRef}></span>
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 mb-6">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-[#A9B2AC] mb-6">
             I design and build thoughtful AI-driven systems — with clarity,
             responsibility, and real-world impact in mind.
           </p>
 
-          <p className="text-sm text-gray-500 mb-8">
+          <p className="text-sm text-gray-500  mb-8">
             Computer Science (AI & ML) · Builder · Learner · Leader
           </p>
 
