@@ -43,11 +43,18 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-[#f6f4ef]/85 backdrop-blur-sm border-b border-[#e5e3dc] dark:bg-[#1B1F1E]/95 dark:backdrop-blur-[2px] dark:border-[#323938]">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        <span className="text-gray-800 font-medium dark:text-[#E6ECE8]">
-          Nikita Sachan
-        </span>
+        <div className="flex items-center gap-3">
+          <img
+            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGJrZ3NlejZ4ZXlvaDRnbTR1b2VmcG1waGM1Y3hvNGU4aGE0aHcweSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26BkNnO2qmCWTQuac/giphy.gif"
+            alt="avatar"
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <span className="text-gray-800 font-medium dark:text-[#E6ECE8]">
+            Nikita Sachan
+          </span>
+        </div>
 
-        <div className="flex items-center gap-3 text-sm">
+        <div className="flex items-center gap-4 text-sm">
           {navSections
             .filter((s) => s.label)
             .map((link) => {
@@ -70,7 +77,7 @@ export default function Navbar() {
                 </a>
               )
             })}
-
+          
             <Switch />
 
             <a
