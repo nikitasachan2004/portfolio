@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Switch = () => {
+  const checkboxRef = useRef(null);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      if (checkboxRef.current) checkboxRef.current.checked = true;
+    } else {
+      document.documentElement.classList.remove("dark");
+      if (checkboxRef.current) checkboxRef.current.checked = false;
+    }
+  }, []);
+
+  const handleToggle = (e) => {
+    const isDark = e.target.checked;
+
+  if (isDark) {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+};
+
   return (
     <StyledWrapper>
       <label className="theme-switch">
-        <input type="checkbox" className="theme-switch__checkbox" />
+        <input 
+          ref={checkboxRef}
+          type="checkbox" 
+          className="theme-switch__checkbox"
+          onChange={handleToggle}
+        />
         <div className="theme-switch__container">
           <div className="theme-switch__clouds" />
           <div className="theme-switch__stars-container">
