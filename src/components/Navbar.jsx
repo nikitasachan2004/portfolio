@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Switch from "./ui/sky-toggle"
+import { InteractiveHoverButton } from "./ui/interactive-hover-button"
 
 const navSections = [
   { id: "hero", label: null }, // special case
@@ -80,26 +81,14 @@ export default function Navbar() {
           
             <Switch />
 
-            <a
-              href="/Nikita_Sachan_Resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="
-                ml-2 px-4 py-2 rounded-full
-                border border-[#7c8f7a]
-                text-[#6f846d]
-                transition-all duration-300
-                hover:bg-[#eaf0ea]
-                hover:-translate-y-0.5
-                hover:shadow-sm
-                dark:border-[#8A9F8A]
-                dark:text-[#8A9F8A]
-                dark:hover:bg-[#2B332F]
-                focus:outline-none focus:ring-2 focus:ring-[#8FA78F]/40 focus:ring-offset-0
-                "
-            >
-              Resume
-            </a>
+            <InteractiveHoverButton
+              text="Resume"
+              onClick={() => window.open("/Nikita_Sachan_Resume.pdf", "_blank")}
+              hoverBgColor="bg-[#7c8f7a] dark:bg-[#2B332F]"
+              hoverTextColor="text-white"
+              className="ml-2 border border-[#7c8f7a] text-[#6f846d] dark:border-[#8A9F8A] dark:text-[#8A9F8A]"
+            />
+
         </div>
 
       </div>

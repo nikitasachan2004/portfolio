@@ -1,6 +1,7 @@
 import { useEffect, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Center, OrbitControls } from "@react-three/drei";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 function BulbasaurModel() {
   const { scene } = useGLTF("/bulbasaur.glb");
@@ -72,12 +73,16 @@ export default function Hero() {
             Computer Science (AI & ML) · Builder · Learner · Leader
           </p>
 
-          <a
-            href="#projects"
-            className="inline-block border border-[#7c8f7a] text-[#7c8f7a] px-6 py-3 rounded-lg hover:bg-[#7c8f7a] hover:text-white transition"
-          >
-            View My Work
-          </a>
+          <InteractiveHoverButton
+            text="View Work"
+            onClick={() => {
+              const projectsSection = document.getElementById("projects");
+              projectsSection?.scrollIntoView({ behavior: "smooth" });
+            }}
+            hoverBgColor="bg-[#7c8f7a] dark:bg-[#2B332F]"
+            hoverTextColor="text-white"
+            className="!w-48 border border-[#7c8f7a] text-[#6f846d] dark:border-[#8A9F8A] dark:text-[#8A9F8A]"
+          />
         </div>
 
         {/* RIGHT SIDE MODEL */}
