@@ -1,7 +1,8 @@
-import { useEffect, useRef, Suspense } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, Center, OrbitControls } from "@react-three/drei";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 function BulbasaurModel() {
   const { scene } = useGLTF("/bulbasaur.glb");
@@ -30,6 +31,7 @@ function BulbasaurModel() {
 
 export default function Hero() {
   const typingRef = useRef(null);
+  const [typingDone, setTypingDone] = useState(false);
 
   useEffect(() => {
     const fullText = "Hello! I'm Nikita.";
@@ -40,6 +42,8 @@ export default function Hero() {
         typingRef.current.textContent = fullText.slice(0, index);
         index++;
         setTimeout(type, 80);
+      } else {
+        setTypingDone(true);
       }
     }
 
@@ -57,12 +61,30 @@ export default function Hero() {
 
         {/* LEFT SIDE TEXT */}
         <div>
-          <h1
-            className="text-4xl sm:text-5xl font-semibold text-gray-800 dark:text-[#E7ECE8] mb-6"
+          <div
+            className="mb-6"
             style={{ fontFamily: "Playfair Display" }}
           >
-            <span ref={typingRef}></span>
-          </h1>
+            {typingDone ? (
+              <SparklesText
+                text="Hello! I'm Nikita."
+                sparklesCount={8}
+                className="text-4xl sm:text-5xl font-semibold text-gray-800 dark:text-[#E7ECE8]"
+                colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
+              />
+            ) : (
+              <h1 className="text-4xl sm:text-5xl font-semibold text-gray-800 dark:text-[#E7ECE8]">
+                <span ref={typingRef}></span>
+                <span
+                  className="inline-block w-[3px] h-[1em] bg-gray-800 dark:bg-[#E7ECE8] ml-[2px] align-middle"
+                  style={{
+                    animation: "blink 0.7s step-end infinite",
+                  }}
+                />
+                <style>{`@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }`}</style>
+              </h1>
+            )}
+          </div>
 
           <p className="text-base sm:text-lg text-gray-600 dark:text-[#A9B2AC] mb-6">
             I design and build thoughtful AI-driven systems — with clarity,

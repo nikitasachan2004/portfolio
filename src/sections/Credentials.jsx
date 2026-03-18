@@ -1,3 +1,7 @@
+import { Suspense, useRef } from "react"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { useGLTF, Center, OrbitControls } from "@react-three/drei"
+
 const educationItems = [
   {
     year: "2023 — 2027",
@@ -46,6 +50,32 @@ const certifications = [
   },
 ]
 
+function MarillModel() {
+  const { scene } = useGLTF("/marill.glb")
+  const groupRef = useRef()
+
+  useFrame(({ clock }) => {
+    if (groupRef.current) {
+      groupRef.current.position.y = Math.sin(clock.elapsedTime * 0.8) * 0.04
+    }
+  })
+
+  return (
+    <Center>
+      <group ref={groupRef}>
+        <primitive
+          object={scene}
+          scale={5}
+          position={[0, -0.25, 0.5]}
+          rotation={[0, Math.PI/2, 0]}
+        />
+      </group>
+    </Center>
+  )
+}
+
+useGLTF.preload("/marill.glb")
+
 export default function Credentials() {
   return (
     <section id="credentials" className="bg-[#fbfaf7] py-24 dark:bg-[#202423]">
@@ -58,7 +88,7 @@ export default function Credentials() {
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          <div>
+          <div className="flex flex-col">
             <h3 className="text-sm tracking-[0.14em] uppercase text-gray-500 mb-5 dark:text-[#7F8A83]">
               Education
             </h3>
@@ -81,6 +111,19 @@ export default function Credentials() {
                   </article>
                 ))}
               </div>
+            </div>
+
+            {/* Marill 3D Model — fills blank space below education */}
+            <div className="flex-1 flex items-center justify-center mt-8" style={{ minHeight: "280px" }}>
+              <Canvas camera={{ position: [0, 0.8, 2.8], fov: 38 }} gl={{ alpha: true }} style={{ width: "100%", height: "100%", background: "transparent" }}>
+                <ambientLight intensity={1.5} />
+                <directionalLight position={[3, 5, 4]} intensity={1.2} />
+                <directionalLight position={[-3, -2, -2]} intensity={0.5} />
+                <Suspense fallback={null}>
+                  <MarillModel />
+                </Suspense>
+                <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} />
+              </Canvas>
             </div>
           </div>
 
