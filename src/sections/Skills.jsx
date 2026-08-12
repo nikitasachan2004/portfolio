@@ -3,7 +3,7 @@ import SkillGroup from "../components/SkillGroup"
 export default function Skills() {
   return (
     <section id="skills" className="bg-[#f6f4ef] py-24 dark:bg-[#1C1F1E]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
         <h2
           className="text-3xl font-semibold text-gray-800 mb-12 dark:text-[#E7ECE8]"
@@ -36,12 +36,12 @@ export default function Skills() {
 
           <SkillGroup
             title="Backend & APIs"
-            skills={["FastAPI", "Node.js", "REST APIs"]}
+            skills={["FastAPI", "Node.js", "REST APIs", "Flask", "JWT Authentication", "LLM Integration"]}
           />
 
           <SkillGroup
             title="Frontend"
-            skills={["React", "JavaScript", "HTML", "CSS"]}
+            skills={["React", "JavaScript", "Next.js", "TypeScript", "HTML", "CSS", "Talwind", "Vite"]}
           />
 
           <SkillGroup

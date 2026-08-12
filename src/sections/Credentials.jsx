@@ -34,7 +34,7 @@ const certifications = [
   },
   {
     organization: "NPTEL",
-    items: ["Design and Analysis of Algorithms", "Introduction to Machine Learning"],
+    items: ["Design and Analysis of Algorithms", "Introduction to Machine Learning","Deep Learning"],
   },
   {
     organization: "Red Hat",
@@ -79,7 +79,7 @@ useGLTF.preload("/marill.glb")
 export default function Credentials() {
   return (
     <section id="credentials" className="bg-[#fbfaf7] py-24 dark:bg-[#202423]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <h2
           className="text-3xl font-semibold text-gray-800 mb-12 dark:text-[#E7ECE8]"
           style={{ fontFamily: "Playfair Display" }}

@@ -1,13 +1,25 @@
+import { useState } from "react"
+
 export default function ProjectCard({ title, description, techStack = [], github, demo }) {
+  const [expanded, setExpanded] = useState(false)
+
   return (
     <div className="bg-[#fbfaf7] border border-[#e5e3dc] rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-md dark:bg-[#262C2A] dark:border-[#323938] dark:hover:shadow-[inset_0_0_0_1px_rgba(143,167,143,0.22),0_10px_25px_rgba(0,0,0,0.35)] relative after:content-[''] after:absolute after:top-4 after:bottom-4 after:left-0 after:w-[2px] after:bg-transparent dark:hover:after:bg-[#8FA78F] flex h-full flex-col">
       <h3 className="text-xl font-semibold text-gray-800 mb-3 dark:text-[#E6ECE8]">
         {title}
       </h3>
 
-      <p className="text-sm leading-6 text-gray-600 mb-5 dark:text-[#A8B2AC] overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
-        {description}
-      </p>
+      <div className="mb-5">
+        <p className={`text-sm leading-6 text-gray-600 dark:text-[#A8B2AC] ${!expanded ? "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]" : ""}`}>
+          {description}
+        </p>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-1 text-xs text-[#6f846d] dark:text-[#8FA78F] hover:underline focus:outline-none"
+        >
+          {expanded ? "less ↑" : "more ↓"}
+        </button>
+      </div>
 
       <div className="mb-6">
         <p className="text-sm font-medium text-gray-700 mb-3 dark:text-[#E6ECE8]">

@@ -1,6 +1,7 @@
 import Hero from "./sections/Hero"
-import Projects from "./sections/Projects"
 import About from "./sections/About"
+import Experience from "./sections/Experience"
+import Projects from "./sections/Projects"
 import Skills from "./sections/Skills"
 import Credentials from "./sections/Credentials"
 import Contact from "./sections/Contact"
@@ -12,8 +13,9 @@ export default function App() {
     <>
       <Navbar />
       <Hero />
-      <Projects />
       <About />
+      <Experience />
+      <Projects />
       <Skills />
       <Credentials />
       <Contact />

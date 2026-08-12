@@ -57,7 +57,7 @@ export default function Hero() {
     >
       <div className="absolute -top-72 -right-72 w-[900px] h-[900px] bg-[#cfdccf] rounded-full blur-[160px] opacity-45 z-0 dark:bg-[#232827] dark:opacity-15"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT SIDE TEXT */}
         <div>
