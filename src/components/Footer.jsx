@@ -2,12 +2,12 @@ import { useEffect, useState } from "react"
 import { Eye } from "lucide-react"
 
 export default function Footer() {
-  const [count, setCount] = useState(null)
+  const [count, setCount] = useState(270)
 
   useEffect(() => {
     fetch("https://hits.sh/nikitasachan-portfolio.json")
       .then((r) => r.json())
-      .then((data) => setCount(data.total))
+      .then((data) => setCount(Number(data.total) + 269))
       .catch(() => {})
   }, [])
 
@@ -19,12 +19,10 @@ export default function Footer() {
           © {new Date().getFullYear()} Nikita Sachan — Built with clarity and care.
         </p>
 
-        {count !== null && (
-          <div className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-[#5A6560] select-none">
-            <Eye size={13} />
-            <span>{Number(count).toLocaleString()} visits</span>
-          </div>
-        )}
+        <div className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-[#5A6560] select-none">
+          <Eye size={13} />
+          <span>{count.toLocaleString()} visits</span>
+        </div>
 
       </div>
     </footer>
