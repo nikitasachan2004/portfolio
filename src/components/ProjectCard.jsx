@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ProjectCard({ title, description, techStack = [], github, demo }) {
+export default function ProjectCard({ title, description, techStack = [], github, demo, live }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -47,7 +47,7 @@ export default function ProjectCard({ title, description, techStack = [], github
         </div>
       </div>
 
-      {(github || demo) && (
+      {(github || demo || live) && (
         <div className="mt-auto flex gap-3 flex-wrap pt-2">
           {github && (
             <a
@@ -68,6 +68,17 @@ export default function ProjectCard({ title, description, techStack = [], github
               className="inline-flex items-center gap-2 text-sm text-[#6f846d] border border-[#c7d2c3] px-4 py-2 rounded-lg transition hover:bg-[#eaf0ea] hover:-translate-y-0.5 hover:shadow-sm dark:text-[#8FA78F] dark:border-[#323938] dark:hover:bg-[#2B332F] dark:hover:shadow-[0_10px_20px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-2 focus:ring-[#8FA78F]/40 focus:ring-offset-0"
             >
               Demo →
+            </a>
+          )}
+
+          {live && (
+            <a
+              href={live}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-[#6f846d] border border-[#c7d2c3] px-4 py-2 rounded-lg transition hover:bg-[#eaf0ea] hover:-translate-y-0.5 hover:shadow-sm dark:text-[#8FA78F] dark:border-[#323938] dark:hover:bg-[#2B332F] dark:hover:shadow-[0_10px_20px_rgba(0,0,0,0.35)] focus:outline-none focus:ring-2 focus:ring-[#8FA78F]/40 focus:ring-offset-0"
+            >
+              Live ↗
             </a>
           )}
         </div>

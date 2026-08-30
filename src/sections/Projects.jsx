@@ -28,6 +28,7 @@ export default function Projects() {
             description="How many times have you stared at random ingredients in your fridge with no idea what to make? CookAI fixes that. Tell it what you have, your dietary preferences, and how much time you've got and it figures out a recipe for you. Built with NLP and a recommendation engine, it actually tries to understand what you'd enjoy, not just what's technically possible."
             techStack={["Python", "NLP", "FastAPI", "React", "Recommendation System"]}
             github="https://github.com/nikitasachan2004/CookAI"
+            live="https://cook-ai-xi.vercel.app"
           />
 
           <ProjectCard
@@ -35,6 +36,7 @@ export default function Projects() {
             description="Farmers in India often sell at a loss simply because they don't know when or where prices are good. KrishiMandi AI digs into historical mandi price data and crop supply patterns to surface those trends in a way that's actually readable. It's not a flashy product, it's a practical one, built for people who make real decisions based on market information."
             techStack={["Python", "Pandas", "NumPy", "Scikit-learn", "Data Visualization"]}
             github="https://github.com/nikitasachan2004/KrishiMind_SustainAi"
+            live="https://krishi-mind-sustain-ai.vercel.app"
           />
 
           <ProjectCard
