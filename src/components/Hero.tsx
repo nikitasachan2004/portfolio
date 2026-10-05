@@ -49,11 +49,11 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Giant Condensed Headline: NIKITA */}
-      <div 
+      <div
         ref={headlineContainerRef}
         className="relative my-2 sm:my-4 select-none w-full max-w-5xl flex flex-col items-center justify-center px-4 sm:px-8 overflow-visible"
       >
-        <h1 
+        <h1
           className="font-syne font-black text-6xl sm:text-8xl md:text-[10rem] lg:text-[11.5rem] tracking-tighter leading-none text-black drop-shadow-[5px_5px_0px_rgba(245,158,11,0.9)] sm:drop-shadow-[8px_8px_0px_rgba(245,158,11,0.9)]"
         >
           <span ref={headlineTextRef} className="inline-block relative">
@@ -73,7 +73,7 @@ export const Hero: React.FC = () => {
         />
 
         {/* Pinned tactile stickers overlapping the title */}
-        <span 
+        <span
           data-interactive="true"
           className="absolute -bottom-3 left-4 sm:left-12 md:left-20 bg-[#A78BFA] text-black font-mono font-extrabold text-xs px-3 py-1 rounded-md border-[2px] border-black shadow-brutal-sm rotate-[-5deg] hover:rotate-0 transition-transform z-30 cursor-default"
         >
@@ -119,14 +119,19 @@ export const Hero: React.FC = () => {
 
       {/* Direct CTA Buttons with Interactive Hover Liquid Fill Effect */}
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a href="#projects" className="inline-block">
-          <InteractiveHoverButton
-            text="Explore Work"
-            hoverBgColor="bg-[#FBBF24]"
-            hoverTextColor="text-black"
-            className="!w-44 border-[2.5px] border-black bg-white text-black font-mono font-black text-sm py-2.5 shadow-brutal hover:translate-x-[-1px] hover:translate-y-[-1px] dark:bg-[#1A1F2C] dark:text-white dark:border-white/80"
-          />
-        </a>
+        <InteractiveHoverButton
+          text="Explore Work"
+          hoverBgColor="bg-[#FBBF24]"
+          hoverTextColor="text-black"
+          onClick={() => {
+            const el = document.getElementById('projects');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+              window.history.pushState(null, '', '#projects');
+            }
+          }}
+          className="!w-44 border-[2.5px] border-black bg-white text-black font-mono font-black text-sm py-2.5 shadow-brutal hover:translate-x-[-1px] hover:translate-y-[-1px] dark:bg-[#1A1F2C] dark:text-white dark:border-white/80"
+        />
 
         {/* Resume Dropdown */}
         <div className="relative inline-block" ref={resumeRef}>

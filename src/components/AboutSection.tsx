@@ -30,7 +30,7 @@ export const AboutSection: React.FC = () => {
                   >
                     {/* Background Circle */}
                     <circle cx="60" cy="60" r="58" fill="#FDE047" stroke="#000" strokeWidth="4" />
-                    
+
                     {/* Hair Back */}
                     <path
                       d="M25 80 C20 45 40 18 60 18 C80 18 100 45 95 80 C90 92 88 102 88 108 L32 108 C32 102 30 92 25 80 Z"
@@ -106,9 +106,6 @@ export const AboutSection: React.FC = () => {
                 <div className="flex items-center gap-1.5 mt-2">
                   <span className="font-mono text-[9px] bg-black text-white px-2 py-0.5 rounded-full font-extrabold tracking-wider">
                     BATCH &apos;27
-                  </span>
-                  <span className="font-mono text-[9px] bg-[#FBBF24] text-black border border-black px-1.5 py-0.5 rounded-full font-black">
-                    CGPA: 9.1
                   </span>
                 </div>
               </div>

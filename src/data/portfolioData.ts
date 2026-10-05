@@ -439,7 +439,7 @@ export const MANIFESTO_CARDS: ManifestoCard[] = [
     bgClass: 'bg-[#FB7185]',
     pillClass: 'bg-white text-black',
     washiText: 'SYSTEMS // 03',
-    sticker: '⚡ CHAOS → CODE',
+    sticker: '★ CHAOS → CODE',
     subtag: 'UNTANGLE DATA',
     description: "The messier, the more interesting. I like turning tangled data, fuzzy ideas, and real-world chaos into something surprisingly simple."
   },

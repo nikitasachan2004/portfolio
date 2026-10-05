@@ -22,8 +22,13 @@ export default function App() {
       if (event.state?.view === 'old') {
         setCurrentView('old');
       } else {
-        setCurrentView('new');
-        window.scrollTo({ top: 0, behavior: 'instant' });
+        setCurrentView((prev) => {
+          if (prev === 'old') {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            return 'new';
+          }
+          return prev;
+        });
       }
     };
 

@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Switch from './ui/sky-toggle';
-import { InteractiveHoverButton } from './ui/interactive-hover-button';
 import { LINKS } from '../data/links';
 
 export const Navbar: React.FC = () => {
@@ -29,29 +28,46 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      const navOffset = targetId === 'hero' ? 0 : 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = targetId === 'hero' ? 0 : elementPosition + window.scrollY - navOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+      window.history.pushState(null, '', href);
+    }
+  };
+
   const navItems = LINKS.nav;
 
   return (
     <header className="fixed top-3 sm:top-4 left-0 right-0 z-50 px-3 sm:px-4 flex justify-center pointer-events-none">
-      <nav 
+      <nav
         id="main-nav"
-        className="pointer-events-auto max-w-5xl w-full bg-white/95 backdrop-blur border-[2.5px] border-black shadow-brutal rounded-full px-3.5 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-4 transition-all duration-200"
+        className="pointer-events-auto max-w-5xl w-full bg-white/95 backdrop-blur border-[2.5px] border-black shadow-brutal rounded-full px-3.5 sm:px-4 py-2 flex items-center justify-between gap-2 sm:gap-4 transition-all duration-200 select-none"
       >
         {/* MacOS Window Window Controls */}
         <div aria-label="Window decorations" className="flex items-center gap-1.5 pl-1 shrink-0">
-          <button 
+          <button
             type="button"
             title="Scroll to top"
             className="w-3 h-3 rounded-full bg-[#EF4444] border-[1.5px] border-black inline-block hover:scale-110 transition-transform cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           />
-          <button 
+          <button
             type="button"
             title="Scroll down"
             className="w-3 h-3 rounded-full bg-[#F59E0B] border-[1.5px] border-black inline-block hover:scale-110 transition-transform cursor-pointer"
             onClick={() => window.scrollBy({ top: 500, behavior: 'smooth' })}
           />
-          <button 
+          <button
             type="button"
             title="Scroll to bottom"
             className="w-3 h-3 rounded-full bg-[#10B981] border-[1.5px] border-black inline-block hover:scale-110 transition-transform cursor-pointer"
@@ -67,11 +83,11 @@ export const Navbar: React.FC = () => {
               <a
                 key={item.id}
                 href={item.href}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-full transition-all whitespace-nowrap ${
-                  isActive
+                onClick={(e) => handleNavClick(e, item.href)}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-full transition-all whitespace-nowrap cursor-pointer ${isActive
                     ? 'bg-[#FBBF24] border-[1.5px] border-black shadow-brutal-sm text-black font-black'
                     : 'hover:bg-black/5 text-black/80 font-bold'
-                }`}
+                  }`}
               >
                 {isActive && <span className="w-1.5 h-1.5 rounded-full bg-black block shrink-0"></span>}
                 <span className="leading-none mt-[1px]">{item.label}</span>
@@ -89,15 +105,11 @@ export const Navbar: React.FC = () => {
 
           <a
             href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
             aria-label="Let's Talk"
-            className="shrink-0"
+            className="shrink-0 inline-flex items-center justify-center bg-[#FB7185] hover:bg-[#F43F5E] text-black border-[2px] border-black font-syne font-black text-[10px] sm:text-xs px-3.5 py-1 rounded-full shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0 active:shadow-none transition-all tracking-wider uppercase cursor-pointer"
           >
-            <button
-              type="button"
-              className="bg-[#FB7185] hover:bg-[#F43F5E] text-black border-[2px] border-black font-syne font-black text-[10px] sm:text-xs px-3.5 py-1 rounded-full shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0 active:shadow-none transition-all tracking-wider uppercase cursor-pointer"
-            >
-              LET&apos;S TALK
-            </button>
+            LET&apos;S TALK
           </a>
 
           {/* Mobile menu toggle */}
@@ -123,8 +135,11 @@ export const Navbar: React.FC = () => {
             <a
               key={item.id}
               href={item.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 font-mono text-sm font-bold rounded-lg hover:bg-[#FBBF24] hover:text-black transition-colors border border-transparent hover:border-black flex items-center justify-between text-black dark:text-white"
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                handleNavClick(e, item.href);
+              }}
+              className="px-3 py-2 font-mono text-sm font-bold rounded-lg hover:bg-[#FBBF24] hover:text-black transition-colors border border-transparent hover:border-black flex items-center justify-between text-black dark:text-white cursor-pointer"
             >
               <span>{item.label}</span>
               {activeSection === item.id && (
@@ -135,8 +150,11 @@ export const Navbar: React.FC = () => {
           <div className="pt-2 border-t border-black/20 dark:border-white/20 mt-1">
             <a
               href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center bg-[#FB7185] hover:bg-[#F43F5E] text-black border-[2px] border-black font-syne font-black text-xs py-2 rounded-full block shadow-brutal-sm uppercase tracking-wider"
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                handleNavClick(e, '#contact');
+              }}
+              className="w-full text-center bg-[#FB7185] hover:bg-[#F43F5E] text-black border-[2px] border-black font-syne font-black text-xs py-2 rounded-full block shadow-brutal-sm uppercase tracking-wider cursor-pointer"
             >
               LET&apos;S TALK
             </a>

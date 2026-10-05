@@ -33,9 +33,8 @@ export const PhilosophySection: React.FC = () => {
               {/* Top Washi Tape Accent */}
               {card.washiText && (
                 <div
-                  className={`absolute -top-3.5 left-6 font-mono text-[10px] font-black uppercase tracking-wider px-3 py-0.5 border border-black shadow-xs bg-white text-black select-none z-10 ${
-                    idx % 2 === 0 ? '-rotate-2' : 'rotate-1'
-                  }`}
+                  className={`absolute -top-3.5 left-6 font-mono text-[10px] font-black uppercase tracking-wider px-3 py-0.5 border border-black shadow-xs bg-white text-black select-none z-10 ${idx % 2 === 0 ? '-rotate-2' : 'rotate-1'
+                    }`}
                 >
                   {card.washiText}
                 </div>
@@ -44,9 +43,8 @@ export const PhilosophySection: React.FC = () => {
               {/* Corner Tactile Sticker */}
               {card.sticker && (
                 <div
-                  className={`absolute -top-3 -right-2 font-mono text-[10px] sm:text-[11px] font-black tracking-wider px-2.5 py-1 bg-black text-white border-[1.5px] border-black shadow-brutal-sm rounded-sm uppercase select-none z-10 transition-transform group-hover:scale-105 ${
-                    idx % 2 === 0 ? 'rotate-3' : '-rotate-2'
-                  }`}
+                  className={`absolute -top-3 -right-2 font-mono text-[10px] sm:text-[11px] font-black tracking-wider px-2.5 py-1 bg-black text-white border-[1.5px] border-black shadow-brutal-sm rounded-sm uppercase select-none z-10 transition-transform group-hover:scale-105 ${idx % 2 === 0 ? 'rotate-3' : '-rotate-2'
+                    }`}
                 >
                   {card.sticker}
                 </div>

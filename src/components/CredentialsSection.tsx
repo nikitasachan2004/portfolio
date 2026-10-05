@@ -155,19 +155,17 @@ export const CredentialsSection: React.FC = () => {
 
                     {/* Timeline Compact Card */}
                     <div
-                      className={`timeline-card w-full rounded-xl border-[2.5px] border-black p-4 transition-all flex flex-col justify-between ${
-                        isCurrent
+                      className={`timeline-card w-full rounded-xl border-[2.5px] border-black p-4 transition-all flex flex-col justify-between ${isCurrent
                           ? 'bg-[#FEF9C3] shadow-brutal hover:shadow-brutal-lg -translate-y-0.5'
                           : 'bg-white shadow-brutal-sm hover:shadow-brutal hover:-translate-y-0.5'
-                      }`}
+                        }`}
                     >
                       <div>
                         {/* Year Chip & Tag */}
                         <div className="flex items-center justify-between gap-1.5 mb-2">
                           <span
-                            className={`font-mono text-xs font-black px-2 py-0.5 rounded border border-black shadow-2xs text-black ${
-                              isCurrent ? 'bg-[#FBBF24]' : idx === 1 ? 'bg-[#38BDF8]' : 'bg-[#A7F3D0]'
-                            }`}
+                            className={`font-mono text-xs font-black px-2 py-0.5 rounded border border-black shadow-2xs text-black ${isCurrent ? 'bg-[#FBBF24]' : idx === 1 ? 'bg-[#38BDF8]' : 'bg-[#A7F3D0]'
+                              }`}
                           >
                             {isCurrent ? '2023 - 2027' : item.period}
                           </span>
@@ -197,14 +195,9 @@ export const CredentialsSection: React.FC = () => {
                       {/* Score & Specialization Badges */}
                       <div className="mt-3.5 pt-2.5 border-t border-black/10 flex flex-wrap gap-1.5 items-center">
                         {isCurrent ? (
-                          <>
-                            <span className="bg-[#34D399] text-black border border-black font-mono font-black text-[10px] px-2 py-0.5 rounded shadow-2xs">
-                              CGPA: 9.1
-                            </span>
-                            <span className="bg-[#DDD6FE] text-black border border-black font-mono font-bold text-[10px] px-2 py-0.5 rounded shadow-2xs">
-                              AI &amp; ML SPECIALIZATION
-                            </span>
-                          </>
+                          <span className="bg-[#DDD6FE] text-black border border-black font-mono font-bold text-[10px] px-2 py-0.5 rounded shadow-2xs">
+                            AI &amp; ML SPECIALIZATION
+                          </span>
                         ) : idx === 1 ? (
                           <>
                             <span className="bg-[#BAE6FD] text-black border border-black font-mono font-black text-[10px] px-2 py-0.5 rounded shadow-2xs">
