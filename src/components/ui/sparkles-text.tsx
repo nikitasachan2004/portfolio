@@ -1,9 +1,7 @@
 "use client";
 
-import { CSSProperties, ReactElement, useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
-import { cn } from "@/lib/utils";
 
 interface Sparkle {
   id: string;
@@ -16,85 +14,19 @@ interface Sparkle {
 }
 
 interface SparklesTextProps {
-  as?: ReactElement;
-  className?: string;
   text: string;
+  className?: string;
   sparklesCount?: number;
   colors?: {
     first: string;
     second: string;
   };
+  style?: CSSProperties;
 }
 
-const SparklesText: React.FC<SparklesTextProps> = ({
-  text,
-  colors = { first: "#9E7AFF", second: "#FE8BBB" },
-  className,
-  sparklesCount = 10,
-  ...props
-}) => {
-  const [sparkles, setSparkles] = useState<Sparkle[]>([]);
-
-  useEffect(() => {
-    const generateStar = (): Sparkle => {
-      const starX = `${Math.random() * 100}%`;
-      const starY = `${Math.random() * 100}%`;
-      const color = Math.random() > 0.5 ? colors.first : colors.second;
-      const delay = Math.random() * 2;
-      const scale = Math.random() * 1 + 0.3;
-      const lifespan = Math.random() * 10 + 5;
-      const id = `${starX}-${starY}-${Date.now()}`;
-      return { id, x: starX, y: starY, color, delay, scale, lifespan };
-    };
-
-    const initializeStars = () => {
-      const newSparkles = Array.from({ length: sparklesCount }, generateStar);
-      setSparkles(newSparkles);
-    };
-
-    const updateStars = () => {
-      setSparkles((currentSparkles) =>
-        currentSparkles.map((star) => {
-          if (star.lifespan <= 0) {
-            return generateStar();
-          } else {
-            return { ...star, lifespan: star.lifespan - 0.1 };
-          }
-        }),
-      );
-    };
-
-    initializeStars();
-    const interval = setInterval(updateStars, 100);
-
-    return () => clearInterval(interval);
-  }, [colors.first, colors.second, sparklesCount]);
-
-  return (
-    <div
-      className={cn("text-6xl font-bold", className)}
-      {...props}
-      style={
-        {
-          "--sparkles-first-color": `${colors.first}`,
-          "--sparkles-second-color": `${colors.second}`,
-        } as CSSProperties
-      }
-    >
-      <span className="relative inline-block">
-        {sparkles.map((sparkle) => (
-          <Sparkle key={sparkle.id} {...sparkle} />
-        ))}
-        <strong>{text}</strong>
-      </span>
-    </div>
-  );
-};
-
-const Sparkle: React.FC<Sparkle> = ({ id, x, y, color, delay, scale }) => {
+function SparkleIcon({ x, y, color, delay, scale }: Sparkle) {
   return (
     <motion.svg
-      key={id}
       className="pointer-events-none absolute z-20"
       initial={{ opacity: 0, left: x, top: y }}
       animate={{
@@ -113,6 +45,54 @@ const Sparkle: React.FC<Sparkle> = ({ id, x, y, color, delay, scale }) => {
       />
     </motion.svg>
   );
-};
+}
 
-export { SparklesText };
+export function SparklesText({
+  text,
+  className = "",
+  sparklesCount = 10,
+  colors = { first: "#9E7AFF", second: "#FE8BBB" },
+  style,
+}: SparklesTextProps) {
+  const [sparkles, setSparkles] = useState<Sparkle[]>([]);
+
+  useEffect(() => {
+    const generate = (): Sparkle => ({
+      id: `${Math.random()}-${Date.now()}`,
+      x: `${Math.random() * 100}%`,
+      y: `${Math.random() * 100}%`,
+      color: Math.random() > 0.5 ? colors.first : colors.second,
+      delay: Math.random() * 2,
+      scale: Math.random() * 1.5 + 1.2,
+      lifespan: Math.random() * 10 + 5,
+    });
+
+    setSparkles(Array.from({ length: sparklesCount }, generate));
+
+    const interval = setInterval(() => {
+      setSparkles(prev =>
+        prev.map(s => (s.lifespan <= 0 ? generate() : { ...s, lifespan: s.lifespan - 0.1 }))
+      );
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [colors.first, colors.second, sparklesCount]);
+
+  return (
+    <span
+      className={`relative inline-block ${className}`}
+      style={
+        {
+          "--sparkles-first-color": colors.first,
+          "--sparkles-second-color": colors.second,
+          ...style,
+        } as CSSProperties
+      }
+    >
+      {sparkles.map(s => (
+        <SparkleIcon key={s.id} {...s} />
+      ))}
+      <strong style={{ fontWeight: "inherit" }}>{text}</strong>
+    </span>
+  );
+}

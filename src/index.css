@@ -1,24 +1,308 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-notebook: #FAF8F3;
+  --color-marigold: #FBBF24;
+  --color-mustard: #F59E0B;
+  --color-bubblegum: #F472B6;
+  --color-coral: #FB7185;
+  --color-mint: #34D399;
+  --color-emeraldCustom: #10B981;
+  --color-cobalt: #3B82F6;
+  --color-skycustom: #38BDF8;
+  --color-lavender: #A78BFA;
+  --color-violetCustom: #8B5CF6;
+
+  --font-syne: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-hand: 'Caveat', cursive;
+  --font-kalam: 'Kalam', cursive;
+  --font-grotesk: 'Space Grotesk', sans-serif;
+
+  --shadow-brutal: 4px 4px 0px #000000;
+  --shadow-brutal-sm: 2.5px 2.5px 0px #000000;
+  --shadow-brutal-lg: 7px 7px 0px #000000;
+  --shadow-brutal-xl: 10px 10px 0px #000000;
+}
+
+/* Ruled paper background with realistic notebook lines */
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f6f4ef;
+  background-color: #FAF8F3;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #E3DFD5 31px,
+    #E3DFD5 32px
+  );
+  position: relative;
+  font-family: var(--font-grotesk), sans-serif;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Dark mode overrides for notebook canvas */
 html.dark body {
-  background-color: #1B1F1E;
-}
-html {
-  scroll-behavior: smooth;
+  background-color: #0F1117;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #1E2230 31px,
+    #1E2230 32px
+  );
+  color: #F3F4F6;
 }
 
-.typing-cursor::after {
-  content: '|';
+/* Notebook left margin pink/red vertical rule */
+.margin-rule {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: clamp(16px, 4vw, 56px);
+  width: 2px;
+  background-color: rgba(244, 114, 182, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
+
+html.dark .margin-rule {
+  background-color: rgba(244, 114, 182, 0.25);
+}
+
+/* Dark mode brutalist element overrides */
+html.dark nav#main-nav {
+  background-color: rgba(23, 27, 38, 0.95);
+  border-color: #38BDF8;
+  box-shadow: 4px 4px 0px #000000;
+  color: #F3F4F6;
+}
+
+html.dark nav#main-nav a {
+  color: #E2E8F0;
+}
+
+html.dark nav#main-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark nav#main-nav a.bg-\[\#FBBF24\] {
+  color: #000000;
+}
+
+/* Main content boxes in dark mode (excluding scrapbook-paper experience section) */
+html.dark main section:not(#experience) > div.bg-white {
+  background-color: #171B26 !important;
+  border-color: #333C4D !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  color: #F3F4F6 !important;
+}
+
+html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) h2,
+html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) h3,
+html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) h4 {
+  color: #FFFFFF !important;
+}
+
+html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) p {
+  color: #CBD5E1;
+}
+
+/* Projects Section: Neo-Brutalist cards always retain crisp solid black ink on their pastel surfaces */
+#projects .project-card,
+#projects .project-card h3,
+#projects .project-card p {
+  color: #000000 !important;
+}
+html.dark #projects .project-card h3,
+html.dark #projects .project-card p,
+html.dark #projects .project-card span:not(.text-white),
+html.dark #projects .project-card div:not(.text-white):not([class*="bg-black"]) {
+  color: #000000 !important;
+}
+html.dark #projects .project-card .text-white,
+html.dark #projects .project-card [class*="text-white"] {
+  color: #FFFFFF !important;
+}
+
+html.dark .bg-\[\#FAF8F3\] {
+  background-color: #1E2333 !important;
+  border-color: #374151 !important;
+  color: #F3F4F6 !important;
+}
+
+html.dark .bg-\[\#FFFDF7\] {
+  background-color: #1A1F2C !important;
+  border-color: #374151 !important;
+  color: #F3F4F6 !important;
+}
+
+html.dark .polaroid {
+  background-color: #1A1F2C !important;
+  border-color: #374151 !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.dark .polaroid span {
+  color: #FFFFFF !important;
+}
+
+/* Credentials Section: Header in dark mode gets crisp white/light text, while cards maintain solid black ink */
+html.dark #credentials h2 {
+  color: #FFFFFF !important;
+}
+html.dark #credentials .section-subhead {
+  color: #CBD5E1 !important;
+}
+html.dark #credentials .section-label {
+  color: #94A3B8 !important;
+}
+
+#credentials .timeline-card,
+#credentials .timeline-card h3,
+#credentials .timeline-card p,
+#credentials .cert-tile,
+#credentials .cert-tile h4,
+#credentials .cert-tile p {
+  color: #000000 !important;
+}
+
+html.dark #credentials .timeline-card h3,
+html.dark #credentials .timeline-card p,
+html.dark #credentials .timeline-card span:not(.text-white),
+html.dark #credentials .cert-tile h4,
+html.dark #credentials .cert-tile p,
+html.dark #credentials .cert-tile span:not(.text-white) {
+  color: #000000 !important;
+}
+
+#credentials .text-white,
+#credentials [class*="text-white"],
+html.dark #credentials .text-white,
+html.dark #credentials [class*="text-white"] {
+  color: #FFFFFF !important;
+}
+
+/* Contact Section: Manila envelope & Find Me buttons remain bold and vibrant */
+html.dark #contact .bg-\[\#FEF9C3\] {
+  background-color: #FEF9C3 !important;
+  color: #000000 !important;
+}
+
+html.dark #contact .bg-\[\#FEF9C3\] h4,
+html.dark #contact .bg-\[\#FEF9C3\] p,
+html.dark #contact .bg-\[\#FEF9C3\] span:not(.text-white):not([class*="bg-black"]) {
+  color: #000000 !important;
+}
+
+html.dark #contact #email-address {
+  color: #000000 !important;
+}
+
+/* Skills Section Bento Tiles: keep bold pastel surfaces, crisp black text and borders in both themes */
+#skills .skill-tile {
+  color: #000000 !important;
+}
+html.dark #skills .skill-tile {
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+html.dark #skills .skill-tile span:not(.text-white) {
+  color: #000000 !important;
+}
+html.dark #skills .overflow-hidden .bg-\[\#FAF8F3\] {
+  background-color: #1A1F2C !important;
+  border-color: #374151 !important;
+  color: #F3F4F6 !important;
+}
+html.dark #skills .overflow-hidden .bg-\[\#FAF8F3\] span {
+  color: #E2E8F0 !important;
+}
+html.dark #skills .overflow-hidden .bg-\[\#FAF8F3\] span.bg-black {
+  color: #FFFFFF !important;
+}
+html.dark #skills .overflow-hidden .group\/chip {
+  background-color: #FEF08A !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+html.dark #skills .overflow-hidden .group\/chip span {
+  color: #000000 !important;
+}
+
+html.dark .modal-content-box {
+  background-color: #171B26 !important;
+  border-color: #475569 !important;
+  color: #F3F4F6 !important;
+}
+
+/* Washi tape styling with realistic frosted edges */
+.washi-tape {
+  background: rgba(254, 240, 138, 0.92);
+  border-left: 2px dashed rgba(217, 119, 6, 0.45);
+  border-right: 2px dashed rgba(217, 119, 6, 0.45);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+.washi-tape-pink {
+  background: rgba(244, 114, 182, 0.9);
+  border-left: 2px dashed rgba(190, 24, 93, 0.45);
+  border-right: 2px dashed rgba(190, 24, 93, 0.45);
+}
+.washi-tape-mint {
+  background: rgba(167, 243, 208, 0.9);
+  border-left: 2px dashed rgba(5, 150, 105, 0.45);
+  border-right: 2px dashed rgba(5, 150, 105, 0.45);
+}
+.washi-tape-blue {
+  background: rgba(186, 230, 253, 0.9);
+  border-left: 2px dashed rgba(2, 132, 199, 0.45);
+  border-right: 2px dashed rgba(2, 132, 199, 0.45);
+}
+
+/* Polaroids */
+.polaroid {
+  background: #FFFFFF;
+  padding: 10px 10px 24px 10px;
+  border: 2.5px solid #000000;
+  box-shadow: 5px 5px 0px #000000;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+.polaroid:hover {
+  transform: translateY(-4px) rotate(0deg) scale(1.02);
+  box-shadow: 7px 7px 0px #000000;
+  z-index: 40;
+}
+
+/* Neo-brutalist buttons & badges */
+.brutal-btn {
+  border: 2.5px solid #000000;
+  box-shadow: 3.5px 3.5px 0px #000000;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+}
+.brutal-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5.5px 5.5px 0px #000000;
+}
+.brutal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+/* Folder Tab header styling */
+.folder-tab {
   display: inline-block;
-  animation: blink 0.7s step-end infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
+  padding: 5px 20px;
+  font-weight: 800;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-top: 2.5px solid #000;
+  border-left: 2.5px solid #000;
+  border-right: 2.5px solid #000;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-bottom: -2.5px;
 }

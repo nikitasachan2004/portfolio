@@ -22,5 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-public/snorlax.glb
-snorlax_in_a_pokeball 2.glb
+*snorlax*
+**/*snorlax*
+scratch/
+test_crop.png
+
