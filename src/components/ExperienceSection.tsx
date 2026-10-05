@@ -1,5 +1,6 @@
 import React from 'react';
 import { EXPERIENCES } from '../data/portfolioData';
+import { LINKS } from '../data/links';
 
 export const ExperienceSection: React.FC = () => {
   const drytisExp = EXPERIENCES[0]; // Most recent: AI Engineer @ Drytis Inc.
@@ -497,7 +498,9 @@ export const ExperienceSection: React.FC = () => {
             </div>
 
             <a
-              href="#credentials"
+              href={LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="brutal-btn bg-[#FBBF24] hover:bg-[#F59E0B] text-black font-mono font-black text-xs px-5 py-2.5 rounded-md border-[2px] border-black shadow-brutal-sm flex items-center gap-1.5 whitespace-nowrap shrink-0 transition-transform select-none"
             >
               <span>VIEW CREDENTIALS</span>
