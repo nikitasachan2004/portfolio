@@ -14,62 +14,66 @@ export const CredentialsSection: React.FC = () => {
   // 3. Manipal University Jaipur B.Tech (2023 - 2027) (Current)
   const timelineData = [...EDUCATION_DATA].reverse();
 
-  // 6 Certifications styling harmonized with the portfolio's core neo-brutalist theme:
-  // Sky (#38BDF8), Lavender (#A78BFA), Marigold (#FBBF24), Coral (#FB7185), Indigo (#818CF8), Mint (#34D399)
-  // Grid arrangement (3 cols):
-  // Row 1: Sky (#38BDF8) [IBM] -> Lavender (#A78BFA) [Microsoft] -> Marigold (#FBBF24) [NPTEL]
-  // Row 2: Coral (#FB7185) [Red Hat] -> Indigo (#818CF8) [Oracle] -> Mint (#34D399) [Cisco]
+  // 6 Certifications styling: dynamic curated mix of BOLD saturated cards and LIGHT cards
+  // Row 1: [BOLD Sky #38BDF8] -> [LIGHT White with Lavender] -> [BOLD Marigold #FBBF24]
+  // Row 2: [LIGHT White with Coral] -> [BOLD Lavender #A78BFA] -> [LIGHT White with Mint]
   const certMetadata = [
     {
-      cardBg: 'bg-[#F0F9FF] dark:bg-[#0C2438]', // Sky Light / Dark
-      tagBg: 'bg-[#38BDF8] text-black',
-      stripeBg: 'bg-[#38BDF8]',
-      borderAccent: 'border-black dark:border-[#38BDF8]/40',
+      cardBg: 'bg-[#38BDF8] dark:bg-[#0284C7]', // BOLD Sky Blue
+      tagBg: 'bg-black text-white',
+      borderAccent: 'border-black dark:border-white/30',
+      stripeBg: 'bg-black',
+      isBold: true,
       issuerTag: 'IBM',
       logoUrl: '/credentials/ibm.svg',
       hasLogo: true,
     },
     {
-      cardBg: 'bg-[#F5F3FF] dark:bg-[#1E1938]', // Lavender Light / Dark
+      cardBg: 'bg-white dark:bg-[#1E2330]', // LIGHT Crisp White
       tagBg: 'bg-[#A78BFA] text-black',
+      borderAccent: 'border-black dark:border-[#A78BFA]/50',
       stripeBg: 'bg-[#A78BFA]',
-      borderAccent: 'border-black dark:border-[#A78BFA]/40',
+      isBold: false,
       issuerTag: 'MICROSOFT',
       logoUrl: '/credentials/microsoft.svg',
       hasLogo: true,
     },
     {
-      cardBg: 'bg-[#FEFCE8] dark:bg-[#26200D]', // Marigold Light / Dark
-      tagBg: 'bg-[#FBBF24] text-black',
-      stripeBg: 'bg-[#FBBF24]',
-      borderAccent: 'border-black dark:border-[#FBBF24]/40',
+      cardBg: 'bg-[#FBBF24] dark:bg-[#D97706]', // BOLD Marigold Yellow
+      tagBg: 'bg-black text-white',
+      borderAccent: 'border-black dark:border-white/30',
+      stripeBg: 'bg-black',
+      isBold: true,
       issuerTag: 'NPTEL',
-      logoUrl: '',
-      hasLogo: false, // Monogram fallback for NPTEL
+      logoUrl: '/credentials/nptel.svg',
+      hasLogo: true,
     },
     {
-      cardBg: 'bg-[#FFF1F2] dark:bg-[#2B1117]', // Coral Light / Dark
+      cardBg: 'bg-white dark:bg-[#1E2330]', // LIGHT Crisp White
       tagBg: 'bg-[#FB7185] text-black',
+      borderAccent: 'border-black dark:border-[#FB7185]/50',
       stripeBg: 'bg-[#FB7185]',
-      borderAccent: 'border-black dark:border-[#FB7185]/40',
+      isBold: false,
       issuerTag: 'RED HAT',
       logoUrl: '/credentials/redhat.svg',
       hasLogo: true,
     },
     {
-      cardBg: 'bg-[#EEF2FF] dark:bg-[#131A36]', // Indigo Light / Dark
-      tagBg: 'bg-[#818CF8] text-black',
-      stripeBg: 'bg-[#818CF8]',
-      borderAccent: 'border-black dark:border-[#818CF8]/40',
+      cardBg: 'bg-[#A78BFA] dark:bg-[#7C3AED]', // BOLD Lavender Violet
+      tagBg: 'bg-black text-white',
+      borderAccent: 'border-black dark:border-white/30',
+      stripeBg: 'bg-black',
+      isBold: true,
       issuerTag: 'ORACLE',
       logoUrl: '/credentials/oracle.svg',
       hasLogo: true,
     },
     {
-      cardBg: 'bg-[#F0FDF4] dark:bg-[#0A2417]', // Mint Light / Dark
+      cardBg: 'bg-white dark:bg-[#1E2330]', // LIGHT Crisp White
       tagBg: 'bg-[#34D399] text-black',
+      borderAccent: 'border-black dark:border-[#34D399]/50',
       stripeBg: 'bg-[#34D399]',
-      borderAccent: 'border-black dark:border-[#34D399]/40',
+      isBold: false,
       issuerTag: 'CISCO',
       logoUrl: '/credentials/cisco.svg',
       hasLogo: true,
@@ -284,30 +288,26 @@ export const CredentialsSection: React.FC = () => {
                   className={`cert-tile group border-[2.5px] ${meta.borderAccent} p-4 sm:p-5 rounded-xl shadow-brutal hover:shadow-brutal-lg transition-all flex flex-col justify-between ${meta.cardBg} outline-none focus-within:ring-3 focus-within:ring-[#FBBF24] focus-within:ring-offset-2 relative overflow-hidden`}
                 >
                   {/* Top Theme Accent Stripe */}
-                  <div className={`h-1.5 w-full absolute top-0 left-0 right-0 ${meta.stripeBg}`} />
+                  {meta.stripeBg && (
+                    <div className={`h-2 w-full absolute top-0 left-0 right-0 ${meta.stripeBg}`} />
+                  )}
 
                   <div>
                     {/* Top Row: Official Logo + Issuer Brand Badge */}
-                    <div className="flex items-center justify-between gap-2 mb-2.5 mt-0.5">
+                    <div className="flex items-center justify-between gap-2 mb-2.5 mt-1">
                       {/* Official Logo Box */}
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white dark:bg-[#151923] border-[1.5px] border-black dark:border-white/20 rounded-lg p-1.5 shadow-2xs flex items-center justify-center shrink-0">
-                        {meta.hasLogo ? (
-                          <img
-                            src={meta.logoUrl}
-                            alt={`${cert.issuer} official logo`}
-                            className="w-full h-full object-contain pointer-events-none select-none"
-                            loading="eager"
-                            decoding="sync"
-                          />
-                        ) : (
-                          <span className="font-syne font-black text-[10px] sm:text-xs text-black tracking-wider bg-[#FBBF24] border border-black px-1.5 py-0.5 rounded shadow-2xs select-none">
-                            NPTEL
-                          </span>
-                        )}
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 bg-white border-[2px] border-black rounded-lg p-1.5 shadow-2xs flex items-center justify-center shrink-0">
+                        <img
+                          src={meta.logoUrl}
+                          alt={`${cert.issuer} official logo`}
+                          className="w-full h-full object-contain pointer-events-none select-none"
+                          loading="eager"
+                          decoding="sync"
+                        />
                       </div>
 
                       {/* Issuer Name Tag in Theme Color */}
-                      <span className={`font-mono text-[10px] sm:text-[11px] font-black uppercase tracking-wider ${meta.tagBg} border-[1.5px] border-black px-2.5 py-0.5 rounded shadow-2xs shrink-0 truncate max-w-[170px]`}>
+                      <span className={`font-mono text-[10px] sm:text-[11px] font-black uppercase tracking-wider ${meta.tagBg} border-[2px] border-black px-2.5 py-1 rounded shadow-2xs shrink-0 truncate max-w-[170px]`}>
                         {cert.issuer}
                       </span>
                     </div>
@@ -322,10 +322,10 @@ export const CredentialsSection: React.FC = () => {
                     </h4>
                   </div>
 
-                  {/* Bottom Row: Category Marker & Never-Wrapping "Verify ↗" Link */}
-                  <div className="mt-3.5 pt-2.5 border-t border-black/10 dark:border-white/10 flex items-center justify-between gap-2">
-                    <span className="font-mono text-[11px] font-black text-black dark:text-slate-200 select-none flex items-center gap-1.5">
-                      <span className={`inline-block w-2 h-2 rounded-full border border-black ${meta.stripeBg}`} />
+                  {/* Bottom Row: Category Marker & High-Contrast Bold "VERIFY ↗" Link */}
+                  <div className="mt-3.5 pt-2.5 border-t border-black/15 dark:border-white/15 flex items-center justify-between gap-2">
+                    <span className="font-mono text-[11px] font-black text-black dark:text-white select-none flex items-center gap-1.5">
+                      <span className="inline-block w-2.5 h-2.5 rounded-full bg-black dark:bg-white" />
                       <span>★ 0{cIdx + 1}</span>
                     </span>
 
@@ -334,10 +334,10 @@ export const CredentialsSection: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Verify ${cert.issuer} ${cert.name} on LinkedIn`}
-                      className="font-mono text-[11px] font-black text-black bg-white hover:bg-black hover:text-white dark:bg-[#151923] dark:text-white dark:hover:bg-[#FBBF24] dark:hover:text-black border-[1.5px] border-black dark:border-white/30 px-3 py-1 rounded shadow-2xs hover:shadow-brutal-sm hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap inline-flex items-center gap-1 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24] cursor-pointer"
+                      className="brutal-btn font-mono font-black text-xs px-3.5 py-1.5 rounded-lg border-[2px] border-black shadow-brutal-sm hover:shadow-brutal hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center gap-1.5 cursor-pointer bg-black text-white hover:bg-[#FBBF24] hover:text-black dark:bg-white dark:text-black dark:hover:bg-[#FBBF24] dark:hover:text-black select-none shrink-0"
                     >
-                      <span className="whitespace-nowrap font-black">Verify</span>
-                      <span aria-hidden="true" className="whitespace-nowrap font-bold">↗</span>
+                      <span className="font-mono font-black text-xs tracking-wider">VERIFY</span>
+                      <span className="font-black text-xs">↗</span>
                     </a>
                   </div>
                 </motion.div>
