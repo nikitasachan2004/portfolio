@@ -265,18 +265,24 @@ html.dark .modal-content-box {
   background: rgba(244, 114, 182, 0.9);
   border-left: 2px dashed rgba(190, 24, 93, 0.45);
   border-right: 2px dashed rgba(190, 24, 93, 0.45);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .washi-tape-mint {
   background: rgba(167, 243, 208, 0.9);
   border-left: 2px dashed rgba(5, 150, 105, 0.45);
   border-right: 2px dashed rgba(5, 150, 105, 0.45);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .washi-tape-blue {
-  background: rgba(186, 230, 253, 0.9);
-  border-left: 2px dashed rgba(2, 132, 199, 0.45);
-  border-right: 2px dashed rgba(2, 132, 199, 0.45);
+  background: rgba(186, 230, 253, 0.92);
+  border-left: 2px dashed rgba(2, 132, 199, 0.55);
+  border-right: 2px dashed rgba(2, 132, 199, 0.55);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 /* Polaroids */

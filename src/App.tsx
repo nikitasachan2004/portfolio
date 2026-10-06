@@ -10,6 +10,8 @@ import { SkillsToolkit } from './components/SkillsToolkit';
 import { CredentialsSection } from './components/CredentialsSection';
 import { ContactSection } from './components/ContactSection';
 import { ProjectModal } from './components/ProjectModal';
+import { CrowdCanvas } from './components/ui/skiper39';
+import { VisitorCounter } from './components/VisitorCounter';
 import { Project } from './types';
 
 export default function App() {
@@ -115,22 +117,59 @@ export default function App() {
             <ContactSection />
           </main>
 
-          {/* Very Bottom: Subtle "My First Portfolio" link */}
-          <footer className="pb-16 pt-4 flex flex-col items-center justify-center text-center relative z-20 px-4">
-            <button
-              type="button"
-              id="btn-my-first-portfolio"
-              onClick={handleOpenOldPortfolio}
-              aria-label="View My First Portfolio archive"
-              className="group inline-flex items-center gap-2 px-4 py-2 rounded-full font-mono text-xs font-bold text-black/75 dark:text-white/75 bg-white/70 dark:bg-neutral-800/80 hover:bg-[#FBBF24] dark:hover:bg-[#FBBF24] hover:text-black dark:hover:text-black border-[1.5px] border-black/25 dark:border-white/20 hover:border-black shadow-2xs hover:shadow-brutal-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24]"
+          {/* Full-Height Handcrafted Crowd Canvas Footer */}
+          <footer className="relative w-full min-h-[460px] sm:min-h-[520px] md:min-h-[560px] overflow-hidden z-20 flex flex-col justify-between items-center">
+            {/* The Crowd Canvas spanning the entire footer area, perfectly blended with notebook paper */}
+            <div
+              className="absolute inset-0 w-full h-full pointer-events-none mix-blend-multiply dark:mix-blend-screen dark:invert opacity-95 dark:opacity-85"
+              style={{
+                maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%)',
+              }}
             >
-              <span className="text-[#F59E0B] group-hover:text-black transition-colors">✦</span>
-              <span>My First Portfolio</span>
-              <span className="text-[10px] opacity-75 group-hover:translate-x-0.5 transition-transform">↗</span>
-            </button>
-            <p className="font-mono text-[10px] text-black/50 dark:text-white/40 mt-2">
-              Historical archive · Originally built with Three.js, R3F &amp; React
-            </p>
+              <CrowdCanvas
+                src="https://cdn.21st.dev/assets/localized/abdb8990a7bef8c2f5af3e45f0a3c969c4b0603fba8be92e81347de4ea4e1ed7.png"
+                rows={15}
+                cols={7}
+                className="absolute bottom-0 h-full w-full pointer-events-none"
+              />
+            </div>
+
+            {/* Top: MK-1 Sticker + Small, sleek, floating "My First Project" yellow button */}
+            <div className="relative z-30 pt-6 sm:pt-8 flex flex-col items-center select-none">
+              {/* Iron Man MK-1 Sticker (Washi tape style matching scrapbook reference) */}
+              <div className="washi-tape-blue inline-flex items-center gap-2.5 px-3.5 sm:px-4.5 py-1 font-mono text-black rotate-[-1.5deg] select-none hover:rotate-0 hover:scale-105 transition-all mb-3 cursor-default">
+                <img
+                  src="/IRON.svg"
+                  alt="Iron Man"
+                  className="h-7 sm:h-8 w-auto shrink-0 object-contain drop-shadow-xs"
+                />
+                <span className="font-mono text-[10px] sm:text-[11px] font-black tracking-tight uppercase text-black">
+                  MK-1: BUILT THIS IN A CAVE WITH A BOX OF SCRAPS!
+                </span>
+              </div>
+
+              {/* Small Yellow My First Project Button */}
+              <button
+                type="button"
+                id="btn-my-first-portfolio"
+                onClick={handleOpenOldPortfolio}
+                aria-label="View My First Project archive"
+                className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-mono text-xs font-black text-black bg-[#FBBF24] hover:bg-[#F59E0B] border-[1.5px] border-black shadow-brutal-sm hover:shadow-brutal transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+              >
+                <span className="text-black group-hover:rotate-45 transition-transform duration-200 text-xs">✦</span>
+                <span className="tracking-wide uppercase text-[11px]">My First Project</span>
+                <span className="text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </button>
+            </div>
+
+            {/* Bottom: Clean copyright line with zero watermark */}
+            <div className="relative z-30 w-full py-3 flex items-center justify-center font-mono text-[10px] text-black/50 dark:text-white/40">
+              <span>© {new Date().getFullYear()} Nikita Sachan · All Rights Reserved</span>
+            </div>
+
+            {/* Bottom Corner: Visitor Counter Sticker */}
+            <VisitorCounter />
           </footer>
 
           {/* Interactive Project Inspector Modal */}
