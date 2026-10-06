@@ -13,50 +13,65 @@ export const CredentialsSection: React.FC = () => {
   // 3. Manipal University Jaipur B.Tech (2023 - 2027) (Current)
   const timelineData = [...EDUCATION_DATA].reverse();
 
-  // 6 Certifications styling: cycled pastel fills from the Skills bento palette
-  // Neighbors never share a background hue
+  // 6 Certifications styling harmonized with the portfolio's core neo-brutalist theme:
+  // Sky (#38BDF8), Lavender (#A78BFA), Marigold (#FBBF24), Coral (#FB7185), Indigo (#818CF8), Mint (#34D399)
+  // Grid arrangement (3 cols):
+  // Row 1: Sky (#38BDF8) [IBM] -> Lavender (#A78BFA) [Microsoft] -> Marigold (#FBBF24) [NPTEL]
+  // Row 2: Coral (#FB7185) [Red Hat] -> Indigo (#818CF8) [Oracle] -> Mint (#34D399) [Cisco]
   const certMetadata = [
     {
-      cardBg: 'bg-[#FFE4E6]', // Rose Pastel
+      cardBg: 'bg-[#F0F9FF] dark:bg-[#0C2438]', // Sky Light / Dark
+      tagBg: 'bg-[#38BDF8] text-black',
+      stripeBg: 'bg-[#38BDF8]',
+      borderAccent: 'border-black dark:border-[#38BDF8]/40',
       issuerTag: 'IBM',
       logoUrl: '/credentials/ibm.svg',
       hasLogo: true,
-      tagBg: 'bg-[#F472B6]'
     },
     {
-      cardBg: 'bg-[#E0F2FE]', // Sky Pastel
+      cardBg: 'bg-[#F5F3FF] dark:bg-[#1E1938]', // Lavender Light / Dark
+      tagBg: 'bg-[#A78BFA] text-black',
+      stripeBg: 'bg-[#A78BFA]',
+      borderAccent: 'border-black dark:border-[#A78BFA]/40',
       issuerTag: 'MICROSOFT',
       logoUrl: '/credentials/microsoft.svg',
       hasLogo: true,
-      tagBg: 'bg-[#38BDF8]'
     },
     {
-      cardBg: 'bg-[#FEF08A]', // Golden Yellow Pastel
+      cardBg: 'bg-[#FEFCE8] dark:bg-[#26200D]', // Marigold Light / Dark
+      tagBg: 'bg-[#FBBF24] text-black',
+      stripeBg: 'bg-[#FBBF24]',
+      borderAccent: 'border-black dark:border-[#FBBF24]/40',
       issuerTag: 'NPTEL',
       logoUrl: '',
       hasLogo: false, // Monogram fallback for NPTEL
-      tagBg: 'bg-[#FBBF24]'
     },
     {
-      cardBg: 'bg-[#D1FAE5]', // Mint Pastel
+      cardBg: 'bg-[#FFF1F2] dark:bg-[#2B1117]', // Coral Light / Dark
+      tagBg: 'bg-[#FB7185] text-black',
+      stripeBg: 'bg-[#FB7185]',
+      borderAccent: 'border-black dark:border-[#FB7185]/40',
       issuerTag: 'RED HAT',
       logoUrl: '/credentials/redhat.svg',
       hasLogo: true,
-      tagBg: 'bg-[#34D399]'
     },
     {
-      cardBg: 'bg-[#EDE9FE]', // Lavender Pastel
+      cardBg: 'bg-[#EEF2FF] dark:bg-[#131A36]', // Indigo Light / Dark
+      tagBg: 'bg-[#818CF8] text-black',
+      stripeBg: 'bg-[#818CF8]',
+      borderAccent: 'border-black dark:border-[#818CF8]/40',
       issuerTag: 'ORACLE',
       logoUrl: '/credentials/oracle.svg',
       hasLogo: true,
-      tagBg: 'bg-[#A78BFA]'
     },
     {
-      cardBg: 'bg-[#FEF9C3]', // Manila Cream Pastel
+      cardBg: 'bg-[#F0FDF4] dark:bg-[#0A2417]', // Mint Light / Dark
+      tagBg: 'bg-[#34D399] text-black',
+      stripeBg: 'bg-[#34D399]',
+      borderAccent: 'border-black dark:border-[#34D399]/40',
       issuerTag: 'CISCO',
       logoUrl: '/credentials/cisco.svg',
       hasLogo: true,
-      tagBg: 'bg-[#FDE047]'
     }
   ];
 
@@ -155,64 +170,64 @@ export const CredentialsSection: React.FC = () => {
 
                     {/* Timeline Compact Card */}
                     <div
-                      className={`timeline-card w-full rounded-xl border-[2.5px] border-black p-4 transition-all flex flex-col justify-between ${isCurrent
-                          ? 'bg-[#FEF9C3] shadow-brutal hover:shadow-brutal-lg -translate-y-0.5'
-                          : 'bg-white shadow-brutal-sm hover:shadow-brutal hover:-translate-y-0.5'
+                      className={`timeline-card w-full rounded-xl border-[2.5px] p-4 transition-all flex flex-col justify-between ${isCurrent
+                          ? 'bg-[#FEF9C3] dark:bg-[#252012] border-black dark:border-[#FBBF24] shadow-brutal hover:shadow-brutal-lg -translate-y-0.5'
+                          : 'bg-white dark:bg-[#1A1F2C] border-black dark:border-[#333C4D] shadow-brutal-sm hover:shadow-brutal hover:-translate-y-0.5'
                         }`}
                     >
                       <div>
                         {/* Year Chip & Tag */}
                         <div className="flex items-center justify-between gap-1.5 mb-2">
                           <span
-                            className={`font-mono text-xs font-black px-2 py-0.5 rounded border border-black shadow-2xs text-black ${isCurrent ? 'bg-[#FBBF24]' : idx === 1 ? 'bg-[#38BDF8]' : 'bg-[#A7F3D0]'
+                            className={`font-mono text-xs font-black px-2 py-0.5 rounded border border-black shadow-2xs text-black ${isCurrent ? 'bg-[#FBBF24]' : idx === 1 ? 'bg-[#38BDF8]' : 'bg-[#34D399]'
                               }`}
                           >
                             {isCurrent ? '2023 - 2027' : item.period}
                           </span>
 
                           {isCurrent ? (
-                            <span className="bg-black text-white font-mono text-[9px] font-black px-2 py-0.5 rounded shadow-2xs tracking-wider uppercase">
+                            <span className="bg-black text-white dark:bg-[#FBBF24] dark:text-black font-mono text-[9px] font-black px-2 py-0.5 rounded shadow-2xs tracking-wider uppercase">
                               ★ CURRENT
                             </span>
                           ) : (
-                            <span className="font-mono text-[9px] font-bold text-black/75 uppercase">
+                            <span className="font-mono text-[9px] font-bold text-black/75 dark:text-slate-300 uppercase">
                               {idx === 0 ? 'CLASS X' : 'CLASS XII'}
                             </span>
                           )}
                         </div>
 
-                        {/* Institution Name (fits naturally without truncation) */}
-                        <h3 className="font-syne font-black text-sm sm:text-base text-black leading-snug">
+                        {/* Institution Name */}
+                        <h3 className="font-syne font-black text-sm sm:text-base text-black dark:text-white leading-snug">
                           {item.institution}
                         </h3>
 
                         {/* Degree / Program */}
-                        <p className="font-grotesk font-bold text-xs text-black/80 mt-1">
+                        <p className="font-grotesk font-bold text-xs text-black/80 dark:text-slate-300 mt-1">
                           {item.degree}
                         </p>
                       </div>
 
                       {/* Score & Specialization Badges */}
-                      <div className="mt-3.5 pt-2.5 border-t border-black/10 flex flex-wrap gap-1.5 items-center">
+                      <div className="mt-3.5 pt-2.5 border-t border-black/10 dark:border-white/10 flex flex-wrap gap-1.5 items-center">
                         {isCurrent ? (
-                          <span className="bg-[#DDD6FE] text-black border border-black font-mono font-bold text-[10px] px-2 py-0.5 rounded shadow-2xs">
+                          <span className="bg-[#A78BFA] text-black border border-black font-mono font-black text-[10px] px-2 py-0.5 rounded shadow-2xs">
                             AI &amp; ML SPECIALIZATION
                           </span>
                         ) : idx === 1 ? (
                           <>
-                            <span className="bg-[#BAE6FD] text-black border border-black font-mono font-black text-[10px] px-2 py-0.5 rounded shadow-2xs">
+                            <span className="bg-neutral-100 dark:bg-neutral-800 text-black dark:text-slate-200 border border-black dark:border-neutral-600 font-mono font-black text-[10px] px-2 py-0.5 rounded shadow-2xs">
                               CBSE BOARD
                             </span>
-                            <span className="bg-[#FEF08A] text-black border border-black font-mono font-bold text-[10px] px-2 py-0.5 rounded shadow-2xs">
+                            <span className="bg-[#E0F2FE] dark:bg-[#0C4A6E] text-black dark:text-sky-200 border border-black font-mono font-bold text-[10px] px-2 py-0.5 rounded shadow-2xs">
                               SCIENCE &amp; MATHS
                             </span>
                           </>
                         ) : (
                           <>
-                            <span className="bg-[#A7F3D0] text-black border border-black font-mono font-black text-[10px] px-2 py-0.5 rounded shadow-2xs">
+                            <span className="bg-neutral-100 dark:bg-neutral-800 text-black dark:text-slate-200 border border-black dark:border-neutral-600 font-mono font-black text-[10px] px-2 py-0.5 rounded shadow-2xs">
                               CBSE BOARD
                             </span>
-                            <span className="bg-[#FED7AA] text-black border border-black font-mono font-bold text-[10px] px-2 py-0.5 rounded shadow-2xs">
+                            <span className="bg-[#D1FAE5] dark:bg-[#064E3B] text-black dark:text-emerald-200 border border-black font-mono font-bold text-[10px] px-2 py-0.5 rounded shadow-2xs">
                               FOUNDATION MERIT
                             </span>
                           </>
@@ -265,13 +280,16 @@ export const CredentialsSection: React.FC = () => {
                     damping: 24
                   }}
                   whileHover={shouldReduceMotion ? {} : { x: -4, y: -4, transition: { duration: 0.12 } }}
-                  className={`cert-tile group border-[2.5px] border-black p-4 sm:p-4.5 rounded-xl shadow-brutal hover:shadow-brutal-lg transition-shadow flex flex-col justify-between ${meta.cardBg} outline-none focus-within:ring-3 focus-within:ring-[#FBBF24] focus-within:ring-offset-2`}
+                  className={`cert-tile group border-[2.5px] ${meta.borderAccent} p-4 sm:p-5 rounded-xl shadow-brutal hover:shadow-brutal-lg transition-all flex flex-col justify-between ${meta.cardBg} outline-none focus-within:ring-3 focus-within:ring-[#FBBF24] focus-within:ring-offset-2 relative overflow-hidden`}
                 >
+                  {/* Top Theme Accent Stripe */}
+                  <div className={`h-1.5 w-full absolute top-0 left-0 right-0 ${meta.stripeBg}`} />
+
                   <div>
-                    {/* Top Row: Official Logo + Issuer Mono Label */}
-                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                    {/* Top Row: Official Logo + Issuer Brand Badge */}
+                    <div className="flex items-center justify-between gap-2 mb-2.5 mt-0.5">
                       {/* Official Logo Box */}
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white border-[1.5px] border-black rounded-lg p-1.5 shadow-2xs flex items-center justify-center shrink-0">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white dark:bg-[#151923] border-[1.5px] border-black dark:border-white/20 rounded-lg p-1.5 shadow-2xs flex items-center justify-center shrink-0">
                         {meta.hasLogo ? (
                           <img
                             src={meta.logoUrl}
@@ -287,8 +305,8 @@ export const CredentialsSection: React.FC = () => {
                         )}
                       </div>
 
-                      {/* Issuer Name Mono Label */}
-                      <span className="font-mono text-[10px] sm:text-[11px] font-black uppercase tracking-wider bg-black text-white px-2 py-0.5 rounded shadow-2xs shrink-0 truncate max-w-[170px]">
+                      {/* Issuer Name Tag in Theme Color */}
+                      <span className={`font-mono text-[10px] sm:text-[11px] font-black uppercase tracking-wider ${meta.tagBg} border-[1.5px] border-black px-2.5 py-0.5 rounded shadow-2xs shrink-0 truncate max-w-[170px]`}>
                         {cert.issuer}
                       </span>
                     </div>
@@ -297,16 +315,17 @@ export const CredentialsSection: React.FC = () => {
                     <h4
                       title={cert.name}
                       aria-label={cert.name}
-                      className="font-syne font-black text-sm sm:text-base text-black leading-snug line-clamp-2 my-1 min-h-[2.6rem]"
+                      className="font-syne font-black text-sm sm:text-base text-black dark:text-white leading-snug line-clamp-2 my-1 min-h-[2.6rem]"
                     >
                       {cert.name}
                     </h4>
                   </div>
 
                   {/* Bottom Row: Category Marker & Never-Wrapping "Verify ↗" Link */}
-                  <div className="mt-3.5 pt-2.5 border-t border-black/10 flex items-center justify-between gap-2">
-                    <span className="font-mono text-[11px] font-black text-black select-none">
-                      ★ 0{cIdx + 1}
+                  <div className="mt-3.5 pt-2.5 border-t border-black/10 dark:border-white/10 flex items-center justify-between gap-2">
+                    <span className="font-mono text-[11px] font-black text-black dark:text-slate-200 select-none flex items-center gap-1.5">
+                      <span className={`inline-block w-2 h-2 rounded-full border border-black ${meta.stripeBg}`} />
+                      <span>★ 0{cIdx + 1}</span>
                     </span>
 
                     <a
@@ -319,7 +338,7 @@ export const CredentialsSection: React.FC = () => {
                           e.preventDefault();
                         }
                       }}
-                      className="font-mono text-[11px] font-black text-black bg-white hover:bg-black hover:text-white border-[1.5px] border-black px-2.5 py-1 rounded shadow-2xs transition-colors whitespace-nowrap inline-flex items-center gap-1 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24]"
+                      className="font-mono text-[11px] font-black text-black bg-white hover:bg-black hover:text-white dark:bg-[#151923] dark:text-white dark:hover:bg-[#FBBF24] dark:hover:text-black border-[1.5px] border-black dark:border-white/30 px-2.5 py-1 rounded shadow-2xs transition-colors whitespace-nowrap inline-flex items-center gap-1 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24]"
                     >
                       <span className="whitespace-nowrap">Verify</span>
                       <span aria-hidden="true" className="whitespace-nowrap">↗</span>
