@@ -7,8 +7,8 @@ interface DualShowcaseProps {
 }
 
 export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
-  const cookProject = PROJECTS_DATA[1];
-  const mandiProject = PROJECTS_DATA[2];
+  const cookProject = PROJECTS_DATA.find((p) => p.title.toLowerCase().includes('cook')) || PROJECTS_DATA[0];
+  const mandiProject = PROJECTS_DATA.find((p) => p.title.toLowerCase().includes('krishi')) || PROJECTS_DATA[1];
 
   // Interactive CookAI state
   const [activeCookPreset, setActiveCookPreset] = useState<number>(0);
@@ -33,32 +33,32 @@ export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
     }
   ];
 
-  // Interactive KrishiMandi state
+  // Interactive KrishiMind state
   const [activeMandiPreset, setActiveMandiPreset] = useState<number>(0);
   const mandiPresets = [
     {
-      crop: 'MUSTARD SEED (JAIPUR APMC)',
-      price: '₹5,420 / QNTL',
-      trend: '+4.2%',
+      crop: 'JAIPUR DISTRICT (RAJASTHAN)',
+      price: 'Mustard Yield: 1.82 T/Ha · ₹5,420/Q',
+      trend: '+14% Eco-Score',
       trendPositive: true,
-      query: 'सरसों का भाव कल क्या रहेगा?',
-      advice: 'Strong regional mill demand. Hold inventory for 48–72 hours.'
+      query: 'Simulate +2°C Heatwave Stress Test',
+      advice: 'Heat-tolerant variety recommended. 18% water conservation advantage over wheat.'
     },
     {
-      crop: 'SHARBATI WHEAT (KOTA MANDI)',
-      price: '₹2,680 / QNTL',
-      trend: '+1.8%',
+      crop: 'KOTA DISTRICT (RAJASTHAN)',
+      price: 'Soybean Yield: 2.15 T/Ha · ₹4,750/Q',
+      trend: '+8.5% Net Profit',
       trendPositive: true,
-      query: 'कोटा मंडी में गेहूं का रेट आज क्या है?',
-      advice: 'Procurement steady. Suitable for immediate sale at gate.'
+      query: 'Simulate -20% Monsoon Deficit Drought',
+      advice: 'Deep root structure minimizes yield decline. Fertilizer nitrogen runoff reduced by 22%.'
     },
     {
-      crop: 'YELLOW SOYBEAN (BARAN MANDI)',
-      price: '₹4,750 / QNTL',
-      trend: '-2.1%',
-      trendPositive: false,
-      query: 'सोयाबीन का ताजा भाव बताओ सा?',
-      advice: 'High moisture arrivals. Dry produce before bringing to auction.'
+      crop: 'INDORE DISTRICT (MADHYA PRADESH)',
+      price: 'Chickpea Yield: 1.64 T/Ha · ₹5,890/Q',
+      trend: '+19% Eco-Score',
+      trendPositive: true,
+      query: 'Multi-Criteria Sustainable Optimization',
+      advice: 'Optimal crop rotation candidate. Enhances soil nitrogen fixing for subsequent Kharif cycle.'
     }
   ];
 
@@ -81,7 +81,7 @@ export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
               ◆ PROJECT #02 // SMART PANTRY
             </span>
             <span className="washi-tape text-black px-3 py-0.5 font-mono text-[10px] font-bold rotate-2">
-              YOLOv8 + LLM
+              TF-IDF + GEMINI 2.5
             </span>
           </div>
 
@@ -90,12 +90,12 @@ export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
               CookAI Engine
             </h3>
             <p className="font-grotesk text-sm text-white/80 mt-2 max-w-md">
-              From raw refrigerator photograph to gourmet nutrient-balanced dinner. Zero food wasted, zero guesswork.
+              From leftover fridge ingredients to verified recipes. Solves the empty-fridge dilemma using TF-IDF vector matching and Gemini 2.5 Flash.
             </p>
 
             {/* Interactive Fridge preset selector */}
             <div className="flex flex-wrap gap-1.5 mt-4">
-              {['Greek Yogurt & Greens', 'Paneer & Peppers', 'Oats & Banana'].map((lbl, idx) => (
+              {['Greek Yogurt & Greens', 'Tofu & Peppers (Swap)', 'Oats & Banana'].map((lbl, idx) => (
                 <button
                   key={idx}
                   type="button"
@@ -114,8 +114,8 @@ export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
             {/* Embedded Mock Phone/Card */}
             <div className="bg-[#27272A] border-[2px] border-white/20 rounded-xl p-4 mt-4 font-mono text-xs text-white/90 shadow-inner">
               <div className="flex justify-between text-[#34D399] text-[11px] pb-2 border-b border-white/10 font-bold">
-                <span>INVENTORY SCANNED</span>
-                <span>{currentCook.items.length} DETECTIONS</span>
+                <span>TF-IDF INGREDIENT RETRIEVAL</span>
+                <span>{currentCook.items.length} INGREDIENTS INDEXED</span>
               </div>
               <div className="mt-2 space-y-1 text-white/70 text-[11px]">
                 {currentCook.items.map((item, i) => (
@@ -138,7 +138,7 @@ export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
 
           <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
             <span className="font-mono text-xs text-white/60">
-              FastAPI · PyTorch · YOLOv8
+              React 19 · Node.js · Express · Gemini 2.5
             </span>
             <button
               type="button"
@@ -150,28 +150,28 @@ export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
           </div>
         </div>
 
-        {/* Card 2 ("KrishiMandi AI" - Solid Rich Mustard Yellow Container) */}
+        {/* Card 2 ("KrishiMind SustainAI" - Solid Rich Mustard Yellow Container) */}
         <div className="bg-[#F59E0B] text-black border-[3px] border-black rounded-2xl p-6 sm:p-8 shadow-brutal-lg flex flex-col justify-between relative">
           <div className="flex flex-wrap justify-between items-center gap-2 mb-6">
             <span className="bg-black text-white border-[2px] border-black px-3 py-1 font-mono text-xs font-extrabold shadow-brutal-sm">
-              ◆ PROJECT #03 // AGRI-FINTECH
+              ◆ PROJECT #03 // AGRI-TECH &amp; CLIMATE
             </span>
             <span className="washi-tape-mint text-black px-3 py-0.5 font-mono text-[10px] font-bold -rotate-2">
-              VOICE + XGBOOST
+              DUAL ML + GREEN AI
             </span>
           </div>
 
           <div>
             <h3 className="font-syne font-black text-3xl sm:text-4xl text-black">
-              KrishiMandi AI
+              KrishiMind SustainAI
             </h3>
             <p className="font-grotesk text-sm text-black/90 mt-2 max-w-md font-medium">
-              Real-time commodity mandi arbitrage intelligence. Multilingual voice queries in local vernacular dialects.
+              Agro-climatic decision engine across 706 districts: forecasts empirical yields &amp; mandi rates while simulating climate stress in sub-15ms.
             </p>
 
             {/* Interactive Commodity preset selector */}
             <div className="flex flex-wrap gap-1.5 mt-4">
-              {['Jaipur Mustard', 'Kota Wheat', 'Baran Soybean'].map((cropName, idx) => (
+              {['Jaipur Mustard (+2°C)', 'Kota Soybean (-20% Rain)', 'Indore Chickpea (Eco)'].map((cropName, idx) => (
                 <button
                   key={idx}
                   type="button"
@@ -192,21 +192,22 @@ export const DualShowcase: React.FC<DualShowcaseProps> = ({ onOpenModal }) => {
               <div className="flex justify-between items-center text-black font-bold pb-2 border-b border-black/20">
                 <span className="text-[11px] truncate max-w-[200px]">{currentMandi.crop}</span>
                 <span className={`font-black ${currentMandi.trendPositive ? 'text-[#10B981]' : 'text-[#EF4444]'}`}>
-                  {currentMandi.price} ({currentMandi.trend})
+                  {currentMandi.trend}
                 </span>
               </div>
               <div className="mt-2 text-black/80 text-[11px] leading-relaxed">
-                <div className="font-semibold">{currentMandi.advice}</div>
+                <div className="font-semibold text-black">{currentMandi.price}</div>
+                <div className="text-black/70 mt-1">{currentMandi.advice}</div>
               </div>
               <div className="mt-3 bg-[#34D399]/40 border border-black p-2 rounded text-[11px] font-bold">
-                🎙 Vernacular Query: &ldquo;{currentMandi.query}&rdquo;
+                🌾 Stress Simulation: &ldquo;{currentMandi.query}&rdquo;
               </div>
             </div>
           </div>
 
           <div className="mt-6 pt-4 border-t-2 border-black/20 flex justify-between items-center">
             <span className="font-mono text-xs font-bold text-black/70">
-              Python · Whisper · XGBoost
+              FastAPI · Next.js 15 · Scikit-Learn · &lt;15ms CPU
             </span>
             <button
               type="button"

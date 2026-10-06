@@ -160,18 +160,6 @@ export const ContactSection: React.FC = () => {
               <span>LEETCODE</span>
               <span className="text-[10px] opacity-75">↗</span>
             </a>
-
-            <a
-              href={LINKS.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Nikita on Twitter / X"
-              className="brutal-btn bg-[#38BDF8] text-black hover:bg-[#0284C7] font-mono font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 border-[2.5px] border-black shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all"
-            >
-              <span className="text-base">✦</span>
-              <span>TWITTER / X</span>
-              <span className="text-[10px] opacity-75">↗</span>
-            </a>
           </div>
         </div>
 

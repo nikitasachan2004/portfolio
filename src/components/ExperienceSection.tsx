@@ -26,7 +26,7 @@ export const ExperienceSection: React.FC = () => {
                 ★ CAREER PROGRESSION
               </span>
               <span className="bg-[#10B981] text-black border-[1.5px] border-black text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded shadow-2xs rotate-[1deg]">
-                ✦ ACTIVE CONTRACTOR @ DRYTIS INC.
+                ✦ FREELANCE AI ENGINEER @ DRYTIS INC.
               </span>
               <span className="bg-[#F472B6] text-black border-[1.5px] border-black text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded shadow-2xs rotate-[-1deg]">
                 PRODUCTION TRACK
@@ -68,7 +68,7 @@ export const ExperienceSection: React.FC = () => {
 
             {/* Top-Right Perforated Tag */}
             <span className="bg-[#10B981] text-black font-mono font-black text-[10px] px-3 py-1 border-[1.5px] border-black shadow-xs rotate-[1.5deg] absolute -top-3 right-6 uppercase select-none">
-              INDEPENDENT CONTRACTOR // REMOTE
+              FREELANCE // REMOTE
             </span>
 
             {/* Card Header */}
@@ -107,7 +107,7 @@ export const ExperienceSection: React.FC = () => {
                       {drytisExp.company}
                     </span>
                     <span className="bg-white text-black font-mono text-[10px] font-bold border border-black px-2 py-0.5 rounded">
-                      REMOTE / CONTRACT
+                      REMOTE / FREELANCE
                     </span>
                     <span className="bg-[#A7F3D0] text-black font-mono text-[10px] font-black border border-black px-2 py-0.5 rounded">
                       {drytisExp.period}
@@ -120,7 +120,7 @@ export const ExperienceSection: React.FC = () => {
               <div className="self-start sm:self-auto shrink-0">
                 <span className="bg-[#10B981] text-black font-mono font-black text-xs px-3.5 py-1.5 border-[2px] border-black rounded-full shadow-brutal-sm flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-                  <span>Active Contractor</span>
+                  <span>Active Freelancer</span>
                 </span>
               </div>
             </div>

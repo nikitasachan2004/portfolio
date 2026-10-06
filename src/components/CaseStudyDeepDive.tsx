@@ -53,7 +53,7 @@ export const CaseStudyDeepDive: React.FC<CaseStudyDeepDiveProps> = ({ onOpenModa
   };
 
   const cur = stationsData[selectedStation];
-  const vayuProject = PROJECTS_DATA[0];
+  const vayuProject = PROJECTS_DATA.find((p) => p.title.toLowerCase().includes('vayu')) || PROJECTS_DATA[0];
 
   const renderBar = (count: number) => {
     const total = 18;
@@ -160,7 +160,7 @@ export const CaseStudyDeepDive: React.FC<CaseStudyDeepDiveProps> = ({ onOpenModa
                 </div>
 
                 <div className="text-white/80 text-[11px]">
-                  &gt; Ensemble inference completed with Gradient Boost + Bi-LSTM.<br />
+                  &gt; Multi-source ML regression inference completed (Sentinel-5P AOD + ERA5 Weather + CPCB).<br />
                   &gt; Anomaly score: <span className="text-[#34D399]">0.021</span> (High confidence forecast window).
                 </div>
               </div>
@@ -169,13 +169,13 @@ export const CaseStudyDeepDive: React.FC<CaseStudyDeepDiveProps> = ({ onOpenModa
             {/* Terminal footer badges */}
             <div className="border-t border-white/20 pt-3 mt-6 flex flex-wrap gap-2 text-[10px]">
               <span className="bg-white/10 px-2 py-1 rounded text-white font-mono">
-                LATENCY: 142ms
+                LATENCY: &lt;100ms
               </span>
               <span className="bg-white/10 px-2 py-1 rounded text-white font-mono">
-                STATION COUNT: 40+ CPCB
+                COVERAGE: 40+ CPCB + SATELLITE
               </span>
               <span className="bg-[#34D399]/20 text-[#34D399] px-2 py-1 rounded font-mono font-bold">
-                DEPLOYED // FASTAPI
+                DEPLOYED // STREAMLIT &amp; DOCKER
               </span>
             </div>
           </div>
@@ -185,33 +185,33 @@ export const CaseStudyDeepDive: React.FC<CaseStudyDeepDiveProps> = ({ onOpenModa
             {/* Metric 1: Sky Blue */}
             <div className="bg-[#38BDF8] border-[2.5px] border-black p-5 sm:p-6 rounded-xl shadow-brutal flex-1">
               <span className="font-mono text-xs font-black uppercase tracking-wider block text-black/70">
-                PREDICTION ACCURACY
+                VALIDATION ACCURACY
               </span>
               <div className="font-syne font-black text-5xl sm:text-6xl text-black my-1">
-                88%
+                90%
               </div>
               <p className="font-grotesk text-xs sm:text-sm font-semibold text-black/90">
-                Maintained across rolling 24-hour horizons validated against Central Pollution Control Board physical monitoring rigs.
+                R² = 0.900 validation benchmark across diverse Indian micro-climates, calibrated against Central Pollution Control Board physical stations.
               </p>
             </div>
 
             {/* Metric 2: Mint Green */}
             <div className="bg-[#34D399] border-[2.5px] border-black p-5 sm:p-6 rounded-xl shadow-brutal flex-1">
               <span className="font-mono text-xs font-black uppercase tracking-wider block text-black/70">
-                LATENCY OPTIMIZATION
+                RURAL REACH EXPANSION
               </span>
               <div className="font-syne font-black text-5xl sm:text-6xl text-black my-1">
-                -42%
+                65%
               </div>
               <p className="font-grotesk text-xs sm:text-sm font-semibold text-black/90">
-                Reduced inference bottleneck via ONNX runtime model graph distillation and caching recurrent feature embeddings.
+                Brings air quality radar to the 65% of Indian regions lacking physical ground monitors through satellite AOD and ERA5 weather fusion.
               </p>
             </div>
 
             {/* Coral Quote Banner */}
             <div className="bg-[#FB7185] border-[2.5px] border-black p-4 rounded-xl shadow-brutal">
               <p className="font-mono text-xs font-bold text-black flex items-center gap-2">
-                <span>✦</span> Zero friction for public health dashboards &amp; city advisories.
+                <span>✦</span> Democratizing clean air telemetry across 3.3M km² using satellite &amp; ground feeds.
               </p>
             </div>
           </div>

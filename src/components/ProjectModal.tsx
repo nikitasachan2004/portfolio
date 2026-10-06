@@ -67,18 +67,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             {project.number}
           </div>
 
-          {/* Close Button */}
-          <button
-            type="button"
-            aria-label="Close modal"
-            onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 bg-white hover:bg-[#FB7185] hover:text-white text-black border-[2.5px] border-black rounded-full font-mono font-black text-sm flex items-center justify-center shadow-brutal-sm hover:scale-105 active:scale-95 transition-all cursor-pointer z-10"
-          >
-            ✕
-          </button>
-
-          {/* Badge & Category Strip */}
-          <div className="flex flex-wrap items-center gap-2 mb-2 relative z-10">
+          {/* Badge & Category Strip (pr-14 prevents overlap with close button) */}
+          <div className="flex flex-wrap items-center gap-2 mb-2 relative z-10 pr-14">
             <span className="font-mono text-xs font-black bg-black text-white px-2.5 py-0.5 rounded shadow-2xs">
               {project.number}
             </span>
@@ -93,7 +83,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Bold Project Title */}
           <h3 
             id="modal-title" 
-            className="font-syne font-black text-3xl sm:text-4xl text-black tracking-tight leading-tight relative z-10 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.7)]"
+            className="font-syne font-black text-3xl sm:text-4xl text-black tracking-tight leading-tight relative z-10 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.7)] pr-14"
           >
             {project.title}
           </h3>
@@ -104,6 +94,22 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {project.metaStatus}
             </span>
           </div>
+
+          {/* Top-Right Close Button - Placed last in DOM with z-50 and pointer-events-auto */}
+          <button
+            type="button"
+            id="modal-close-btn"
+            aria-label="Close modal"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onClose();
+            }}
+            onPointerDown={(e) => e.stopPropagation()}
+            className="absolute top-4 right-4 w-10 h-10 bg-white hover:bg-[#FB7185] hover:text-white text-black border-[2.5px] border-black rounded-full font-mono font-black text-base flex items-center justify-center shadow-brutal-sm hover:scale-105 active:scale-95 transition-all cursor-pointer z-50 pointer-events-auto"
+          >
+            ✕
+          </button>
         </div>
 
         {/* Scrollable Content Body */}

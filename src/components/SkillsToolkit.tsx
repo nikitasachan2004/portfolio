@@ -255,10 +255,10 @@ export const SkillsToolkit: React.FC = () => {
       {/* Folder Tab Header */}
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div className="folder-tab bg-[#34D399] text-black">
-          SKILLS 04 // BENTO MATRIX
+          SKILLS 04 // WHAT I BUILD WITH
         </div>
         <div className="font-mono text-xs font-black bg-[#FBBF24] border-[2px] border-black px-3 py-1 mb-1 shadow-brutal-sm select-none text-black">
-          [ 32 PRODUCTION SKILLS // OFFICIAL LOGOS ]
+          [ 32 TOOLS IN MY WORKFLOW · CLICK TO EXPLORE ]
         </div>
       </div>
 
@@ -271,13 +271,13 @@ export const SkillsToolkit: React.FC = () => {
               ENGINEERING ARSENAL
             </h2>
             <p className="font-mono text-xs text-black/70 mt-1">
-              // PRODUCTION FRAMEWORKS, AGENTIC PIPELINES &amp; CLOUD RUNTIMES
+              // What I reach for daily — from LLM pipelines and models to production backends
             </p>
           </div>
 
           <div className="font-mono text-xs font-bold text-black/80 flex items-center gap-2 whitespace-nowrap shrink-0">
             <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse shrink-0"></span>
-            <span className="whitespace-nowrap">BENTO ACTIVE</span>
+            <span className="whitespace-nowrap">CLICK ANY TOOL TO INSPECT</span>
           </div>
         </div>
 

@@ -26,7 +26,6 @@ export const LINKS = {
   github: 'https://github.com/nikitasachan2004',
   linkedin: 'https://www.linkedin.com/in/nikita-sachan-1ba900282/',
   leetcode: 'https://leetcode.com/u/nikitasachan_/',
-  twitter: 'https://twitter.com', // Optional handle / external
 
   // Resumes
   resumes: {
@@ -62,7 +61,7 @@ export const LINKS = {
     },
     krishimandi: {
       id: '3',
-      title: 'KrishiMandi AI',
+      title: 'KrishiMind SustainAI',
       githubUrl: 'https://github.com/nikitasachan2004/KrishiMind_SustainAi',
       liveUrl: 'https://krishi-mind-sustain-ai.vercel.app',
     },
@@ -73,7 +72,7 @@ export const LINKS = {
     },
     promptQuest: {
       id: '5',
-      title: 'PromptQuest',
+      title: 'PromptQuest: Infinite Lore',
       githubUrl: 'https://github.com/nikitasachan2004/promptquest-infinite-lore',
     },
     emotionVision: {
@@ -83,14 +82,15 @@ export const LINKS = {
     },
     smartInventory: {
       id: '7',
-      title: 'Smart Demand Inventory',
+      title: 'Smart Inventory Management System',
       githubUrl: 'https://github.com/nishant-gupta911/Smart_Inventory_Management_System',
+      liveUrl: 'https://smart-inventory-management-system-rho.vercel.app',
       demoUrl: 'https://youtu.be/FIwXLg6SQ70?si=39Veg3gtqKnq80eX',
     },
     colophon: {
       id: '8',
       title: 'Colophon: RAG Knowledge Assistant',
-      githubUrl: 'https://github.com/nikitasachan2004/colophon-rag-assistant',
+      githubUrl: 'https://github.com/nikitasachan2004/colophon',
       liveUrl: 'https://colophon-rag.vercel.app',
     },
   },

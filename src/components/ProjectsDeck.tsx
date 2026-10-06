@@ -57,7 +57,7 @@ export const ProjectsDeck: React.FC<ProjectsDeckProps> = ({ onSelectProject }) =
           PROJECTS 03 // SHOWCASE DECK
         </div>
         <div className="font-mono text-xs font-black bg-[#FBBF24] border-[2px] border-black px-3 py-1 mb-1 shadow-brutal-sm select-none text-black">
-          [ 08 SHIPPED // CLICK TAB OR PILL TO BRING FORWARD ]
+          [ 8 SHIPPED BUILDS · CLICK ANY TAB TO FLIP ]
         </div>
       </div>
 
@@ -70,13 +70,13 @@ export const ProjectsDeck: React.FC<ProjectsDeckProps> = ({ onSelectProject }) =
               FEATURED WORKS
             </h2>
             <p className="font-mono text-xs text-black/70 mt-1">
-              // INTERACTIVE STACKED CARDS · {total} PRODUCTION &amp; RESEARCH REPOSITORIES
+              // {total} projects I built to solve real problems — from scratch to production
             </p>
           </div>
 
           <div className="font-mono text-xs font-bold text-black/80 flex items-center gap-2">
             <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse"></span>
-            <span>STACK RECEPTOR ACTIVE</span>
+            <span>PRESS ← → OR CLICK TO FLIP</span>
           </div>
         </div>
 
