@@ -149,16 +149,16 @@ export default function App() {
                 </span>
               </div>
 
-              {/* Small Yellow My First Project Button */}
+              {/* Small Yellow My First Portfolio Button */}
               <button
                 type="button"
                 id="btn-my-first-portfolio"
                 onClick={handleOpenOldPortfolio}
-                aria-label="View My First Project archive"
+                aria-label="View My First Portfolio archive"
                 className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-mono text-xs font-black text-black bg-[#FBBF24] hover:bg-[#F59E0B] border-[1.5px] border-black shadow-brutal-sm hover:shadow-brutal transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="text-black group-hover:rotate-45 transition-transform duration-200 text-xs">✦</span>
-                <span className="tracking-wide uppercase text-[11px]">My First Project</span>
+                <span className="tracking-wide uppercase text-[11px]">My First Portfolio</span>
                 <span className="text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
               </button>
             </div>

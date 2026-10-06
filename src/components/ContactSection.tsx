@@ -51,11 +51,11 @@ export const ContactSection: React.FC = () => {
         </div>
 
         <h2 className="font-syne font-black text-5xl sm:text-7xl md:text-8xl tracking-tight text-black uppercase">
-          LET&apos;S TALK
+          LET&apos;S CONNECT
         </h2>
 
         <p className="font-grotesk text-base sm:text-xl font-medium max-w-lg mt-2 text-black/85 leading-relaxed">
-          Got an ambitious project, an AI research question, an internship opportunity, or just want to chat about models?
+          Whether you have an ambitious project, an AI research question, an internship opportunity, or simply want to chat about models—my inbox is always open.
         </p>
 
         {/* Pinned Manila Envelope / Note with washi tape at all 4 corners */}

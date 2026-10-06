@@ -106,10 +106,10 @@ export const Navbar: React.FC = () => {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            aria-label="Let's Talk"
+            aria-label="Let's Connect"
             className="shrink-0 inline-flex items-center justify-center bg-[#FB7185] hover:bg-[#F43F5E] text-black border-[2px] border-black font-syne font-black text-[10px] sm:text-xs px-3.5 py-1 rounded-full shadow-brutal-sm hover:shadow-brutal hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0 active:shadow-none transition-all tracking-wider uppercase cursor-pointer"
           >
-            LET&apos;S TALK
+            LET&apos;S CONNECT
           </a>
 
           {/* Mobile menu toggle */}
@@ -156,7 +156,7 @@ export const Navbar: React.FC = () => {
               }}
               className="w-full text-center bg-[#FB7185] hover:bg-[#F43F5E] text-black border-[2px] border-black font-syne font-black text-xs py-2 rounded-full block shadow-brutal-sm uppercase tracking-wider cursor-pointer"
             >
-              LET&apos;S TALK
+              LET&apos;S CONNECT
             </a>
           </div>
         </div>
