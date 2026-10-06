@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Project } from '../types';
+import { SiGithub } from 'react-icons/si';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -305,7 +306,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 rel="noopener noreferrer"
                 className="brutal-btn bg-black hover:bg-neutral-800 text-white dark:bg-white dark:text-black dark:hover:bg-neutral-200 font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black shadow-brutal-sm"
               >
-                <span>⌨ GitHub Code</span>
+                <SiGithub className="w-3.5 h-3.5 shrink-0" />
+                <span>GitHub Code</span>
                 <span>↗</span>
               </a>
             )}

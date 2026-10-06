@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CharacterCard from './CharacterCard';
 import { LINKS } from '../data/links';
+import { SiGithub, SiLeetcode } from 'react-icons/si';
+import { FaLinkedinIn } from 'react-icons/fa6';
 
 export const ContactSection: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -132,7 +134,7 @@ export const ContactSection: React.FC = () => {
               aria-label="Nikita on GitHub"
               className="brutal-btn bg-black text-white hover:bg-neutral-800 font-mono font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 border-[2.5px] border-black shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all"
             >
-              <span className="text-base">⌨</span>
+              <SiGithub className="w-4 h-4 shrink-0" />
               <span>GITHUB</span>
               <span className="text-[10px] opacity-75">↗</span>
             </a>
@@ -144,7 +146,7 @@ export const ContactSection: React.FC = () => {
               aria-label="Nikita on LinkedIn"
               className="brutal-btn bg-[#0A66C2] text-white hover:bg-[#004182] font-mono font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 border-[2.5px] border-black shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all"
             >
-              <span className="text-base">💼</span>
+              <FaLinkedinIn className="w-4 h-4 shrink-0" />
               <span>LINKEDIN</span>
               <span className="text-[10px] opacity-75">↗</span>
             </a>
@@ -156,7 +158,7 @@ export const ContactSection: React.FC = () => {
               aria-label="Nikita on LeetCode"
               className="brutal-btn bg-[#FFA116] text-black hover:bg-[#F59E0B] font-mono font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 border-[2.5px] border-black shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all"
             >
-              <span className="text-base">⚡</span>
+              <SiLeetcode className="w-4 h-4 shrink-0" />
               <span>LEETCODE</span>
               <span className="text-[10px] opacity-75">↗</span>
             </a>
