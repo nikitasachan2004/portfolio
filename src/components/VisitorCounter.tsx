@@ -4,6 +4,7 @@ import { Eye } from 'lucide-react';
 const START_COUNT = 313;
 const SESSION_STORAGE_KEY = 'portfolio_visit_logged';
 const CACHE_COUNT_KEY = 'portfolio_last_known_count';
+const GLOBAL_COUNTER_KEY = 'nikitasachan_portfolio_visitors_global';
 
 export const VisitorCounter: React.FC = () => {
   const [count, setCount] = useState<number>(() => {
@@ -15,66 +16,85 @@ export const VisitorCounter: React.FC = () => {
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500);
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
 
     const checkAndLogVisit = async () => {
       try {
-      const metaEnv = (import.meta as { env?: { DEV?: boolean; VITE_COUNTER_API_URL?: string } }).env;
+        const metaEnv = (import.meta as { env?: { DEV?: boolean; VITE_COUNTER_API_URL?: string } }).env;
 
-      const isLocal =
-        window.location.hostname === 'localhost' ||
-        window.location.hostname === '127.0.0.1' ||
-        Boolean(metaEnv?.DEV);
+        // Allow explicit test increment via ?inc=1 in URL for verification
+        const hasTestParam = typeof window !== 'undefined' && window.location.search.includes('inc=1');
 
-      const isBot =
-        Boolean(navigator.webdriver) ||
-        /bot|crawler|spider|crawling/i.test(navigator.userAgent || '');
+        const isLocal =
+          (window.location.hostname === 'localhost' ||
+            window.location.hostname === '127.0.0.1' ||
+            Boolean(metaEnv?.DEV)) &&
+          !hasTestParam;
 
-      const alreadyCountedInSession = Boolean(
-        sessionStorage.getItem(SESSION_STORAGE_KEY)
-      );
+        const isBot =
+          Boolean(navigator.webdriver) ||
+          /bot|crawler|spider|crawling/i.test(navigator.userAgent || '');
 
-      // Determine if we should increment or just fetch
-      const shouldIncrement = !isLocal && !isBot && !alreadyCountedInSession;
+        const alreadyCountedInSession = Boolean(
+          sessionStorage.getItem(SESSION_STORAGE_KEY)
+        ) && !hasTestParam;
 
-      const endpoint = metaEnv?.VITE_COUNTER_API_URL || '/api/visitors';
+        // Determine if we should increment or just fetch
+        const shouldIncrement = (!isLocal && !isBot && !alreadyCountedInSession) || hasTestParam;
 
-        let response: Response;
+        // 1. Try local serverless endpoint (/api/visitors) first
+        const endpoint = metaEnv?.VITE_COUNTER_API_URL || '/api/visitors';
+        let total: number | null = null;
+
+        try {
+          const response = await fetch(endpoint, {
+            method: shouldIncrement ? 'POST' : 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            signal: controller.signal,
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            if (typeof data.total === 'number') {
+              total = data.total;
+            } else if (typeof data.count === 'number') {
+              total = START_COUNT + data.count;
+            }
+          }
+        } catch {
+          // Endpoint unavailable (e.g. running local Vite dev server without Vercel CLI)
+        }
+
+        // 2. Seamless fallback to global cloud counter if serverless route is not yet deployed or returned error
+        if (total === null) {
+          const action = shouldIncrement ? 'hit' : 'get';
+          const cloudUrl = `https://countapi.mileshilliard.com/api/v1/${action}/${GLOBAL_COUNTER_KEY}`;
+          const cloudRes = await fetch(cloudUrl, {
+            method: 'GET',
+            headers: { 'Accept': 'application/json' },
+            signal: controller.signal,
+          });
+
+          if (cloudRes.ok) {
+            const cloudData = await cloudRes.json();
+            const val = Number(cloudData.value);
+            if (!Number.isNaN(val)) {
+              total = START_COUNT + val;
+            }
+          }
+        }
 
         if (shouldIncrement) {
-          response = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            signal: controller.signal,
-          });
-          // Mark session as counted
           sessionStorage.setItem(SESSION_STORAGE_KEY, 'true');
-        } else {
-          response = await fetch(endpoint, {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-            signal: controller.signal,
-          });
         }
 
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-
-        const data = await response.json();
-        // Server returns total (which incorporates START_COUNT) or count
-        const total =
-          typeof data.total === 'number'
-            ? data.total
-            : START_COUNT + (Number(data.count) || 0);
-
-        if (isMounted && !Number.isNaN(total)) {
+        if (isMounted && total !== null && !Number.isNaN(total)) {
           setCount(total);
           setHasLoaded(true);
           sessionStorage.setItem(CACHE_COUNT_KEY, total.toString());
         }
       } catch {
-        // Silent failure handling: retain current/fallback count without console noise
+        // Retain fallback cleanly without noisy console warnings
         if (isMounted) {
           setHasLoaded(true);
         }
