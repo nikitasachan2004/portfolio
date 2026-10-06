@@ -167,30 +167,7 @@ html.dark #credentials .section-label {
   color: #94A3B8 !important;
 }
 
-#credentials .timeline-card,
-#credentials .timeline-card h3,
-#credentials .timeline-card p,
-#credentials .cert-tile,
-#credentials .cert-tile h4,
-#credentials .cert-tile p {
-  color: #000000 !important;
-}
 
-html.dark #credentials .timeline-card h3,
-html.dark #credentials .timeline-card p,
-html.dark #credentials .timeline-card span:not(.text-white),
-html.dark #credentials .cert-tile h4,
-html.dark #credentials .cert-tile p,
-html.dark #credentials .cert-tile span:not(.text-white) {
-  color: #000000 !important;
-}
-
-#credentials .text-white,
-#credentials [class*="text-white"],
-html.dark #credentials .text-white,
-html.dark #credentials [class*="text-white"] {
-  color: #FFFFFF !important;
-}
 
 /* Contact Section: Manila envelope & Find Me buttons remain bold and vibrant */
 html.dark #contact .bg-\[\#FEF9C3\] {

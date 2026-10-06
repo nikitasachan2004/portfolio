@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { EDUCATION_DATA, CERTIFICATIONS_DATA } from '../data/portfolioData';
+import { LINKS } from '../data/links';
 
 export const CredentialsSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -329,19 +330,14 @@ export const CredentialsSection: React.FC = () => {
                     </span>
 
                     <a
-                      href={cert.credentialId || '#credentials'}
-                      target={cert.credentialId ? '_blank' : undefined}
-                      rel={cert.credentialId ? 'noopener noreferrer' : undefined}
-                      aria-label={`Verify ${cert.issuer} ${cert.name} certificate`}
-                      onClick={(e) => {
-                        if (!cert.credentialId) {
-                          e.preventDefault();
-                        }
-                      }}
-                      className="font-mono text-[11px] font-black text-black bg-white hover:bg-black hover:text-white dark:bg-[#151923] dark:text-white dark:hover:bg-[#FBBF24] dark:hover:text-black border-[1.5px] border-black dark:border-white/30 px-2.5 py-1 rounded shadow-2xs transition-colors whitespace-nowrap inline-flex items-center gap-1 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24]"
+                      href={cert.credentialId || LINKS.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Verify ${cert.issuer} ${cert.name} on LinkedIn`}
+                      className="font-mono text-[11px] font-black text-black bg-white hover:bg-black hover:text-white dark:bg-[#151923] dark:text-white dark:hover:bg-[#FBBF24] dark:hover:text-black border-[1.5px] border-black dark:border-white/30 px-3 py-1 rounded shadow-2xs hover:shadow-brutal-sm hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap inline-flex items-center gap-1 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24] cursor-pointer"
                     >
-                      <span className="whitespace-nowrap">Verify</span>
-                      <span aria-hidden="true" className="whitespace-nowrap">↗</span>
+                      <span className="whitespace-nowrap font-black">Verify</span>
+                      <span aria-hidden="true" className="whitespace-nowrap font-bold">↗</span>
                     </a>
                   </div>
                 </motion.div>
