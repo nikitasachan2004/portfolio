@@ -55,7 +55,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       }}
     >
       <div 
-        className="bg-[#FFFDF9] dark:bg-[#131722] border-[3.5px] border-black dark:border-white/80 rounded-2xl shadow-brutal-xl dark:shadow-[8px_8px_0px_#FBBF24] max-w-2xl w-full relative max-h-[92vh] flex flex-col overflow-hidden animate-scaleUp select-none"
+        className="bg-[#FFFDF9] dark:bg-[#131722] border-[3.5px] border-black dark:border-white/80 rounded-2xl shadow-brutal-xl dark:shadow-[8px_8px_0px_#FBBF24] max-w-2xl w-full relative max-h-[92vh] max-h-[92dvh] flex flex-col overflow-hidden animate-scaleUp select-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Bold Themed Header Banner in Project's Accent Color */}
@@ -84,7 +84,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Bold Project Title */}
           <h3 
             id="modal-title" 
-            className="font-syne font-black text-3xl sm:text-4xl text-black tracking-tight leading-tight relative z-10 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.7)] pr-14"
+            className="font-syne font-black text-2xl xs:text-3xl sm:text-4xl text-black tracking-tight leading-tight relative z-10 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.7)] pr-14"
           >
             {project.title}
           </h3>
@@ -96,7 +96,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </span>
           </div>
 
-          {/* Top-Right Close Button - Placed last in DOM with z-50 and pointer-events-auto */}
+          {/* Top-Right Close Button - Placed with min 44x44px touch target */}
           <button
             type="button"
             id="modal-close-btn"
@@ -107,7 +107,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               onClose();
             }}
             onPointerDown={(e) => e.stopPropagation()}
-            className="absolute top-4 right-4 w-10 h-10 bg-white hover:bg-[#FB7185] hover:text-white text-black border-[2.5px] border-black rounded-full font-mono font-black text-base flex items-center justify-center shadow-brutal-sm hover:scale-105 active:scale-95 transition-all cursor-pointer z-50 pointer-events-auto"
+            className="absolute top-4 right-4 w-11 h-11 min-w-[44px] min-h-[44px] bg-white hover:bg-[#FB7185] hover:text-white text-black border-[2.5px] border-black rounded-full font-mono font-black text-base flex items-center justify-center shadow-brutal-sm hover:scale-105 active:scale-95 transition-all cursor-pointer z-50 pointer-events-auto"
           >
             ✕
           </button>
@@ -116,14 +116,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Scrollable Content Body */}
         <div className="p-5 sm:p-6 overflow-y-auto space-y-5 flex-1">
           {/* Navigation Tabs */}
-          <div className="flex flex-wrap gap-2 border-b-2 border-black/20 dark:border-white/20 pb-3">
+          <div className="flex flex-wrap gap-2 border-b-2 border-black/20 dark:border-white/10 pb-3">
             <button
               type="button"
               onClick={() => setActiveTab('overview')}
-              className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
+              className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#3D4F6E] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
                 activeTab === 'overview'
-                  ? 'bg-black text-white dark:bg-[#FBBF24] dark:text-black scale-[1.02]'
-                  : 'bg-white dark:bg-[#1E2433] text-black dark:text-white hover:bg-[#FEF08A] hover:text-black'
+                  ? 'bg-black text-white dark:bg-[#F5B838] dark:text-[#0F141C] scale-[1.02]'
+                  : 'bg-white dark:bg-[#1E283A] text-black dark:text-[#E8EDF5] hover:bg-[#FEF08A] hover:text-black dark:hover:bg-[#26334A]'
               }`}
             >
               OVERVIEW &amp; IMPACT
@@ -132,10 +132,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <button
                 type="button"
                 onClick={() => setActiveTab('architecture')}
-                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
+                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#3D4F6E] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
                   activeTab === 'architecture'
-                    ? 'bg-[#38BDF8] text-black scale-[1.02]'
-                    : 'bg-white dark:bg-[#1E2433] text-black dark:text-white hover:bg-[#38BDF8] hover:text-black'
+                    ? 'bg-[#38BDF8] text-black dark:bg-[#38BDF8] dark:text-[#0F141C] scale-[1.02]'
+                    : 'bg-white dark:bg-[#1E283A] text-black dark:text-[#E8EDF5] hover:bg-[#38BDF8] hover:text-black dark:hover:bg-[#26334A]'
                 }`}
               >
                 ARCHITECTURE PIPELINE
@@ -145,10 +145,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <button
                 type="button"
                 onClick={() => setActiveTab('code')}
-                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
+                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#3D4F6E] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
                   activeTab === 'code'
-                    ? 'bg-[#34D399] text-black scale-[1.02]'
-                    : 'bg-white dark:bg-[#1E2433] text-black dark:text-white hover:bg-[#34D399] hover:text-black'
+                    ? 'bg-[#34D399] text-black dark:bg-[#34D399] dark:text-[#0F141C] scale-[1.02]'
+                    : 'bg-white dark:bg-[#1E283A] text-black dark:text-[#E8EDF5] hover:bg-[#34D399] hover:text-black dark:hover:bg-[#26334A]'
                 }`}
               >
                 SAMPLE CODE ⌨
@@ -250,14 +250,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Technology Stack Tags */}
           <div className="pt-2">
-            <h4 className="font-mono text-xs font-black uppercase text-black dark:text-white mb-2 tracking-wider flex items-center gap-1.5">
+            <h4 className="font-mono text-xs font-black uppercase text-black dark:text-[#E8EDF5] mb-2 tracking-wider flex items-center gap-1.5">
               <span className="text-[#F59E0B]">✦</span> TECHNOLOGY STACK:
             </h4>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag, tIdx) => (
                 <span
                   key={tIdx}
-                  className="bg-[#FEF08A] dark:bg-[#FBBF24] text-black border-[2px] border-black px-3 py-1 text-xs font-mono font-black shadow-brutal-sm rounded-md hover:-translate-y-0.5 transition-transform"
+                  className="bg-[#FEF08A] dark:bg-[#263248] text-black dark:text-[#E8EDF5] border-[2px] border-black dark:border-[#3D4F6E] px-3 py-1 text-xs font-mono font-black shadow-brutal-sm rounded-md hover:-translate-y-0.5 transition-transform"
                 >
                   {tag}
                 </span>
@@ -267,8 +267,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Action Links & Footer: Distinct Website (Live) vs YouTube (Demo) vs GitHub */}
-        <div className="p-4 sm:p-5 border-t-[3px] border-black/20 dark:border-white/20 bg-black/5 dark:bg-white/5 flex flex-wrap items-center justify-between gap-3 shrink-0">
-          <div className="font-mono text-xs text-black/70 dark:text-white/70 font-bold">
+        <div className="p-4 sm:p-5 pb-[calc(1rem+env(safe-area-inset-bottom,0px))] border-t-[3px] border-black/20 dark:border-white/10 bg-black/5 dark:bg-white/5 flex flex-wrap items-center justify-between gap-3 shrink-0">
+          <div className="font-mono text-xs text-black/70 dark:text-[#9BAAC0] font-bold">
             {project.category}
           </div>
 
@@ -279,7 +279,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutal-btn bg-[#34D399] hover:bg-[#10B981] text-black font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black shadow-brutal-sm"
+                className="brutal-btn bg-[#34D399] hover:bg-[#10B981] text-black font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm"
               >
                 <span>🌐 Live Website</span>
                 <span>↗</span>
@@ -292,7 +292,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutal-btn bg-[#FF0000] hover:bg-[#DC2626] text-white font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black shadow-brutal-sm"
+                className="brutal-btn bg-[#FF0000] hover:bg-[#DC2626] text-white font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm"
               >
                 <span>▶ Watch Demo (YouTube)</span>
               </a>
@@ -304,7 +304,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutal-btn bg-black hover:bg-neutral-800 text-white dark:bg-white dark:text-black dark:hover:bg-neutral-200 font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black shadow-brutal-sm"
+                className="brutal-btn bg-black hover:bg-neutral-800 text-white dark:bg-[#1E283A] dark:text-[#E8EDF5] dark:hover:bg-[#26334A] font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm"
               >
                 <SiGithub className="w-3.5 h-3.5 shrink-0" />
                 <span>GitHub Code</span>
@@ -316,7 +316,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <button
               type="button"
               onClick={onClose}
-              className="brutal-btn bg-[#FBBF24] hover:bg-[#F59E0B] text-black font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1 border-[2px] border-black shadow-brutal-sm cursor-pointer"
+              className="brutal-btn bg-[#FBBF24] hover:bg-[#F59E0B] text-black dark:bg-[#F5B838] dark:text-[#0F141C] dark:hover:bg-[#FBBF24] font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm cursor-pointer"
             >
               ✕ Close
             </button>

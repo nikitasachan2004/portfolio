@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
           />
         </div>
 
-        <h2 className="font-syne font-black text-5xl sm:text-7xl md:text-8xl tracking-tight text-black uppercase">
+        <h2 className="font-syne font-black text-4xl sm:text-7xl md:text-8xl tracking-tight text-black uppercase">
           LET&apos;S CONNECT
         </h2>
 
@@ -59,7 +59,7 @@ export const ContactSection: React.FC = () => {
         </p>
 
         {/* Pinned Manila Envelope / Note with washi tape at all 4 corners */}
-        <div className="w-full max-w-xl bg-[#FEF9C3] border-[3px] border-black p-6 sm:p-8 rounded-2xl shadow-brutal-lg my-8 relative text-black">
+        <div className="w-full max-w-xl bg-[#FEF9C3] border-[3px] border-black p-5 sm:p-8 rounded-2xl shadow-brutal-lg my-8 relative text-black">
           {/* 4 Washi Tapes at corners */}
           <div className="washi-tape-mint absolute -top-3 -left-3 px-4 py-0.5 text-[9px] font-mono font-bold rotate-[-12deg] select-none text-black">
             AIRMAIL
@@ -82,7 +82,7 @@ export const ContactSection: React.FC = () => {
           <div className="bg-white border-[2.5px] border-black p-3.5 sm:p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-brutal-sm text-black">
             <span 
               id="email-address"
-              className="font-mono text-sm sm:text-base font-black text-black select-all"
+              className="font-mono text-xs sm:text-sm md:text-base font-black text-black select-all break-all sm:break-normal text-center sm:text-left"
             >
               {email}
             </span>
@@ -92,7 +92,7 @@ export const ContactSection: React.FC = () => {
                 type="button"
                 id="copy-email-btn"
                 onClick={handleCopyEmail}
-                className={`brutal-btn font-mono font-black text-xs px-4 py-2.5 rounded-lg flex-1 sm:flex-initial cursor-pointer transition-colors border-[2px] border-black ${
+                className={`brutal-btn font-mono font-black text-xs px-4 py-2.5 min-h-[44px] rounded-lg flex-1 sm:flex-initial flex items-center justify-center cursor-pointer transition-colors border-[2px] border-black ${
                   copied ? 'bg-[#34D399] text-black' : 'bg-[#FBBF24] text-black hover:bg-[#F59E0B]'
                 }`}
               >
@@ -101,7 +101,7 @@ export const ContactSection: React.FC = () => {
 
               <a
                 href={`mailto:${email}?subject=Hello%20Nikita%20—%20Let's%20Connect`}
-                className="brutal-btn bg-black text-white hover:bg-neutral-800 font-mono font-black text-xs px-4 py-2.5 rounded-lg flex-1 sm:flex-initial text-center border-[2px] border-black"
+                className="brutal-btn bg-black text-white hover:bg-neutral-800 font-mono font-black text-xs px-4 py-2.5 min-h-[44px] rounded-lg flex-1 sm:flex-initial flex items-center justify-center text-center border-[2px] border-black"
               >
                 SEND EMAIL ↗
               </a>

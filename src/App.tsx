@@ -82,7 +82,7 @@ export default function App() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-black dark:text-[#F3F4F6] font-grotesk min-h-screen overflow-x-hidden selection:bg-[#FBBF24] selection:text-black relative transition-colors duration-300"
+          className="text-black dark:text-[#E8EDF5] font-grotesk min-h-screen overflow-x-hidden selection:bg-[#F5B838] selection:text-[#0F141C] relative transition-colors duration-300"
         >
           {/* Left notebook red margin wire line */}
           <div aria-hidden="true" className="margin-rule"></div>
@@ -164,7 +164,7 @@ export default function App() {
             </div>
 
             {/* Bottom: Clean copyright line with zero watermark */}
-            <div className="relative z-30 w-full py-3 flex items-center justify-center font-mono text-[10px] text-black/50 dark:text-white/40">
+            <div className="relative z-30 w-full py-3 pb-9 sm:pb-3 flex items-center justify-center font-mono text-[10px] text-black/50 dark:text-[#9BAAC0] px-4 text-center">
               <span>© {new Date().getFullYear()} Nikita Sachan · All Rights Reserved</span>
             </div>
 
@@ -182,13 +182,13 @@ export default function App() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 w-full h-full bg-[#f6f4ef] dark:bg-[#1B1F1E] z-50 flex flex-col"
+          className="fixed inset-0 w-full h-full bg-[#f6f4ef] dark:bg-[#0F141C] z-50 flex flex-col"
         >
           {/* Top navigation header for Old Portfolio view */}
-          <header className="h-12 bg-white/95 dark:bg-[#202524]/95 backdrop-blur border-b border-[#e5e3dc] dark:border-[#323938] px-4 sm:px-6 flex items-center justify-between shadow-xs shrink-0 z-50">
+          <header className="h-12 bg-white/95 dark:bg-[#18202F]/95 backdrop-blur border-b border-[#e5e3dc] dark:border-[#263248] px-4 sm:px-6 flex items-center justify-between shadow-xs shrink-0 z-50">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse"></span>
-              <span className="font-mono text-xs font-bold text-gray-800 dark:text-gray-200">
+              <span className="font-mono text-xs font-bold text-gray-800 dark:text-[#E8EDF5]">
                 ARCHIVED FIRST PORTFOLIO (V1)
               </span>
             </div>
@@ -198,7 +198,7 @@ export default function App() {
               id="btn-back-to-new"
               onClick={handleBackToNew}
               aria-label="Back to new portfolio"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-mono text-xs font-bold bg-[#1B1F1E] dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm cursor-pointer border border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FBBF24]"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-mono text-xs font-bold bg-[#1B1F1E] dark:bg-[#1E283A] text-white dark:text-[#E8EDF5] hover:bg-neutral-800 dark:hover:bg-[#26334A] dark:border dark:border-[#3D4F6E] transition-all shadow-sm cursor-pointer border border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B838]"
             >
               <span>←</span>
               <span>Back to new portfolio</span>

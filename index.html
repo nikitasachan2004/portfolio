@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nikita Sachan — AI/ML Engineer & Full-Stack Builder</title>
+    <script>
+      (function() {
+        try {
+          var t = localStorage.getItem('theme');
+          var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (t === 'dark' || (!t && d)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>Nikita</title>
     <meta name="description" content="Interactive neo-brutalist scrapbook portfolio of Nikita Sachan, AI/ML Engineer & Full-Stack Builder." />
     <meta property="og:title" content="Nikita Sachan — AI/ML Engineer & Full-Stack Builder" />
     <meta property="og:description" content="Interactive neo-brutalist scrapbook portfolio of Nikita Sachan, AI/ML Engineer & Full-Stack Builder." />

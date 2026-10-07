@@ -48,186 +48,409 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode overrides for notebook canvas */
+/* ========================================================================= */
+/* UNIFIED DARK MODE DESIGN TOKENS & SYSTEM                                   */
+/* ========================================================================= */
+html.dark {
+  color-scheme: dark;
+
+  /* Surfaces (deep slate / charcoal hierarchy) */
+  --dark-bg-base: #0F141C;
+  --dark-bg-subtle: #141B26;
+  --dark-bg-surface: #18202F;
+  --dark-bg-elevated: #1E283A;
+  --dark-bg-hover: #26334A;
+
+  /* Text & Labels */
+  --dark-text-primary: #E8EDF5;
+  --dark-text-secondary: #9BAAC0;
+  --dark-text-muted: #74859E;
+
+  /* Borders & Dividers */
+  --dark-border-subtle: #263248;
+  --dark-border-strong: #3D4F6E;
+  --dark-border-focus: #38BDF8;
+
+  /* Tuned Accents (desaturated, comfortable luminescence) */
+  --dark-accent-amber: #F5B838;
+  --dark-accent-sky: #38BDF8;
+  --dark-accent-rose: #F472B6;
+  --dark-accent-mint: #34D399;
+  --dark-accent-violet: #A78BFA;
+
+  /* Neo-Brutalist Tactile Shadows in Dark Mode */
+  --dark-shadow-sm: 2.5px 2.5px 0px rgba(0, 0, 0, 0.65), 0 0 0 1px #3D4F6E;
+  --dark-shadow-md: 4px 4px 0px rgba(0, 0, 0, 0.65), 0 0 0 1px #3D4F6E;
+  --dark-shadow-lg: 6px 6px 0px rgba(0, 0, 0, 0.65), 0 0 0 1.5px #3D4F6E;
+  --dark-shadow-xl: 8px 8px 0px rgba(0, 0, 0, 0.65), 0 0 0 1.5px #3D4F6E;
+}
+
+/* Base Canvas & Ruled Notebook in Dark Mode */
 html.dark body {
-  background-color: #0F1117;
-  background-image: repeating-linear-gradient(transparent,
-      transparent 31px,
-      #1E2230 31px,
-      #1E2230 32px);
-  color: #F3F4F6;
+  background-color: var(--dark-bg-base);
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    var(--dark-bg-subtle) 31px,
+    var(--dark-bg-subtle) 32px
+  );
+  color: var(--dark-text-primary);
 }
 
-/* Notebook left margin pink/red vertical rule */
-.margin-rule {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: clamp(16px, 4vw, 56px);
-  width: 2px;
-  background-color: rgba(244, 114, 182, 0.45);
-  z-index: 0;
-  pointer-events: none;
-}
-
+/* Margin wire rule */
 html.dark .margin-rule {
-  background-color: rgba(244, 114, 182, 0.25);
+  background-color: rgba(244, 114, 182, 0.2);
 }
 
-/* Dark mode brutalist element overrides */
+/* Native selection color */
+html.dark ::selection {
+  background-color: var(--dark-accent-amber);
+  color: var(--dark-bg-base);
+}
+
+/* Form Autofill styling override for inputs in Dark Mode */
+html.dark input:-webkit-autofill,
+html.dark textarea:-webkit-autofill,
+html.dark select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--dark-bg-surface) inset !important;
+  -webkit-text-fill-color: var(--dark-text-primary) !important;
+  caret-color: var(--dark-text-primary) !important;
+}
+
+/* Custom dark scrollbars */
+html.dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: var(--dark-bg-base);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: var(--dark-border-subtle);
+  border-radius: 5px;
+  border: 2px solid var(--dark-bg-base);
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-border-strong);
+}
+
+/* Clearly visible focus ring in dark mode */
+html.dark :focus-visible {
+  outline: 2px solid var(--dark-border-focus) !important;
+  outline-offset: 2px;
+}
+
+/* Tactile Brutalist button overrides in Dark Mode */
+html.dark .brutal-btn {
+  border-color: var(--dark-border-strong);
+  box-shadow: var(--dark-shadow-sm);
+}
+html.dark .brutal-btn:hover {
+  box-shadow: var(--dark-shadow-md);
+  border-color: var(--dark-accent-amber);
+}
+
+/* Navigation Bar */
 html.dark nav#main-nav {
-  background-color: rgba(23, 27, 38, 0.95);
-  border-color: #38BDF8;
-  box-shadow: 4px 4px 0px #000000;
-  color: #F3F4F6;
+  background-color: rgba(24, 32, 47, 0.95);
+  border-color: var(--dark-border-strong);
+  box-shadow: var(--dark-shadow-md);
+  color: var(--dark-text-primary);
 }
-
 html.dark nav#main-nav a {
-  color: #E2E8F0;
+  color: var(--dark-text-secondary);
 }
-
 html.dark nav#main-nav a:hover {
   background-color: rgba(255, 255, 255, 0.08);
+  color: var(--dark-text-primary);
 }
-
 html.dark nav#main-nav a.bg-\[\#FBBF24\] {
-  color: #000000;
+  background-color: var(--dark-accent-amber);
+  color: var(--dark-bg-base);
+  border-color: var(--dark-bg-base);
 }
 
-/* Main content boxes in dark mode (excluding scrapbook-paper experience section) */
-html.dark main section:not(#experience)>div.bg-white {
-  background-color: #171B26 !important;
-  border-color: #333C4D !important;
-  box-shadow: 6px 6px 0px #000000 !important;
-  color: #F3F4F6 !important;
+/* Section Containers in Dark Mode */
+html.dark main section > div.bg-white {
+  background-color: var(--dark-bg-surface) !important;
+  border-color: var(--dark-border-strong) !important;
+  box-shadow: var(--dark-shadow-lg) !important;
+  color: var(--dark-text-primary) !important;
 }
 
-html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) h2,
-html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) h3,
-html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) h4 {
-  color: #FFFFFF !important;
+/* Section Headings & Text */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  color: var(--dark-text-primary) !important;
 }
 
-html.dark main section:not(#experience):not(#projects):not(#credentials):not(#contact) p {
-  color: #CBD5E1;
+html.dark p {
+  color: var(--dark-text-secondary);
 }
 
-/* Projects Section: Neo-Brutalist cards always retain crisp solid black ink on their pastel surfaces */
-#projects .project-card,
-#projects .project-card h3,
-#projects .project-card p {
-  color: #000000 !important;
+/* Folder Tabs */
+html.dark .folder-tab {
+  background-color: var(--dark-bg-elevated) !important;
+  color: var(--dark-text-primary) !important;
+  border-color: var(--dark-border-strong) !important;
+  box-shadow: 0 -2px 0 0 var(--dark-border-strong);
 }
 
-html.dark #projects .project-card h3,
-html.dark #projects .project-card p,
-html.dark #projects .project-card span:not(.text-white),
-html.dark #projects .project-card div:not(.text-white):not([class*="bg-black"]) {
-  color: #000000 !important;
+/* Hero Section */
+html.dark #hero h1 {
+  color: var(--dark-text-primary) !important;
+  text-shadow: none;
+  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.7));
+}
+html.dark #hero p {
+  color: var(--dark-text-primary);
 }
 
-html.dark #projects .project-card .text-white,
-html.dark #projects .project-card [class*="text-white"] {
-  color: #FFFFFF !important;
-}
-
-html.dark .bg-\[\#FAF8F3\] {
-  background-color: #1E2333 !important;
-  border-color: #374151 !important;
-  color: #F3F4F6 !important;
-}
-
-html.dark .bg-\[\#FFFDF7\] {
-  background-color: #1A1F2C !important;
-  border-color: #374151 !important;
-  color: #F3F4F6 !important;
-}
-
+/* About Section */
 html.dark .polaroid {
-  background-color: #1A1F2C !important;
-  border-color: #374151 !important;
-  box-shadow: 5px 5px 0px #000000 !important;
-  color: #FFFFFF !important;
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+  color: var(--dark-text-primary) !important;
 }
-
 html.dark .polaroid span {
-  color: #FFFFFF !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark .polaroid .bg-\[\#FEF08A\] {
+  background-color: var(--dark-bg-subtle) !important;
+  border-color: var(--dark-border-subtle) !important;
+}
+html.dark #about .bg-\[\#FFFDF7\] {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #about .bg-\[\#FFFDF7\] p {
+  color: var(--dark-text-primary) !important;
 }
 
-/* Credentials Section: Header in dark mode gets crisp white/light text, while cards maintain solid black ink */
-html.dark #credentials h2 {
-  color: #FFFFFF !important;
+/* Philosophy Section (Manifesto Cards) */
+html.dark #philosophy .bg-white {
+  background-color: var(--dark-bg-surface) !important;
+  border-color: var(--dark-border-strong) !important;
+}
+html.dark #philosophy div[class*="rounded-xl"] {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+}
+html.dark #philosophy span[class*="font-mono"] {
+  color: var(--dark-text-primary) !important;
 }
 
-html.dark #credentials .section-subhead {
-  color: #CBD5E1 !important;
+/* Experience Section (Logbook) */
+html.dark #experience > div.bg-white {
+  background-color: var(--dark-bg-surface) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #experience .bg-\[\#ECFDF5\] {
+  background-color: #12211C !important;
+  border-color: var(--dark-border-strong) !important;
+  border-left-color: var(--dark-accent-mint) !important;
+  color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+}
+html.dark #experience .bg-\[\#FFFDF5\] {
+  background-color: #211E15 !important;
+  border-color: var(--dark-border-strong) !important;
+  border-left-color: var(--dark-accent-amber) !important;
+  color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+}
+html.dark #experience .bg-\[\#F0F9FF\] {
+  background-color: #13202E !important;
+  border-color: var(--dark-border-strong) !important;
+  border-left-color: var(--dark-accent-sky) !important;
+  color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+}
+html.dark #experience .bg-white,
+html.dark #experience .bg-white\/95 {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #experience ul li {
+  background-color: var(--dark-bg-surface) !important;
+  border-color: var(--dark-border-subtle) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #experience .bg-\[\#FAF8F3\] {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
 }
 
-html.dark #credentials .section-label {
-  color: #94A3B8 !important;
+/* Projects Section */
+html.dark #projects .project-card {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+}
+html.dark #projects .project-card h3 {
+  color: var(--dark-text-primary) !important;
+}
+html.dark #projects .project-card p {
+  color: var(--dark-text-secondary) !important;
+}
+html.dark #projects .project-card .bg-white\/80 {
+  background-color: var(--dark-bg-subtle) !important;
+  border-color: var(--dark-border-subtle) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #projects .project-card span[class*="bg-\[\#FEF08A\]"] {
+  background-color: var(--dark-bg-hover) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #projects button[class*="bg-white"] {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
 }
 
-
-
-/* Contact Section: Manila envelope & Find Me buttons remain bold and vibrant */
-html.dark #contact .bg-\[\#FEF9C3\] {
-  background-color: #FEF9C3 !important;
-  color: #000000 !important;
-}
-
-html.dark #contact .bg-\[\#FEF9C3\] h4,
-html.dark #contact .bg-\[\#FEF9C3\] p,
-html.dark #contact .bg-\[\#FEF9C3\] span:not(.text-white):not([class*="bg-black"]) {
-  color: #000000 !important;
-}
-
-html.dark #contact #email-address {
-  color: #000000 !important;
-}
-
-/* Skills Section Bento Tiles: keep bold pastel surfaces, crisp black text and borders in both themes */
-#skills .skill-tile {
-  color: #000000 !important;
-}
-
+/* Skills Section Bento Tiles */
 html.dark #skills .skill-tile {
-  color: #000000 !important;
-  border-color: #000000 !important;
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-sm) !important;
 }
-
-html.dark #skills .skill-tile span:not(.text-white) {
-  color: #000000 !important;
+html.dark #skills .skill-tile:hover {
+  background-color: var(--dark-bg-hover) !important;
+  border-color: var(--dark-accent-sky) !important;
+  box-shadow: var(--dark-shadow-md) !important;
 }
-
+html.dark #skills .skill-tile span {
+  color: var(--dark-text-primary) !important;
+}
+html.dark #skills .skill-tile img {
+  filter: brightness(0.95);
+}
 html.dark #skills .overflow-hidden .bg-\[\#FAF8F3\] {
-  background-color: #1A1F2C !important;
-  border-color: #374151 !important;
-  color: #F3F4F6 !important;
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-subtle) !important;
+  color: var(--dark-text-primary) !important;
 }
-
-html.dark #skills .overflow-hidden .bg-\[\#FAF8F3\] span {
-  color: #E2E8F0 !important;
-}
-
-html.dark #skills .overflow-hidden .bg-\[\#FAF8F3\] span.bg-black {
-  color: #FFFFFF !important;
-}
-
 html.dark #skills .overflow-hidden .group\/chip {
-  background-color: #FEF08A !important;
-  color: #000000 !important;
-  border-color: #000000 !important;
+  background-color: var(--dark-bg-hover) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
 }
-
 html.dark #skills .overflow-hidden .group\/chip span {
-  color: #000000 !important;
+  color: var(--dark-text-primary) !important;
 }
 
-html.dark .modal-content-box {
-  background-color: #171B26 !important;
-  border-color: #475569 !important;
-  color: #F3F4F6 !important;
+/* Credentials Section */
+html.dark #credentials h2 {
+  color: var(--dark-text-primary) !important;
 }
+html.dark #credentials .section-subhead {
+  color: var(--dark-text-secondary) !important;
+}
+html.dark #credentials .section-label {
+  color: var(--dark-text-muted) !important;
+}
+html.dark .timeline-card {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark .timeline-card h3 {
+  color: var(--dark-text-primary) !important;
+}
+html.dark .timeline-card p {
+  color: var(--dark-text-secondary) !important;
+}
+html.dark .cert-tile {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  box-shadow: var(--dark-shadow-sm) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark .cert-tile:hover {
+  border-color: var(--dark-accent-sky) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+}
+html.dark .cert-tile h4 {
+  color: var(--dark-text-primary) !important;
+}
+
+/* Contact Section (Manila Envelope) */
+html.dark #contact .bg-\[\#FEF9C3\] {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-strong) !important;
+  box-shadow: var(--dark-shadow-lg) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #contact .bg-\[\#FEF9C3\] p,
+html.dark #contact .bg-\[\#FEF9C3\] h4 {
+  color: var(--dark-text-primary) !important;
+}
+html.dark #contact .bg-\[\#FEF9C3\] div.bg-white {
+  background-color: var(--dark-bg-subtle) !important;
+  border-color: var(--dark-border-strong) !important;
+  color: var(--dark-text-primary) !important;
+}
+html.dark #contact #email-address {
+  color: var(--dark-text-primary) !important;
+}
+html.dark #contact .bg-\[\#FAF8F3\] {
+  background-color: var(--dark-bg-elevated) !important;
+  border-color: var(--dark-border-subtle) !important;
+  color: var(--dark-text-primary) !important;
+}
+
+/* Project Modal */
+html.dark .modal-content-box,
+html.dark div[role="dialog"] > div {
+  background-color: var(--dark-bg-surface) !important;
+  border-color: var(--dark-border-strong) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px #3D4F6E !important;
+  color: var(--dark-text-primary) !important;
+}
+
+/* Washi Tapes (comfortably muted luminescence in dark mode) */
+html.dark .washi-tape {
+  background: rgba(48, 40, 20, 0.88);
+  border-left-color: rgba(245, 184, 56, 0.4);
+  border-right-color: rgba(245, 184, 56, 0.4);
+  color: var(--dark-text-primary);
+}
+html.dark .washi-tape-pink {
+  background: rgba(54, 22, 38, 0.88);
+  border-left-color: rgba(244, 114, 182, 0.4);
+  border-right-color: rgba(244, 114, 182, 0.4);
+  color: var(--dark-text-primary);
+}
+html.dark .washi-tape-mint {
+  background: rgba(18, 44, 34, 0.88);
+  border-left-color: rgba(52, 211, 153, 0.4);
+  border-right-color: rgba(52, 211, 153, 0.4);
+  color: var(--dark-text-primary);
+}
+html.dark .washi-tape-blue {
+  background: rgba(24, 42, 64, 0.88);
+  border-left-color: rgba(56, 189, 248, 0.4);
+  border-right-color: rgba(56, 189, 248, 0.4);
+  color: var(--dark-text-primary);
+}
+
+/* Subtle image/logo glare softening in dark mode */
+html.dark img:not([src$=".svg"]):not([class*="dark:invert"]) {
+  filter: brightness(0.92) contrast(1.02);
+}
+
 
 /* Washi tape styling with realistic frosted edges */
 .washi-tape {
@@ -309,4 +532,59 @@ html.dark .modal-content-box {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   margin-bottom: -2.5px;
+}
+
+/* ========================================================================= */
+/* RESPONSIVE: mobile (<= 767px)                                             */
+/* ========================================================================= */
+@media (max-width: 767px) {
+  /* Prevent horizontal scroll leakage */
+  html,
+  body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent automatic zooming on input focus in iOS Safari */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Safe margin line position on narrow mobile screens */
+  .margin-rule {
+    left: 12px;
+  }
+
+  /* Tap target safety utility */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Modal viewport height safety for iOS Safari */
+  .modal-content-box {
+    max-height: 90dvh !important;
+  }
+}
+
+/* ========================================================================= */
+/* RESPONSIVE: tablet (768px to 1024px)                                      */
+/* ========================================================================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Overflow protection */
+  html,
+  body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Margin rule adjustment for tablet */
+  .margin-rule {
+    left: 24px;
+  }
 }

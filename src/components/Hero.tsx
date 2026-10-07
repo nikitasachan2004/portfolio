@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="pt-6 sm:pt-8 pb-4 relative flex flex-col items-center text-center">
+    <section id="hero" className="pt-6 sm:pt-8 pb-4 relative flex flex-col items-center text-center overflow-x-clip sm:overflow-x-visible max-w-full">
       {/* Top washi tape on hero */}
       <div className="washi-tape px-6 py-1 font-mono text-xs font-bold text-black rotate-[-1.5deg] mb-6 inline-block select-none">
         PORTFOLIO SCRAPBOOK
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
         className="relative my-2 sm:my-4 select-none w-full max-w-5xl flex flex-col items-center justify-center px-4 sm:px-8 overflow-visible"
       >
         <h1
-          className="font-syne font-black text-6xl sm:text-8xl md:text-[10rem] lg:text-[11.5rem] tracking-tighter leading-none text-black drop-shadow-[5px_5px_0px_rgba(245,158,11,0.9)] sm:drop-shadow-[8px_8px_0px_rgba(245,158,11,0.9)]"
+          className="font-syne font-black text-5xl xs:text-6xl sm:text-8xl md:text-[10rem] lg:text-[11.5rem] tracking-tighter leading-none text-black drop-shadow-[5px_5px_0px_rgba(245,158,11,0.9)] sm:drop-shadow-[8px_8px_0px_rgba(245,158,11,0.9)]"
         >
           <span ref={headlineTextRef} className="inline-block relative">
             <SparklesText
@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
         {/* Pinned tactile stickers overlapping the title */}
         <span
           data-interactive="true"
-          className="absolute -bottom-3 left-4 sm:left-12 md:left-20 bg-[#A78BFA] text-black font-mono font-extrabold text-xs px-3 py-1 rounded-md border-[2px] border-black shadow-brutal-sm rotate-[-5deg] hover:rotate-0 transition-transform z-30 cursor-default"
+          className="absolute -bottom-3 left-2 sm:left-12 md:left-20 bg-[#A78BFA] text-black font-mono font-extrabold text-xs px-3 py-1 rounded-md border-[2px] border-black shadow-brutal-sm rotate-[-5deg] hover:rotate-0 transition-transform z-30 cursor-default"
         >
           10+ CERTIFIED ↗
         </span>
@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
             <span>gets out</span>
           </span>{' '}
           of your way. <span className="text-[#FB7185] inline-block font-black">✦</span>
-          <span className="absolute -right-4 -bottom-2 sm:-right-32 sm:bottom-2 bg-[#34D399] text-black font-mono font-extrabold text-[10px] sm:text-xs px-3 py-1 rounded-md border-[2px] border-black shadow-brutal-sm rotate-[-5deg] hover:rotate-0 transition-transform z-10 whitespace-nowrap">
+          <span className="absolute -right-2 -bottom-2 sm:-right-24 md:-right-32 sm:bottom-2 bg-[#34D399] text-black font-mono font-extrabold text-[10px] sm:text-xs px-3 py-1 rounded-md border-[2px] border-black shadow-brutal-sm rotate-[-5deg] hover:rotate-0 transition-transform z-10 whitespace-nowrap">
             CURRENTLY BUILDING
           </span>
         </p>
@@ -130,7 +130,7 @@ export const Hero: React.FC = () => {
               window.history.pushState(null, '', '#projects');
             }
           }}
-          className="!w-44 border-[2.5px] border-black bg-white text-black font-mono font-black text-sm py-2.5 shadow-brutal hover:translate-x-[-1px] hover:translate-y-[-1px] dark:bg-[#1A1F2C] dark:text-white dark:border-white/80"
+          className="!w-44 border-[2.5px] border-black bg-white text-black font-mono font-black text-sm py-2.5 shadow-brutal hover:translate-x-[-1px] hover:translate-y-[-1px] dark:bg-[#18202F] dark:text-[#E8EDF5] dark:border-[#3D4F6E]"
         />
 
         {/* Resume Dropdown */}
@@ -140,18 +140,18 @@ export const Hero: React.FC = () => {
               text="Resume ▾"
               hoverBgColor="bg-[#F472B6]"
               hoverTextColor="text-black"
-              className="!w-36 border-[2.5px] border-black bg-white text-black font-mono font-black text-sm py-2.5 shadow-brutal hover:translate-x-[-1px] hover:translate-y-[-1px] dark:bg-[#1A1F2C] dark:text-white dark:border-white/80"
+              className="!w-36 border-[2.5px] border-black bg-white text-black font-mono font-black text-sm py-2.5 shadow-brutal hover:translate-x-[-1px] hover:translate-y-[-1px] dark:bg-[#18202F] dark:text-[#E8EDF5] dark:border-[#3D4F6E]"
             />
           </div>
 
           {resumeOpen && (
-            <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-44 bg-white dark:bg-[#1E2333] border-[2.5px] border-black rounded-xl shadow-brutal overflow-hidden z-50 animate-fadeIn">
+            <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-44 bg-white dark:bg-[#1E283A] border-[2.5px] border-black dark:border-[#3D4F6E] rounded-xl shadow-brutal overflow-hidden z-50 animate-fadeIn">
               <a
                 href={LINKS.resumes.aiMl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setResumeOpen(false)}
-                className="block px-4 py-2.5 font-mono text-xs font-bold text-black dark:text-white hover:bg-[#FBBF24] hover:text-black transition-colors border-b border-black/15 flex items-center justify-between"
+                className="block px-4 py-2.5 font-mono text-xs font-bold text-black dark:text-[#E8EDF5] hover:bg-[#F5B838] hover:text-black transition-colors border-b border-black/15 dark:border-white/10 flex items-center justify-between"
               >
                 <span>AI / ML Resume</span>
                 <span>↗</span>
@@ -161,7 +161,7 @@ export const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setResumeOpen(false)}
-                className="block px-4 py-2.5 font-mono text-xs font-bold text-black dark:text-white hover:bg-[#34D399] hover:text-black transition-colors flex items-center justify-between"
+                className="block px-4 py-2.5 font-mono text-xs font-bold text-black dark:text-[#E8EDF5] hover:bg-[#34D399] hover:text-black transition-colors flex items-center justify-between"
               >
                 <span>SDE Resume</span>
                 <span>↗</span>
