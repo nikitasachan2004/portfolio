@@ -18,103 +18,45 @@ export const AboutSection: React.FC = () => {
                 NIKITA.JPG
               </div>
 
-              {/* Avatar Graphic Card Frame */}
-              <div className="w-full aspect-[4/4.5] bg-[#FEF08A] border-[2px] border-black flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
-                {/* Handcrafted Neo-Brutalist Illustrated Avatar */}
-                <div className="w-28 h-28 rounded-full bg-white border-[3px] border-black flex items-center justify-center shadow-brutal mb-2 select-none hover:scale-105 transition-transform overflow-hidden relative">
-                  <svg
-                    viewBox="0 0 120 120"
-                    className="w-full h-full"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    {/* Background Circle */}
-                    <circle cx="60" cy="60" r="58" fill="#FDE047" stroke="#000" strokeWidth="4" />
+              {/* Full-bleed Polaroid Photo Card Frame */}
+              <div className="w-full aspect-[4/4.8] sm:aspect-[4/5] bg-black border-[2px] border-black relative overflow-hidden group rounded-xs">
+                {/* Photo Filling Whole Box */}
+                <img
+                  src="/remote_work_tools.jpeg"
+                  alt="Nikita Sachan"
+                  className="w-full h-full object-cover object-[center_20%] select-none group-hover:scale-105 transition-transform duration-300"
+                />
 
-                    {/* Hair Back */}
-                    <path
-                      d="M25 80 C20 45 40 18 60 18 C80 18 100 45 95 80 C90 92 88 102 88 108 L32 108 C32 102 30 92 25 80 Z"
-                      fill="#1E293B"
-                    />
-
-                    {/* Neck */}
-                    <rect x="52" y="74" width="16" height="18" fill="#FBCFE8" stroke="#000" strokeWidth="2.5" />
-
-                    {/* Face Base */}
-                    <ellipse cx="60" cy="56" rx="26" ry="29" fill="#FDE2D6" stroke="#000" strokeWidth="3" />
-
-                    {/* Hair Front / Fringe */}
-                    <path
-                      d="M34 45 C38 32 50 25 60 25 C70 25 82 32 86 45 C78 38 68 36 60 38 C52 36 42 38 34 45 Z"
-                      fill="#0F172A"
-                      stroke="#000"
-                      strokeWidth="2.5"
-                    />
-                    {/* Side hair strands */}
-                    <path d="M34 45 C32 60 34 76 38 84" stroke="#0F172A" strokeWidth="6" strokeLinecap="round" />
-                    <path d="M86 45 C88 60 86 76 82 84" stroke="#0F172A" strokeWidth="6" strokeLinecap="round" />
-
-                    {/* Eyebrows */}
-                    <path d="M43 45 Q50 42 54 44" stroke="#000" strokeWidth="2.5" strokeLinecap="round" />
-                    <path d="M66 44 Q70 42 77 45" stroke="#000" strokeWidth="2.5" strokeLinecap="round" />
-
-                    {/* Glasses Frame (Bold Neo-Brutal Eyewear) */}
-                    <rect x="40" y="48" width="16" height="13" rx="3" fill="#FFFFFF" fillOpacity="0.75" stroke="#000" strokeWidth="3" />
-                    <rect x="64" y="48" width="16" height="13" rx="3" fill="#FFFFFF" fillOpacity="0.75" stroke="#000" strokeWidth="3" />
-                    {/* Bridge */}
-                    <path d="M56 53 L64 53" stroke="#000" strokeWidth="3" />
-
-                    {/* Eyes inside glasses */}
-                    <circle cx="48" cy="54" r="2.5" fill="#000" />
-                    <circle cx="72" cy="54" r="2.5" fill="#000" />
-                    <circle cx="49" cy="53" r="0.8" fill="#FFF" />
-                    <circle cx="73" cy="53" r="0.8" fill="#FFF" />
-
-                    {/* Nose */}
-                    <path d="M60 58 Q62 63 59 64" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-
-                    {/* Cheerful Smile with blush */}
-                    <path d="M52 69 Q60 76 68 69" stroke="#000" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-                    <ellipse cx="43" cy="65" rx="3.5" ry="2" fill="#F43F5E" fillOpacity="0.4" />
-                    <ellipse cx="77" cy="65" rx="3.5" ry="2" fill="#F43F5E" fillOpacity="0.4" />
-
-                    {/* Hoodie / Shoulders */}
-                    <path
-                      d="M28 112 C30 92 42 86 60 86 C78 86 90 92 92 112 Z"
-                      fill="#38BDF8"
-                      stroke="#000"
-                      strokeWidth="3"
-                    />
-                    {/* Hoodie string / zipper */}
-                    <path d="M60 86 L60 112" stroke="#000" strokeWidth="2" strokeDasharray="3 2" />
-                    <circle cx="56" cy="98" r="2" fill="#FFF" stroke="#000" strokeWidth="1.5" />
-                    <circle cx="64" cy="98" r="2" fill="#FFF" stroke="#000" strokeWidth="1.5" />
-                  </svg>
-                </div>
-
-                <div className="bg-white border-[2px] border-black px-3 py-0.5 rounded-md font-mono text-xs font-black text-black shadow-xs">
-                  <SparklesText
-                    text="Nikita"
-                    sparklesCount={6}
-                    colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
-                  />{' '}
-                  Sachan
-                </div>
-                <span className="font-mono text-[10px] text-black/90 mt-1 font-bold">
-                  CS &amp; AI @ Manipal University Jaipur
-                </span>
-                <div className="flex items-center gap-1.5 mt-2">
-                  <span className="font-mono text-[9px] bg-black text-white px-2 py-0.5 rounded-full font-extrabold tracking-wider">
+                {/* Top Corner Tactile Badge */}
+                <div className="absolute top-2.5 right-2.5 z-10 select-none">
+                  <span className="font-mono text-[9px] sm:text-[10px] bg-black/85 text-[#FBBF24] px-2.5 py-0.5 rounded-full font-black tracking-wider border border-[#FBBF24]/60 shadow-sm backdrop-blur-xs">
                     BATCH &apos;27
+                  </span>
+                </div>
+
+                {/* Bottom Overlay Gradient & Name Badges */}
+                <div className="absolute bottom-0 inset-x-0 p-3.5 pt-10 bg-gradient-to-t from-black/90 via-black/55 to-transparent flex flex-col items-start z-10 select-none">
+                  <div className="bg-white/95 dark:bg-black/80 backdrop-blur-xs border-[1.5px] border-black dark:border-white/20 px-2.5 py-0.5 rounded-md font-mono text-xs font-black text-black dark:text-[#F1F5F9] shadow-xs inline-flex items-center gap-1">
+                    <span className="text-black dark:text-[#F1F5F9]">
+                      <SparklesText
+                        text="Nikita"
+                        sparklesCount={4}
+                        colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
+                      />
+                    </span>
+                    <span className="text-black dark:text-[#F1F5F9]">Sachan</span>
+                  </div>
+                  <span className="font-mono text-[10px] sm:text-[11px] text-white/90 mt-1 font-bold drop-shadow-sm">
+                    CS &amp; AI @ Manipal University Jaipur
                   </span>
                 </div>
               </div>
 
               <div className="mt-3 flex justify-between items-center px-1">
-                <span className="font-hand text-xl font-bold text-black">
+                <span className="font-hand text-xl font-bold text-black dark:text-[#F8FAFC]">
                   Nikita S. (that&apos;s me!)
                 </span>
-                <span className="font-mono text-[10px] bg-black text-white px-1.5 py-0.5 rounded font-bold">
+                <span className="font-mono text-[10px] bg-black dark:bg-[#1C1C1C] text-white dark:text-[#CBD5E1] px-1.5 py-0.5 rounded font-bold border border-transparent dark:border-[#2C2C2C]">
                   VER. 2026
                 </span>
               </div>
@@ -127,11 +69,11 @@ export const AboutSection: React.FC = () => {
               WHAT&apos;S UP ✏
             </div>
 
-            <p className="font-kalam text-lg sm:text-xl font-medium leading-relaxed text-black">
-              I&apos;m an <strong className="bg-[#FBBF24] px-1 font-black">AI/ML Engineer &amp; Full-Stack Developer</strong> who gets genuinely excited about turning convoluted research papers and noisy real-world datasets into human-centered software.
+            <p className="font-kalam text-lg sm:text-xl font-medium leading-relaxed text-black dark:text-[#F1F5F9]">
+              I&apos;m an <strong className="bg-[#FBBF24] text-black px-1 font-black">AI/ML Engineer &amp; Full-Stack Developer</strong> who gets genuinely excited about turning convoluted research papers and noisy real-world datasets into human-centered software.
             </p>
 
-            <p className="font-kalam text-base sm:text-lg text-black/80 mt-4 leading-relaxed">
+            <p className="font-kalam text-base sm:text-lg text-black/80 dark:text-[#CBD5E1] mt-4 leading-relaxed">
               I care about the small details, the edge cases everyone else forgets, and shipping end-to-end architectures that make someone&apos;s everyday decisions faster and simpler.
             </p>
 

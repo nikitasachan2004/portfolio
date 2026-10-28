@@ -3,9 +3,10 @@ import { EXPERIENCES } from '../data/portfolioData';
 import { LINKS } from '../data/links';
 
 export const ExperienceSection: React.FC = () => {
-  const drytisExp = EXPERIENCES[0]; // Most recent: AI Engineer @ Drytis Inc.
-  const aiDataExp = EXPERIENCES[1]; // AI Data Analytics Intern
-  const webDevExp = EXPERIENCES[2]; // Web Development Intern
+  const mlHealthExp = EXPERIENCES[0]; // Most recent: AI Research Intern @ mlHealth 360 India
+  const drytisExp = EXPERIENCES[1]; // AI Engineer @ Drytis Inc.
+  const aiDataExp = EXPERIENCES[2]; // AI Data Analytics Intern
+  const webDevExp = EXPERIENCES[3]; // Web Development Intern
 
   return (
     <section id="experience" className="relative text-black">
@@ -25,29 +26,32 @@ export const ExperienceSection: React.FC = () => {
               <span className="washi-tape px-3 py-0.5 text-[10px] font-mono font-extrabold text-black rotate-[-1.5deg] shadow-2xs">
                 ★ CAREER PROGRESSION
               </span>
-              <span className="bg-[#10B981] text-black border-[1.5px] border-black text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded shadow-2xs rotate-[1deg]">
-                ✦ FREELANCE AI ENGINEER @ DRYTIS INC.
+              <span className="bg-[#A78BFA] text-black border-[1.5px] border-black text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded shadow-2xs rotate-[1deg]">
+                ✦ AI RESEARCH INTERN @ MLHEALTH 360
               </span>
-              <span className="bg-[#F472B6] text-black border-[1.5px] border-black text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded shadow-2xs rotate-[-1deg]">
-                PRODUCTION TRACK
+              <span className="bg-[#10B981] text-black border-[1.5px] border-black text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded shadow-2xs rotate-[-1deg]">
+                ✦ FREELANCE AI ENGINEER @ DRYTIS
+              </span>
+              <span className="bg-[#F472B6] text-black border-[1.5px] border-black text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded shadow-2xs rotate-[1deg]">
+                PRODUCTION &amp; RESEARCH
               </span>
             </div>
 
             <h2 className="font-syne font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter text-black leading-none drop-shadow-[4px_4px_0px_rgba(56,189,248,0.45)]">
               EXPERIENCE
             </h2>
-            <p className="font-mono text-xs text-black/80 mt-2 font-bold tracking-wider">
+            <p className="font-mono text-xs text-black/80 dark:text-[#CBD5E1] mt-2 font-bold tracking-wider">
               // PRODUCTION TIMELINE: AI ENGINEERING &amp; FULL-STACK SYSTEMS
             </p>
           </div>
 
           {/* Official Tactile Inspection Seal */}
-          <div className="border-[2.5px] border-dashed border-[#FB7185] bg-[#FFE4E6] text-black p-3 rounded-xl rotate-[-2deg] hover:rotate-0 transition-transform select-none shadow-xs text-center shrink-0">
-            <div className="font-mono font-extrabold text-[9px] tracking-widest text-[#E11D48]">
+          <div className="border-[2.5px] border-dashed border-[#FB7185] bg-[#FFE4E6] dark:bg-[#200A12] text-black dark:text-white p-3 rounded-xl rotate-[-2deg] hover:rotate-0 transition-transform select-none shadow-xs text-center shrink-0">
+            <div className="font-mono font-extrabold text-[9px] tracking-widest text-[#E11D48] dark:text-[#FB7185]">
               [ ACTIVE VERIFIED ]
             </div>
-            <div className="font-syne font-black text-sm text-black my-0.5">
-              3 ROLES SHIPPED
+            <div className="font-syne font-black text-sm text-black dark:text-white my-0.5">
+              4 ROLES SHIPPED
             </div>
             <div className="bg-[#34D399] text-black border border-black text-[9px] font-mono font-black px-2 py-0.5 rounded-xs shadow-2xs inline-block">
               OCT 2026 – PRESENT ✓
@@ -55,15 +59,156 @@ export const ExperienceSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Sequential Timeline: Top Role is Most Recent (Drytis Inc.) */}
+        {/* Sequential Timeline: Top Role is Most Recent (mlHealth 360 India) */}
         <div className="space-y-0 relative overflow-visible">
           {/* ========================================================================= */}
-          {/* ROLE 01 (TOP / CURRENT): AI ENGINEER @ DRYTIS INC.                        */}
+          {/* ROLE 01 (TOP / CURRENT): AI RESEARCH INTERN @ MLHEALTH 360 INDIA          */}
+          {/* ========================================================================= */}
+          <div className="w-full bg-[#F5F3FF] border-[3px] border-black border-l-[10px] border-l-[#8B5CF6] shadow-brutal hover:shadow-brutal-lg transition-all rounded-2xl relative pt-8 pb-6 px-6 sm:px-8 overflow-visible group">
+            {/* Top Frosted Washi Tape (overflow-visible, no clipping) */}
+            <div className="washi-tape absolute -top-3.5 left-6 sm:left-8 px-5 py-1 font-mono text-[11px] font-black text-black rotate-[-1.5deg] select-none shadow-xs">
+              LATEST RESEARCH ROLE // OCT 2026 – PRESENT
+            </div>
+
+            {/* Top-Right Perforated Tag */}
+            <span className="bg-[#8B5CF6] text-black font-mono font-black text-[10px] px-3 py-1 border-[1.5px] border-black shadow-xs rotate-[1.5deg] absolute -top-3 right-6 uppercase select-none">
+              RESEARCH INTERNSHIP // PRAGNYA LAB (MUJ)
+            </span>
+
+            {/* Card Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b-2 border-black/15">
+              <div className="flex items-center gap-3.5">
+                {/* Clean Vector Diagnostic Medical Imaging Icon */}
+                <div className="w-12 h-12 rounded-xl bg-[#8B5CF6] border-[2px] border-black shadow-brutal-sm flex items-center justify-center text-black shrink-0 group-hover:scale-105 transition-transform">
+                  <svg
+                    className="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M7 12h10" />
+                    <path d="M12 7v10" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                </div>
+
+                <div>
+                  <h3 className="font-syne font-black text-2xl sm:text-3xl text-black leading-tight">
+                    {mlHealthExp.title}
+                  </h3>
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
+                    <span className="bg-black text-white font-mono text-[10px] font-black px-2 py-0.5 rounded shadow-2xs">
+                      {mlHealthExp.company}
+                    </span>
+                    <span className="bg-white text-black font-mono text-[10px] font-bold border border-black px-2 py-0.5 rounded">
+                      PRAGNYA LAB, MUJ
+                    </span>
+                    <span className="bg-[#DDD6FE] text-black font-mono text-[10px] font-black border border-black px-2 py-0.5 rounded">
+                      {mlHealthExp.period}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Highlight Metric Pill */}
+              <div className="self-start sm:self-auto shrink-0">
+                <span className="bg-[#8B5CF6] text-black font-mono font-black text-xs px-3.5 py-1.5 border-[2px] border-black rounded-full shadow-brutal-sm flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-white animate-ping" />
+                  <span>TB Screening Workflow</span>
+                </span>
+              </div>
+            </div>
+
+            {/* Landscape 2-Column Split: Field Notes & Deliverables */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-5 items-start">
+              {/* Left Column (5 Cols): Handwritten Note & Tech Stack */}
+              <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4">
+                {/* Handwritten Scrapbook Margin Callout */}
+                <div className="bg-white border-[1.5px] border-dashed border-black/40 p-4 rounded-xl shadow-2xs rotate-[-0.5deg]">
+                  <div className="font-mono text-[9px] font-black text-black/60 dark:text-[#94A3B8] uppercase tracking-wider mb-1">
+                    // RESEARCH SCOPE &amp; PROJECT
+                  </div>
+                  <p className="font-kalam text-base sm:text-lg text-black dark:text-[#F1F5F9] font-bold leading-snug">
+                    &ldquo;Conducting applied research on AI-powered diagnostic imaging and sovereign radiology pipelines for automated TB Screening Workflows at Pragnya Lab, MUJ in collaboration with mlHealth 360 India.&rdquo;
+                  </p>
+                </div>
+
+                {/* Tech Stack Stickers */}
+                <div>
+                  <div className="font-mono text-[10px] font-black uppercase text-black/80 dark:text-[#CBD5E1] mb-2 flex items-center gap-1.5">
+                    <span>TECHNOLOGIES &amp; TOOLS:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {mlHealthExp.skills.map((skill, sIdx) => {
+                      const colors = [
+                        'bg-[#8B5CF6] text-black',
+                        'bg-[#38BDF8] text-black',
+                        'bg-[#FBBF24] text-black',
+                        'bg-[#34D399] text-black',
+                        'bg-[#F472B6] text-black',
+                        'bg-[#DDD6FE] text-black'
+                      ];
+                      const color = colors[sIdx % colors.length];
+                      return (
+                        <span
+                          key={sIdx}
+                          className={`${color} border-[1.5px] border-black font-mono text-[11px] font-black px-2.5 py-1 rounded shadow-xs hover:-translate-y-0.5 hover:rotate-1 transition-all select-none cursor-default`}
+                        >
+                          {skill}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column (7 Cols): Production Deliverables Checklist */}
+              <div className="lg:col-span-7 bg-white/95 border-[2px] border-black p-4 sm:p-5 rounded-xl shadow-xs">
+                <div className="font-mono text-[11px] font-black uppercase text-black dark:text-white mb-3 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#8B5CF6]" />
+                  <span>RESEARCH ACHIEVEMENTS &amp; RESPONSIBILITIES</span>
+                </div>
+                <ul className="space-y-3 font-grotesk text-sm text-black dark:text-[#F1F5F9]">
+                  {mlHealthExp.achievements.map((ach, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3 bg-[#F5F3FF]/80 p-3 rounded-lg border border-black/20 shadow-2xs hover:border-black transition-colors"
+                    >
+                      <span className="w-5 h-5 rounded bg-[#8B5CF6] border-[1.5px] border-black shadow-2xs flex items-center justify-center font-mono font-black text-black text-[10px] shrink-0 mt-0.5">
+                        ✓
+                      </span>
+                      <span className="leading-relaxed font-semibold">{ach}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* ========================================================================= */}
+          {/* CONNECTING SPINE: CONCURRENT INDUSTRIAL & RESEARCH ROLES                  */}
+          {/* ========================================================================= */}
+          <div className="flex flex-col items-center py-5 relative select-none z-20">
+            <div className="w-0.5 h-6 bg-black border-dashed border-l-2 border-black" />
+            <div className="bg-[#A78BFA] border-[2.5px] border-black px-5 py-2 rounded-full shadow-brutal-sm font-mono text-xs font-black text-black flex items-center gap-2.5 rotate-[1deg] hover:rotate-0 transition-transform cursor-default">
+              <span>✦</span>
+              <span>CONCURRENT INDUSTRIAL ROLE: FULL-STACK AI SYSTEMS</span>
+              <span className="text-base font-black leading-none">↓</span>
+            </div>
+            <div className="w-0.5 h-6 bg-black border-dashed border-l-2 border-black" />
+          </div>
+
+          {/* ========================================================================= */}
+          {/* ROLE 02: AI ENGINEER @ DRYTIS INC.                                        */}
           {/* ========================================================================= */}
           <div className="w-full bg-[#ECFDF5] border-[3px] border-black border-l-[10px] border-l-[#10B981] shadow-brutal hover:shadow-brutal-lg transition-all rounded-2xl relative pt-8 pb-6 px-6 sm:px-8 overflow-visible group">
             {/* Top Frosted Washi Tape (overflow-visible, no clipping) */}
             <div className="washi-tape-mint absolute -top-3.5 left-6 sm:left-8 px-5 py-1 font-mono text-[11px] font-black text-black rotate-[-1.5deg] select-none shadow-xs">
-              CURRENT ROLE // OCT 2026 – PRESENT
+              CONCURRENT ROLE // SEP 2026 – PRESENT
             </div>
 
             {/* Top-Right Perforated Tag */}
@@ -131,17 +276,17 @@ export const ExperienceSection: React.FC = () => {
               <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4">
                 {/* Handwritten Scrapbook Margin Callout */}
                 <div className="bg-white border-[1.5px] border-dashed border-black/40 p-4 rounded-xl shadow-2xs rotate-[-0.5deg]">
-                  <div className="font-mono text-[9px] font-black text-black/60 uppercase tracking-wider mb-1">
+                  <div className="font-mono text-[9px] font-black text-black/60 dark:text-[#94A3B8] uppercase tracking-wider mb-1">
                     // ROLE SUMMARY &amp; SCOPE
                   </div>
-                  <p className="font-kalam text-base sm:text-lg text-black font-bold leading-snug">
+                  <p className="font-kalam text-base sm:text-lg text-black dark:text-[#F1F5F9] font-bold leading-snug">
                     &ldquo;Engineering AI-assisted developer solutions, building prompt pipelines, and supporting clients in real-time cloud dev environments to ship robust software faster.&rdquo;
                   </p>
                 </div>
 
                 {/* Tech Stack Stickers */}
                 <div>
-                  <div className="font-mono text-[10px] font-black uppercase text-black/80 mb-2 flex items-center gap-1.5">
+                  <div className="font-mono text-[10px] font-black uppercase text-black/80 dark:text-[#CBD5E1] mb-2 flex items-center gap-1.5">
                     <span>TECHNOLOGIES &amp; TOOLS:</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
@@ -170,11 +315,11 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Right Column (7 Cols): Production Deliverables Checklist */}
               <div className="lg:col-span-7 bg-white/95 border-[2px] border-black p-4 sm:p-5 rounded-xl shadow-xs">
-                <div className="font-mono text-[11px] font-black uppercase text-black mb-3 flex items-center gap-2">
+                <div className="font-mono text-[11px] font-black uppercase text-black dark:text-white mb-3 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#10B981]" />
                   <span>ACHIEVEMENTS &amp; RESPONSIBILITIES</span>
                 </div>
-                <ul className="space-y-3 font-grotesk text-sm text-black">
+                <ul className="space-y-3 font-grotesk text-sm text-black dark:text-[#F1F5F9]">
                   {drytisExp.achievements.map((ach, idx) => (
                     <li
                       key={idx}
@@ -274,17 +419,17 @@ export const ExperienceSection: React.FC = () => {
               <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4">
                 {/* Handwritten Scrapbook Margin Callout */}
                 <div className="bg-white border-[1.5px] border-dashed border-black/40 p-4 rounded-xl shadow-2xs rotate-[0.5deg]">
-                  <div className="font-mono text-[9px] font-black text-black/60 uppercase tracking-wider mb-1">
+                  <div className="font-mono text-[9px] font-black text-black/60 dark:text-[#94A3B8] uppercase tracking-wider mb-1">
                     // INTERN FIELD NOTES
                   </div>
-                  <p className="font-kalam text-base sm:text-lg text-black font-bold leading-snug">
+                  <p className="font-kalam text-base sm:text-lg text-black dark:text-[#F1F5F9] font-bold leading-snug">
                     &ldquo;Analyzed noisy production datasets, engineered features, and built clear Matplotlib/Seaborn graphics that simplified key stakeholder decisions.&rdquo;
                   </p>
                 </div>
 
                 {/* Tech Stack Stickers */}
                 <div>
-                  <div className="font-mono text-[10px] font-black uppercase text-black/80 mb-2 flex items-center gap-1.5">
+                  <div className="font-mono text-[10px] font-black uppercase text-black/80 dark:text-[#CBD5E1] mb-2 flex items-center gap-1.5">
                     <span>TECHNOLOGIES SHIPPED:</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
@@ -313,11 +458,11 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Right Column (7 Cols): Production Deliverables Checklist */}
               <div className="lg:col-span-7 bg-white/95 border-[2px] border-black p-4 sm:p-5 rounded-xl shadow-xs">
-                <div className="font-mono text-[11px] font-black uppercase text-black mb-3 flex items-center gap-2">
+                <div className="font-mono text-[11px] font-black uppercase text-black dark:text-white mb-3 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#F59E0B]" />
                   <span>KEY PRODUCTION IMPACT &amp; DELIVERABLES</span>
                 </div>
-                <ul className="space-y-3 font-grotesk text-sm text-black">
+                <ul className="space-y-3 font-grotesk text-sm text-black dark:text-[#F1F5F9]">
                   {aiDataExp.achievements.map((ach, idx) => (
                     <li
                       key={idx}
@@ -414,17 +559,17 @@ export const ExperienceSection: React.FC = () => {
               <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4">
                 {/* Handwritten Scrapbook Margin Callout */}
                 <div className="bg-white border-[1.5px] border-dashed border-black/40 p-4 rounded-xl shadow-2xs rotate-[-0.5deg]">
-                  <div className="font-mono text-[9px] font-black text-black/60 uppercase tracking-wider mb-1">
+                  <div className="font-mono text-[9px] font-black text-black/60 dark:text-[#94A3B8] uppercase tracking-wider mb-1">
                     // INTERN FIELD NOTES
                   </div>
-                  <p className="font-kalam text-base sm:text-lg text-black font-bold leading-snug">
+                  <p className="font-kalam text-base sm:text-lg text-black dark:text-[#F1F5F9] font-bold leading-snug">
                     &ldquo;Cut into the foundation&apos;s codebase, tested 5+ API endpoints, fixed frontend bottlenecks, and pushed production code across fast-paced weekly sprints.&rdquo;
                   </p>
                 </div>
 
                 {/* Tech Stack Stickers */}
                 <div>
-                  <div className="font-mono text-[10px] font-black uppercase text-black/80 mb-2 flex items-center gap-1.5">
+                  <div className="font-mono text-[10px] font-black uppercase text-black/80 dark:text-[#CBD5E1] mb-2 flex items-center gap-1.5">
                     <span>TECHNOLOGIES SHIPPED:</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
@@ -452,11 +597,11 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Right Column (7 Cols): Production Deliverables Checklist */}
               <div className="lg:col-span-7 bg-white/95 border-[2px] border-black p-4 sm:p-5 rounded-xl shadow-xs">
-                <div className="font-mono text-[11px] font-black uppercase text-black mb-3 flex items-center gap-2">
+                <div className="font-mono text-[11px] font-black uppercase text-black dark:text-white mb-3 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#0284C7]" />
                   <span>KEY PRODUCTION IMPACT &amp; DELIVERABLES</span>
                 </div>
-                <ul className="space-y-3 font-grotesk text-sm text-black">
+                <ul className="space-y-3 font-grotesk text-sm text-black dark:text-[#F1F5F9]">
                   {webDevExp.achievements.map((ach, idx) => (
                     <li
                       key={idx}
@@ -488,11 +633,11 @@ export const ExperienceSection: React.FC = () => {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#10B981]" />
               </span>
               <div>
-                <div className="font-mono text-xs font-black text-black uppercase tracking-wider">
-                  INDUSTRIAL TRACK ARCHIVE // 3 PRODUCTION ROLES VERIFIED
+                <div className="font-mono text-xs font-black text-black dark:text-white uppercase tracking-wider">
+                  INDUSTRIAL TRACK ARCHIVE // 4 PRODUCTION ROLES VERIFIED
                 </div>
-                <p className="font-grotesk text-xs sm:text-sm text-black/80 mt-1 font-medium leading-relaxed">
-                  Real engineering discipline: LLM prompt architectures, cloud coding environments, agile sprints, exploratory Python telemetry, and modular React systems.
+                <p className="font-grotesk text-xs sm:text-sm text-black/80 dark:text-[#CBD5E1] mt-1 font-medium leading-relaxed">
+                  Real engineering discipline: sovereign radiology AI workflows, LLM prompt architectures, cloud coding environments, agile sprints, exploratory Python telemetry, and modular React systems.
                 </p>
               </div>
             </div>

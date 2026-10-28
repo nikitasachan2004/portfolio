@@ -29,7 +29,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
     >
       {/* Background circle disc */}
       <motion.div
-        className="absolute inset-0 rounded-full border-[3px] border-black shadow-brutal"
+        className="absolute inset-0 rounded-full border-[3.5px] border-black dark:border-[#FBBF24] shadow-brutal dark:shadow-[4px_4px_0px_#000000] overflow-hidden"
         style={{ backgroundColor: bgColor }}
         variants={{
           idle: { scale: 1, opacity: 1 },
@@ -50,7 +50,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
 
       {/* Character mascot — floats continuously, scales and rocks slightly on hover */}
       <motion.div
-        className="relative z-10 w-[82%] h-[82%] flex items-center justify-center pointer-events-none"
+        className={`relative z-10 ${src ? 'w-full h-full' : 'w-[82%] h-[82%]'} flex items-center justify-center pointer-events-none`}
         animate={{
           y: [-floatAmplitude / 2, floatAmplitude / 2, -floatAmplitude / 2],
         }}
@@ -62,7 +62,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
         }}
         variants={{
           idle: { scale: 1, rotate: 0 },
-          hover: { scale: 1.12, rotate: [-2, 2, -2] },
+          hover: { scale: 1.08, rotate: [-1.5, 1.5, -1.5] },
         }}
       >
         {src ? (
@@ -70,7 +70,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
             src={src}
             alt={alt}
             draggable={false}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover rounded-full select-none"
           />
         ) : (
           /* Handcrafted Vector Chibi Anime Mascot with glasses and triangle clip */

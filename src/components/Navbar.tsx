@@ -9,6 +9,12 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const isBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
+      if (isBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
       const sections = ['hero', 'about', 'philosophy', 'experience', 'projects', 'skills', 'credentials', 'contact'];
       const scrollY = window.scrollY + 140;
 
@@ -155,7 +161,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-sm font-mono font-bold bg-[#FAF8F3] dark:bg-[#1E283A] border-[1.5px] border-black dark:border-[#3D4F6E] rounded-full text-black dark:text-[#E8EDF5] shadow-brutal-sm hover:bg-[#FBBF24] transition-colors cursor-pointer"
+              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-sm font-mono font-bold bg-[#FAF8F3] dark:bg-[#141414] border-[1.5px] border-black dark:border-[#2C2C2C] rounded-full text-black dark:text-[#F1F5F9] shadow-brutal-sm hover:bg-[#FBBF24] transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -166,9 +172,9 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile / Tablet Drawer Dropdown */}
         {mobileMenuOpen && (
-          <div className="absolute top-14 left-0 right-0 bg-white dark:bg-[#18202F] border-[2.5px] border-black dark:border-[#3D4F6E] shadow-brutal-lg rounded-2xl p-4 lg:hidden flex flex-col gap-1.5 z-50 text-black dark:text-[#E8EDF5] animate-fadeIn">
+          <div className="absolute top-14 left-0 right-0 bg-white dark:bg-[#0E0E0E] border-[2.5px] border-black dark:border-[#2C2C2C] shadow-brutal-lg dark:shadow-[6px_6px_0px_#000000] rounded-2xl p-4 lg:hidden flex flex-col gap-1.5 z-50 text-black dark:text-[#F1F5F9] animate-fadeIn">
             <div className="flex items-center justify-between px-2 pb-2.5 border-b border-black/20 dark:border-white/10 mb-1">
-              <span className="font-mono text-xs font-black text-black/70 dark:text-[#9BAAC0] uppercase tracking-wider">Theme / Mode</span>
+              <span className="font-mono text-xs font-black text-black/70 dark:text-[#94A3B8] uppercase tracking-wider">Theme / Mode</span>
               <Switch size="12px" />
             </div>
             {navItems.map((item) => (

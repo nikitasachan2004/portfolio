@@ -120,13 +120,13 @@ export const VisitorCounter: React.FC = () => {
       role="status"
     >
       <div
-        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono text-[10px] sm:text-[11px] font-bold tracking-tight bg-white/90 dark:bg-[#1E283A] text-black dark:text-[#E8EDF5] border border-black/20 dark:border-[#3D4F6E] shadow-xs backdrop-blur-xs select-none transition-transform duration-200 hover:scale-105 cursor-default"
+        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono text-[10px] sm:text-[11px] font-bold tracking-tight bg-white/90 dark:bg-[#141414] text-black dark:text-[#F1F5F9] border border-black/20 dark:border-[#2C2C2C] shadow-xs backdrop-blur-xs select-none transition-transform duration-200 hover:scale-105 cursor-default"
         aria-label={`Total visitors: ${formattedCount}`}
         title={`Total visitors: ${formattedCount}`}
       >
         <Eye
           size={12}
-          className="text-black/60 dark:text-[#9BAAC0] shrink-0"
+          className="text-black/60 dark:text-[#94A3B8] shrink-0"
           aria-hidden="true"
         />
         <span

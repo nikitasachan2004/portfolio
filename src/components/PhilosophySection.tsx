@@ -14,7 +14,7 @@ export const PhilosophySection: React.FC = () => {
             <h2 className="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight text-black">
               HOW I WORK
             </h2>
-            <p className="font-mono text-xs text-black/70 mt-1">
+            <p className="font-mono text-xs text-black/70 dark:text-[#94A3B8] mt-1 font-bold">
               // THE 4 UNBREAKABLE PRINCIPLES GUIDING MY REPOSITORIES
             </p>
           </div>
@@ -28,13 +28,14 @@ export const PhilosophySection: React.FC = () => {
           {MANIFESTO_CARDS.map((card, idx) => (
             <div
               key={card.id}
-              className={`${card.bgClass} border-[2.5px] border-black p-6 sm:p-7 rounded-xl shadow-brutal relative hover:-translate-y-1 hover:shadow-brutal-lg transition-all duration-200 flex flex-col justify-between text-black`}
+              className={`${card.bgClass} manifesto-card manifesto-card-${idx + 1} border-[2.5px] border-black p-6 sm:p-7 rounded-xl shadow-brutal relative hover:-translate-y-1 hover:shadow-brutal-lg transition-all duration-200 flex flex-col justify-between text-black`}
             >
               {/* Top Washi Tape Accent */}
               {card.washiText && (
                 <div
-                  className={`absolute -top-3.5 left-6 font-mono text-[10px] font-black uppercase tracking-wider px-3 py-0.5 border border-black shadow-xs bg-white text-black select-none z-10 ${idx % 2 === 0 ? '-rotate-2' : 'rotate-1'
-                    }`}
+                  className={`manifesto-washi absolute -top-3.5 left-6 font-mono text-[10px] font-black uppercase tracking-wider px-3 py-0.5 border border-black shadow-xs bg-white text-black select-none z-10 ${
+                    idx % 2 === 0 ? '-rotate-2' : 'rotate-1'
+                  }`}
                 >
                   {card.washiText}
                 </div>
@@ -43,8 +44,9 @@ export const PhilosophySection: React.FC = () => {
               {/* Corner Tactile Sticker */}
               {card.sticker && (
                 <div
-                  className={`absolute -top-3 -right-2 font-mono text-[10px] sm:text-[11px] font-black tracking-wider px-2.5 py-1 bg-black text-white border-[1.5px] border-black shadow-brutal-sm rounded-sm uppercase select-none z-10 transition-transform group-hover:scale-105 ${idx % 2 === 0 ? 'rotate-3' : '-rotate-2'
-                    }`}
+                  className={`manifesto-sticker absolute -top-3 -right-2 font-mono text-[10px] sm:text-[11px] font-black tracking-wider px-2.5 py-1 bg-black text-white border-[1.5px] border-black shadow-brutal-sm rounded-sm uppercase select-none z-10 transition-transform group-hover:scale-105 ${
+                    idx % 2 === 0 ? 'rotate-3' : '-rotate-2'
+                  }`}
                 >
                   {card.sticker}
                 </div>
@@ -52,21 +54,21 @@ export const PhilosophySection: React.FC = () => {
 
               <div>
                 <div className="mb-3.5 mt-1">
-                  <span className={`${card.pillClass} border-[2px] border-black px-3 py-1 font-mono text-xs font-black shadow-xs inline-block`}>
+                  <span className={`manifesto-pill ${card.pillClass} border-[2px] border-black px-3 py-1 font-mono text-xs font-black shadow-xs inline-block`}>
                     {card.number} — {card.title}
                   </span>
                 </div>
-                <p className="font-grotesk text-sm sm:text-base leading-relaxed text-black/90 font-medium">
+                <p className="manifesto-desc font-grotesk text-sm sm:text-base leading-relaxed text-black/90 font-medium">
                   {card.description}
                 </p>
               </div>
 
               {/* Bottom Metadata Rule */}
-              <div className="mt-5 pt-3.5 border-t-2 border-black/15 flex items-center justify-between">
-                <span className="font-mono text-[10px] font-black uppercase tracking-wider bg-white/95 border border-black px-2 py-0.5 rounded shadow-2xs text-black">
+              <div className="manifesto-footer mt-5 pt-3.5 border-t-2 border-black/15 flex items-center justify-between">
+                <span className="manifesto-subtag font-mono text-[10px] font-black uppercase tracking-wider bg-white/95 border border-black px-2 py-0.5 rounded shadow-2xs text-black">
                   // {card.subtag || 'PRINCIPLE'}
                 </span>
-                <span className="font-mono text-[10px] font-bold text-black/60 uppercase tracking-widest">
+                <span className="manifesto-rule font-mono text-[10px] font-bold text-black/60 uppercase tracking-widest">
                   RULE #{card.number}
                 </span>
               </div>

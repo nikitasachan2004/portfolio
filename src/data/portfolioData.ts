@@ -405,9 +405,27 @@ def analyze_conversation_batch(messages: list[str]):
 
 export const EXPERIENCES: ExperienceRole[] = [
   {
+    title: 'Research Intern — AI / Diagnostic Imaging',
+    company: 'mlHealth 360 India',
+    period: 'OCT 2026 – PRESENT',
+    periodBadgeColor: 'bg-[#A78BFA]',
+    type: 'internship',
+    accentColor: 'bg-[#F5F3FF]',
+    darkAccentColor: 'dark:bg-[#120B24]',
+    tagColor: 'bg-[#C4B5FD]',
+    highlightStat: { label: 'RESEARCH LAB', value: 'TB Screening Workflow', color: 'bg-[#A78BFA]' },
+    achievements: [
+      'Conducting applied research on AI-powered diagnostic imaging and automated TB Screening Workflows at Pragnya Lab, Manipal University Jaipur in partnership with mlHealth 360.',
+      'Developing and fine-tuning deep learning computer vision architectures for sovereign radiology AI to detect pulmonary lesions and anomalies from imaging scans.',
+      'Benchmarking sensitivity, specificity, and inference latency on medical diagnostic datasets to ensure clinical-grade reliability.',
+      'Collaborating with clinicians and research scientists to optimize edge-compatible medical AI screening pipelines.'
+    ],
+    skills: ['Computer Vision', 'Deep Learning', 'PyTorch', 'Medical Imaging', 'Python', 'Diagnostic AI']
+  },
+  {
     title: 'AI Engineer',
     company: 'Drytis Inc.',
-    period: 'OCT 2026 – PRESENT',
+    period: 'SEP 2026 – PRESENT',
     periodBadgeColor: 'bg-[#10B981]',
     type: 'internship',
     accentColor: 'bg-[#ECFDF5]',
@@ -462,35 +480,35 @@ export const EDUCATION_DATA: EducationItem[] = [
   {
     institution: 'Manipal University Jaipur',
     degree: 'B.Tech in Computer Science & Engineering',
-    period: '2023 – 2027 (Expected)',
+    period: '2023 – 2027',
     periodBadgeColor: 'bg-[#FBBF24]',
-    score: '',
-    scoreBadgeColor: '',
-    coursework: [],
-    location: '',
+    score: 'CURRENT // B.TECH DEGREE',
+    scoreBadgeColor: 'bg-[#A78BFA]',
+    coursework: ['Deep Learning', 'Neural Networks', 'Data Structures & Algorithms', 'System Architecture', 'Computer Vision'],
+    location: 'Jaipur, Rajasthan',
     specialization: 'Artificial Intelligence & Machine Learning (AI & ML)'
   },
   {
     institution: 'Carmel Convent Sr. Sec. School',
     degree: 'Class XII (Senior Secondary Examination)',
-    period: '2023',
+    period: '2021 – 2023',
     periodBadgeColor: 'bg-white',
     score: 'CBSE BOARD',
     scoreBadgeColor: 'bg-[#7DD3FC]',
-    coursework: [],
-    location: '',
+    coursework: ['Physics', 'Chemistry', 'Mathematics', 'Computer Science'],
+    location: 'CBSE Affiliated',
     specialization: 'Mathematics, Physics & Computer Science'
   },
   {
     institution: 'Carmel Convent Sr. Sec. School',
     degree: 'Class X (Secondary School Examination)',
-    period: '2021',
+    period: '2019 – 2021',
     periodBadgeColor: 'bg-white',
     score: 'CBSE BOARD',
     scoreBadgeColor: 'bg-[#A7F3D0]',
-    coursework: [],
-    location: '',
-    specialization: 'Foundation in Science, Mathematics, Computer Applications & Social Sciences'
+    coursework: ['Science', 'Mathematics', 'Computer Applications', 'Social Sciences'],
+    location: 'CBSE Affiliated',
+    specialization: 'Foundation in Science, Mathematics & Computer Applications'
   }
 ];
 

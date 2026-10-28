@@ -28,7 +28,7 @@ const BENTO_SKILLS: SkillItem[] = [
     name: 'Python',
     category: 'Core AI & Backend',
     isFeatured: true,
-    bg: 'bg-[#BAE6FD]', // Sky Pastel
+    bg: 'bg-[#BAE6FD] dark:bg-[#071927] dark:border-[#38BDF8]/50 hover:dark:border-[#38BDF8]', // Sky Pastel -> Deep Navy Obsidian
     iconUrl: '/skills/python.svg',
     source: 'devicon',
     spec: 'CORE RUNTIME · RAG & AI',
@@ -43,7 +43,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'pytorch',
     name: 'PyTorch',
     category: 'Deep Learning',
-    bg: 'bg-[#FEF9C3]', // Neutral Cream (maximizes red-orange flame contrast)
+    bg: 'bg-[#FEF9C3] dark:bg-[#1E1107] dark:border-[#FB923C]/50 hover:dark:border-[#FB923C]', // Cream -> Deep Amber Ember
     iconUrl: '/skills/pytorch.svg',
     source: 'devicon',
     spec: 'DEEP LEARNING & CV'
@@ -53,7 +53,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'typescript',
     name: 'TypeScript',
     category: 'Full-Stack Language',
-    bg: 'bg-[#E0F2FE]', // Soft Sky Pastel
+    bg: 'bg-[#E0F2FE] dark:bg-[#06182C] dark:border-[#38BDF8]/50 hover:dark:border-[#38BDF8]', // Soft Sky -> Deep Blue Obsidian
     iconUrl: '/skills/typescript.svg',
     source: 'devicon',
     spec: 'TYPE-SAFE ARCHITECTURE'
@@ -63,7 +63,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'fastapi',
     name: 'FastAPI',
     category: 'Backend & APIs',
-    bg: 'bg-[#D1FAE5]', // Mint Pastel
+    bg: 'bg-[#D1FAE5] dark:bg-[#051C13] dark:border-[#34D399]/50 hover:dark:border-[#34D399]', // Mint -> Deep Emerald Obsidian
     iconUrl: '/skills/fastapi.svg',
     source: 'devicon',
     spec: 'ASYNC REST SERVICES'
@@ -73,7 +73,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'nextjs',
     name: 'Next.js',
     category: 'Web Framework',
-    bg: 'bg-[#FEF08A]', // Golden Yellow Pastel
+    bg: 'bg-[#FEF08A] dark:bg-[#1C1605] dark:border-[#FBBF24]/50 hover:dark:border-[#FBBF24]', // Golden Yellow -> Deep Gold Obsidian
     iconUrl: '/skills/nextjs.svg',
     source: 'devicon',
     spec: 'PRODUCTION SSR APPS'
@@ -83,7 +83,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'docker',
     name: 'Docker',
     category: 'Infra & DevOps',
-    bg: 'bg-[#FFFFFF]', // Neutral Crisp White (Docker blue pops with high contrast)
+    bg: 'bg-[#FFFFFF] dark:bg-[#061828] dark:border-[#0284C7]/50 hover:dark:border-[#38BDF8]', // White -> Deep Marine Obsidian
     iconUrl: '/skills/docker.svg',
     source: 'devicon',
     spec: 'CONTAINER RUNTIMES'
@@ -93,7 +93,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'opencv',
     name: 'OpenCV',
     category: 'Computer Vision',
-    bg: 'bg-[#FEF9C3]', // Neutral Cream (prevents pink/red wash-out)
+    bg: 'bg-[#FEF9C3] dark:bg-[#161616] dark:border-[#525252] hover:dark:border-[#A3A3A3]', // Cream -> Neutral Obsidian
     iconUrl: '/skills/opencv.svg',
     source: 'devicon',
     spec: 'REAL-TIME VISION & EDA'
@@ -103,7 +103,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'postgresql',
     name: 'PostgreSQL',
     category: 'Databases & Vector',
-    bg: 'bg-[#EDE9FE]', // Lavender Pastel
+    bg: 'bg-[#EDE9FE] dark:bg-[#140D26] dark:border-[#A78BFA]/50 hover:dark:border-[#A78BFA]', // Lavender -> Deep Violet Obsidian
     iconUrl: '/skills/postgresql.svg',
     source: 'devicon',
     spec: 'RELATIONAL & PGVECTOR'
@@ -113,7 +113,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'tailwindcss',
     name: 'Tailwind CSS',
     category: 'Design Systems',
-    bg: 'bg-[#FFFFFF]', // Neutral Crisp White (Tailwind cyan waves pop with high contrast)
+    bg: 'bg-[#FFFFFF] dark:bg-[#051924] dark:border-[#06B6D4]/50 hover:dark:border-[#22D3EE]', // White -> Deep Cyan Obsidian
     iconUrl: '/skills/tailwindcss.svg',
     source: 'devicon',
     spec: 'NEO-BRUTALIST STYLING'
@@ -123,7 +123,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'langchain',
     name: 'LangChain',
     category: 'Agentic AI',
-    bg: 'bg-[#FEF08A]', // Golden Yellow Pastel
+    bg: 'bg-[#FEF08A] dark:bg-[#1A1604] dark:border-[#FBBF24]/50 hover:dark:border-[#FBBF24]', // Golden Yellow -> Deep Amber Obsidian
     iconUrl: '/skills/langchain.svg',
     source: 'lobehub',
     spec: 'AGENTIC ORCHESTRATION'
@@ -133,7 +133,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'pandas',
     name: 'Pandas',
     category: 'Data Science',
-    bg: 'bg-[#FFE4E6]', // Rose Pastel
+    bg: 'bg-[#FFE4E6] dark:bg-[#220B16] dark:border-[#FB7185]/50 hover:dark:border-[#FB7185]', // Rose -> Deep Rose Obsidian
     iconUrl: '/skills/pandas.svg',
     source: 'devicon',
     spec: 'DATASETS & STATS'
@@ -143,7 +143,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'tensorflow',
     name: 'TensorFlow',
     category: 'Deep Learning',
-    bg: 'bg-[#EDE9FE]', // Lavender Pastel
+    bg: 'bg-[#EDE9FE] dark:bg-[#1B0F26] dark:border-[#FB923C]/50 hover:dark:border-[#FB923C]', // Lavender -> Deep Twilight Obsidian
     iconUrl: '/skills/tensorflow.svg',
     source: 'devicon',
     spec: 'NEURAL NETWORKS & KERAS'
@@ -153,7 +153,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'scikitlearn',
     name: 'scikit-learn',
     category: 'Machine Learning',
-    bg: 'bg-[#FEF9C3]', // Neutral Cream (orange/blue gear pops with high contrast)
+    bg: 'bg-[#FEF9C3] dark:bg-[#1C1306] dark:border-[#F59E0B]/50 hover:dark:border-[#FBBF24]', // Cream -> Deep Amber Obsidian
     iconUrl: '/skills/scikitlearn.svg',
     source: 'devicon',
     spec: 'ML MODELS & TIME-SERIES'
@@ -164,7 +164,7 @@ const BENTO_SKILLS: SkillItem[] = [
     name: 'React',
     category: 'Frontend & UI Architecture',
     isFeatured: true,
-    bg: 'bg-[#FCE7F3]', // Bubblegum Pink Pastel
+    bg: 'bg-[#FCE7F3] dark:bg-[#061828] dark:border-[#38BDF8]/60 hover:dark:border-[#38BDF8]', // Pink -> Deep Midnight Cyan
     iconUrl: '/skills/react.svg',
     source: 'devicon',
     spec: 'CLIENT ARCHITECTURE & UIS',
@@ -179,7 +179,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'numpy',
     name: 'NumPy',
     category: 'Scientific Compute',
-    bg: 'bg-[#D1FAE5]', // Mint Pastel
+    bg: 'bg-[#D1FAE5] dark:bg-[#09152B] dark:border-[#6366F1]/50 hover:dark:border-[#818CF8]', // Mint -> Deep Indigo Obsidian
     iconUrl: '/skills/numpy.svg',
     source: 'devicon',
     spec: 'TENSORS & ARRAY MATH'
@@ -189,7 +189,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'linux',
     name: 'Linux',
     category: 'Systems & Shell',
-    bg: 'bg-[#FEF08A]', // Golden Yellow Pastel
+    bg: 'bg-[#FEF08A] dark:bg-[#1C1605] dark:border-[#FBBF24]/50 hover:dark:border-[#FBBF24]', // Golden Yellow -> Deep Amber Obsidian
     iconUrl: '/skills/linux.svg',
     source: 'devicon',
     spec: 'SERVERS & BASH SCRIPTING'
@@ -199,7 +199,7 @@ const BENTO_SKILLS: SkillItem[] = [
     id: 'ollama',
     name: 'Ollama',
     category: 'Local LLMs',
-    bg: 'bg-[#FFFFFF] dark:bg-[#1E2230]', // Neutral Crisp White in light, slate in dark
+    bg: 'bg-[#FFFFFF] dark:bg-[#141414] dark:border-[#404040] hover:dark:border-[#737373]', // Neutral White -> Obsidian
     iconUrl: '/skills/ollama.svg',
     source: 'lobehub',
     spec: 'LOCAL INFERENCE RUNTIMES',
@@ -270,12 +270,12 @@ export const SkillsToolkit: React.FC = () => {
             <h2 className="font-syne font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-black">
               ENGINEERING ARSENAL
             </h2>
-            <p className="font-mono text-xs text-black/70 mt-1">
+            <p className="font-mono text-xs text-black/70 dark:text-[#94A3B8] mt-1 font-bold">
               // What I reach for daily — from LLM pipelines and models to production backends
             </p>
           </div>
 
-          <div className="font-mono text-xs font-bold text-black/80 flex items-center gap-2 whitespace-nowrap shrink-0">
+          <div className="font-mono text-xs font-bold text-black/80 dark:text-[#CBD5E1] flex items-center gap-2 whitespace-nowrap shrink-0">
             <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse shrink-0"></span>
             <span className="whitespace-nowrap">CLICK ANY TOOL TO INSPECT</span>
           </div>
@@ -411,12 +411,12 @@ export const SkillsToolkit: React.FC = () => {
                   }
             }
             whileHover={shouldReduceMotion ? {} : { x: -4, y: -4, transition: { duration: 0.15 } }}
-            className="skill-tile group relative aspect-square rounded-2xl sm:rounded-3xl border-[2.5px] sm:border-[3px] border-black p-3 sm:p-4 flex flex-col items-center justify-center cursor-pointer select-none col-span-1 row-span-1 bg-[#FDE047] shadow-brutal hover:shadow-brutal-lg transition-shadow outline-none focus-visible:ring-3 focus-visible:ring-[#FBBF24] focus-visible:ring-offset-2"
+            className="skill-tile group relative aspect-square rounded-2xl sm:rounded-3xl border-[2.5px] sm:border-[3px] border-black p-3 sm:p-4 flex flex-col items-center justify-center cursor-pointer select-none col-span-1 row-span-1 bg-[#FDE047] dark:bg-[#FBBF24] shadow-brutal hover:shadow-brutal-lg transition-shadow outline-none focus-visible:ring-3 focus-visible:ring-[#FBBF24] focus-visible:ring-offset-2"
           >
-            <div className="font-syne font-black text-2xl sm:text-3xl md:text-4xl text-black tracking-tighter leading-none group-hover:scale-110 transition-transform">
+            <div className="font-syne font-black text-2xl sm:text-3xl md:text-4xl text-black dark:text-black tracking-tighter leading-none group-hover:scale-110 transition-transform">
               +15
             </div>
-            <div className="font-mono text-[9px] sm:text-[10px] font-black uppercase text-black tracking-wider mt-1 sm:mt-1.5 flex items-center gap-1">
+            <div className="font-mono text-[9px] sm:text-[10px] font-black uppercase text-black dark:text-black tracking-wider mt-1 sm:mt-1.5 flex items-center gap-1">
               <span>{isExpanded ? 'CLOSE' : 'EXPAND'}</span>
               <span>{isExpanded ? '▲' : '▼'}</span>
             </div>
@@ -438,21 +438,21 @@ export const SkillsToolkit: React.FC = () => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.35, ease: 'easeInOut' }}
-              className="overflow-hidden mt-6 pt-6 border-t-2 border-dashed border-black/25"
+              className="overflow-hidden mt-6 pt-6 border-t-2 border-dashed border-black/25 dark:border-white/15"
             >
               <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-black uppercase tracking-wider bg-black text-white px-2.5 py-1 rounded shadow-2xs">
+                  <span className="font-mono text-xs font-black uppercase tracking-wider bg-black text-white dark:bg-[#FBBF24] dark:text-black px-2.5 py-1 rounded shadow-2xs">
                     EXPANDED STACK REPERTORY
                   </span>
-                  <span className="font-mono text-xs text-black/70 font-bold">
+                  <span className="font-mono text-xs text-black/70 dark:text-[#94A3B8] font-bold">
                     // 15 SPECIALIZED PRODUCTION TOOLS &amp; ALGORITHMS
                   </span>
                 </div>
                 <button
                   type="button"
                   onClick={() => setIsExpanded(false)}
-                  className="font-mono text-xs font-black bg-white hover:bg-black hover:text-white border-[2px] border-black px-2.5 py-1 rounded shadow-brutal-sm transition-colors cursor-pointer"
+                  className="font-mono text-xs font-black bg-white hover:bg-black hover:text-white dark:bg-[#1A1A1A] dark:hover:bg-[#282828] dark:text-[#FBBF24] dark:border-[#FBBF24] border-[2px] border-black px-2.5 py-1 rounded shadow-brutal-sm transition-colors cursor-pointer"
                 >
                   COLLAPSE ▲
                 </button>
@@ -465,11 +465,11 @@ export const SkillsToolkit: React.FC = () => {
                   return (
                     <div
                       key={cat}
-                      className="bg-[#FAF8F3] border-[2px] border-black p-3.5 rounded-xl shadow-brutal-sm flex flex-col justify-between"
+                      className="bg-[#FAF8F3] dark:bg-[#121212] border-[2px] border-black dark:border-[#2C2C2C] p-3.5 rounded-xl shadow-brutal-sm dark:shadow-[3px_3px_0px_#000000] flex flex-col justify-between"
                     >
-                      <div className="font-mono text-[10px] font-black uppercase tracking-wider text-black/75 mb-2.5 pb-1 border-b border-black/15 flex items-center justify-between">
+                      <div className="font-mono text-[10px] font-black uppercase tracking-wider text-black/75 dark:text-[#F8FAFC] mb-2.5 pb-1 border-b border-black/15 dark:border-[#262626] flex items-center justify-between">
                         <span>{cat}</span>
-                        <span className="bg-black text-white px-1.5 py-0.5 rounded text-[9px] font-mono">
+                        <span className="bg-black text-white dark:bg-[#222222] dark:text-[#FBBF24] dark:border dark:border-[#383838] px-1.5 py-0.5 rounded text-[9px] font-mono">
                           {catSkills.length}
                         </span>
                       </div>
@@ -480,7 +480,7 @@ export const SkillsToolkit: React.FC = () => {
                             <div
                               key={idx}
                               title={item.spec}
-                              className="group/chip bg-[#FEF08A] hover:bg-black hover:text-white border-[1.5px] border-black px-2.5 py-1 rounded-md text-[11px] font-mono font-black text-black shadow-2xs transition-all cursor-default flex items-center gap-1.5 select-none"
+                              className="group/chip bg-[#FEF08A] hover:bg-black hover:text-white dark:bg-[#181818] dark:hover:bg-[#242424] dark:text-[#F1F5F9] dark:border-[#333333] border-[1.5px] border-black px-2.5 py-1 rounded-md text-[11px] font-mono font-black text-black shadow-2xs transition-all cursor-default flex items-center gap-1.5 select-none"
                             >
                               {item.iconUrl ? (
                                 <img
@@ -491,11 +491,11 @@ export const SkillsToolkit: React.FC = () => {
                               ) : IconComp ? (
                                 <IconComp className="w-3.5 h-3.5" />
                               ) : (
-                                <span className="text-[9px] font-black opacity-75 font-mono px-1 bg-black/10 rounded group-hover/chip:bg-white/20">
+                                <span className="text-[9px] font-black font-mono px-1 bg-black/10 dark:bg-black/60 text-black dark:text-[#FBBF24] rounded border border-transparent dark:border-[#383838] group-hover/chip:bg-white/20">
                                   {item.badge}
                                 </span>
                               )}
-                              <span>{item.name}</span>
+                              <span className="dark:text-[#F1F5F9]">{item.name}</span>
                             </div>
                           );
                         })}

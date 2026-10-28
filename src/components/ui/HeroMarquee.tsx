@@ -59,13 +59,13 @@ const MacCursor: React.FC<{ isClicking?: boolean }> = ({ isClicking = false }) =
 const CornerHandles = () => (
   <>
     {/* Top-Left */}
-    <span className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white dark:bg-[#1A1F2C] border-2 border-[#FB7185] shadow-xs pointer-events-none select-none rounded-[1px]" />
+    <span className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white dark:bg-[#000000] border-2 border-[#FB7185] dark:border-[#FB7185] shadow-xs dark:shadow-[0_0_8px_rgba(251,113,133,0.8)] pointer-events-none select-none rounded-[1px]" />
     {/* Top-Right */}
-    <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-white dark:bg-[#1A1F2C] border-2 border-[#FB7185] shadow-xs pointer-events-none select-none rounded-[1px]" />
+    <span className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-white dark:bg-[#000000] border-2 border-[#FB7185] dark:border-[#FB7185] shadow-xs dark:shadow-[0_0_8px_rgba(251,113,133,0.8)] pointer-events-none select-none rounded-[1px]" />
     {/* Bottom-Left */}
-    <span className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-white dark:bg-[#1A1F2C] border-2 border-[#FB7185] shadow-xs pointer-events-none select-none rounded-[1px]" />
+    <span className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-white dark:bg-[#000000] border-2 border-[#FB7185] dark:border-[#FB7185] shadow-xs dark:shadow-[0_0_8px_rgba(251,113,133,0.8)] pointer-events-none select-none rounded-[1px]" />
     {/* Bottom-Right */}
-    <span className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-white dark:bg-[#1A1F2C] border-2 border-[#FB7185] shadow-xs pointer-events-none select-none rounded-[1px]" />
+    <span className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-white dark:bg-[#000000] border-2 border-[#FB7185] dark:border-[#FB7185] shadow-xs dark:shadow-[0_0_8px_rgba(251,113,133,0.8)] pointer-events-none select-none rounded-[1px]" />
   </>
 );
 
@@ -77,7 +77,7 @@ const DimensionTag: React.FC<{ width: number; height: number; label?: string }> 
 }) => {
   if (width < 60 || height < 24) return null;
   return (
-    <div className="absolute -top-6 left-0 bg-[#FB7185] text-white font-mono text-[9px] font-extrabold px-1.5 py-0.5 rounded-[2px] border border-black/30 shadow-xs flex items-center gap-1.5 select-none pointer-events-none whitespace-nowrap">
+    <div className="absolute -top-6 left-0 bg-[#FB7185] text-white font-mono text-[9px] font-extrabold px-1.5 py-0.5 rounded-[2px] border border-black/30 dark:border-white/50 shadow-xs dark:shadow-[0_0_12px_rgba(251,113,133,0.6)] flex items-center gap-1.5 select-none pointer-events-none whitespace-nowrap">
       <span>{label}</span>
       <span className="opacity-90 font-mono text-[8px] font-normal">
         {Math.round(width)} × {Math.round(height)}
@@ -416,7 +416,7 @@ export const HeroMarquee: React.FC<HeroMarqueeProps> = ({
             left: startX,
             top: startY,
           }}
-          className="border-2 border-[#FB7185] bg-[#FB7185]/15 pointer-events-none z-20 overflow-visible"
+          className="border-2 border-[#FB7185] bg-[#FB7185]/15 dark:bg-[#FB7185]/20 dark:shadow-[0_0_24px_rgba(251,113,133,0.3)] pointer-events-none z-20 overflow-visible"
         >
           <CornerHandles />
           <DimensionTag width={boxWidth} height={boxHeight} label="NIKITA" />
@@ -443,7 +443,7 @@ export const HeroMarquee: React.FC<HeroMarqueeProps> = ({
       {/* Manual Drag Marquee Selection Box */}
       {manualDrag && (manualDrag.isDragging || manualWidth > 8) && (
         <div
-          className={`absolute border-2 border-[#FB7185] bg-[#FB7185]/15 pointer-events-none z-20 overflow-visible transition-opacity duration-300 ${
+          className={`absolute border-2 border-[#FB7185] bg-[#FB7185]/15 dark:bg-[#FB7185]/20 dark:shadow-[0_0_24px_rgba(251,113,133,0.3)] pointer-events-none z-20 overflow-visible transition-opacity duration-300 ${
             fadeManual ? 'opacity-0' : 'opacity-100'
           }`}
           style={{

@@ -49,70 +49,74 @@ body {
 }
 
 /* ========================================================================= */
-/* UNIFIED DARK MODE DESIGN TOKENS & SYSTEM                                   */
+/* UNIFIED DARK MODE DESIGN TOKENS & SYSTEM - ABSOLUTE PITCH BLACK             */
 /* ========================================================================= */
 html.dark {
   color-scheme: dark;
 
-  /* Surfaces (deep slate / charcoal hierarchy) */
-  --dark-bg-base: #0F141C;
-  --dark-bg-subtle: #141B26;
-  --dark-bg-surface: #18202F;
-  --dark-bg-elevated: #1E283A;
-  --dark-bg-hover: #26334A;
+  /* Surfaces (Ultra-sleek Absolute Pitch Black & Obsidian Hierarchy) */
+  --dark-bg-base: #000000;
+  /* Absolute Pure Black Canvas */
+  --dark-bg-subtle: #080808;
+  /* Deep Obsidian */
+  --dark-bg-surface: #0C0C0C;
+  /* Pitch Onyx Main Container */
+  --dark-bg-elevated: #141414;
+  /* Sleek Pitch Black Cards & Tiles */
+  --dark-bg-hover: #202020;
+  /* Crisp Graphite Hover */
 
-  /* Text & Labels */
-  --dark-text-primary: #E8EDF5;
-  --dark-text-secondary: #9BAAC0;
-  --dark-text-muted: #74859E;
+  /* Text & Labels (Comfortable, eye-friendly contrast) */
+  --dark-text-primary: #F8FAFC;
+  --dark-text-secondary: #CBD5E1;
+  --dark-text-muted: #94A3B8;
 
-  /* Borders & Dividers */
-  --dark-border-subtle: #263248;
-  --dark-border-strong: #3D4F6E;
-  --dark-border-focus: #38BDF8;
+  /* Borders & Dividers (Brutalist Graphite Lines) */
+  --dark-border-subtle: #222222;
+  --dark-border-strong: #2C2C2C;
+  --dark-border-focus: #FBBF24;
 
-  /* Tuned Accents (desaturated, comfortable luminescence) */
-  --dark-accent-amber: #F5B838;
+  /* Tuned Accents (rich, balanced saturation) */
+  --dark-accent-amber: #FBBF24;
   --dark-accent-sky: #38BDF8;
-  --dark-accent-rose: #F472B6;
+  --dark-accent-rose: #FB7185;
   --dark-accent-mint: #34D399;
   --dark-accent-violet: #A78BFA;
 
-  /* Neo-Brutalist Tactile Shadows in Dark Mode */
-  --dark-shadow-sm: 2.5px 2.5px 0px rgba(0, 0, 0, 0.65), 0 0 0 1px #3D4F6E;
-  --dark-shadow-md: 4px 4px 0px rgba(0, 0, 0, 0.65), 0 0 0 1px #3D4F6E;
-  --dark-shadow-lg: 6px 6px 0px rgba(0, 0, 0, 0.65), 0 0 0 1.5px #3D4F6E;
-  --dark-shadow-xl: 8px 8px 0px rgba(0, 0, 0, 0.65), 0 0 0 1.5px #3D4F6E;
+  /* Tactile Shadows in Dark Mode (pure deep drop-shadows) */
+  --dark-shadow-sm: 2.5px 2.5px 0px #000000;
+  --dark-shadow-md: 4.5px 4.5px 0px #000000;
+  --dark-shadow-lg: 7px 7px 0px #000000;
+  --dark-shadow-xl: 10px 10px 0px #000000;
 }
 
-/* Base Canvas & Ruled Notebook in Dark Mode */
+/* Base Canvas & Ruled Notebook in Dark Mode: Absolute Black */
 html.dark body {
-  background-color: var(--dark-bg-base);
-  background-image: repeating-linear-gradient(
-    transparent,
-    transparent 31px,
-    var(--dark-bg-subtle) 31px,
-    var(--dark-bg-subtle) 32px
-  );
+  background-color: #000000;
+  background-image: repeating-linear-gradient(transparent,
+      transparent 31px,
+      rgba(255, 255, 255, 0.075) 31px,
+      rgba(255, 255, 255, 0.075) 32px);
   color: var(--dark-text-primary);
 }
 
 /* Margin wire rule */
 html.dark .margin-rule {
-  background-color: rgba(244, 114, 182, 0.2);
+  background-color: rgba(244, 114, 182, 0.35);
+  box-shadow: 0 0 8px rgba(244, 114, 182, 0.25);
 }
 
 /* Native selection color */
 html.dark ::selection {
   background-color: var(--dark-accent-amber);
-  color: var(--dark-bg-base);
+  color: #000000;
 }
 
 /* Form Autofill styling override for inputs in Dark Mode */
 html.dark input:-webkit-autofill,
 html.dark textarea:-webkit-autofill,
 html.dark select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px var(--dark-bg-surface) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #121212 inset !important;
   -webkit-text-fill-color: var(--dark-text-primary) !important;
   caret-color: var(--dark-text-primary) !important;
 }
@@ -122,16 +126,19 @@ html.dark ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
+
 html.dark ::-webkit-scrollbar-track {
-  background: var(--dark-bg-base);
+  background: #000000;
 }
+
 html.dark ::-webkit-scrollbar-thumb {
-  background: var(--dark-border-subtle);
+  background: #242424;
   border-radius: 5px;
-  border: 2px solid var(--dark-bg-base);
+  border: 2px solid #000000;
 }
+
 html.dark ::-webkit-scrollbar-thumb:hover {
-  background: var(--dark-border-strong);
+  background: #383838;
 }
 
 /* Clearly visible focus ring in dark mode */
@@ -142,39 +149,61 @@ html.dark :focus-visible {
 
 /* Tactile Brutalist button overrides in Dark Mode */
 html.dark .brutal-btn {
-  border-color: var(--dark-border-strong);
-  box-shadow: var(--dark-shadow-sm);
+  border-color: #2C2C2C;
+  box-shadow: 3.5px 3.5px 0px #000000;
 }
+
 html.dark .brutal-btn:hover {
-  box-shadow: var(--dark-shadow-md);
+  box-shadow: 5px 5px 0px #000000;
   border-color: var(--dark-accent-amber);
+}
+
+/* ── Kill hover shadow growth in Dark Mode ──────────────────────────
+   Black-on-black shadow growth is invisible & causes a muddy halo.
+   Keep base shadows for depth but freeze them on hover.
+   Light mode is untouched. */
+html.dark .skill-tile:hover,
+html.dark .manifesto-card:hover,
+html.dark .project-card:hover,
+html.dark .cert-tile:hover,
+html.dark #experience .group:hover,
+html.dark [class*="shadow-brutal"]:hover {
+  box-shadow: var(--dark-shadow-sm) !important;
+}
+
+html.dark .brutal-btn:hover {
+  box-shadow: 3.5px 3.5px 0px #000000 !important;
 }
 
 /* Navigation Bar */
 html.dark nav#main-nav {
-  background-color: rgba(24, 32, 47, 0.95);
-  border-color: var(--dark-border-strong);
-  box-shadow: var(--dark-shadow-md);
+  background-color: rgba(10, 10, 10, 0.95);
+  border-color: #242424;
+  box-shadow: 4px 4px 0px #000000;
   color: var(--dark-text-primary);
-}
-html.dark nav#main-nav a {
-  color: var(--dark-text-secondary);
-}
-html.dark nav#main-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: var(--dark-text-primary);
-}
-html.dark nav#main-nav a.bg-\[\#FBBF24\] {
-  background-color: var(--dark-accent-amber);
-  color: var(--dark-bg-base);
-  border-color: var(--dark-bg-base);
 }
 
-/* Section Containers in Dark Mode */
-html.dark main section > div.bg-white {
-  background-color: var(--dark-bg-surface) !important;
-  border-color: var(--dark-border-strong) !important;
-  box-shadow: var(--dark-shadow-lg) !important;
+html.dark nav#main-nav a:not([aria-label="Let's Talk"]):not(.bg-\[\#FBBF24\]) {
+  color: #CBD5E1;
+}
+
+html.dark nav#main-nav a:not([aria-label="Let's Talk"]):not(.bg-\[\#FBBF24\]):hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+html.dark nav#main-nav a.bg-\[\#FBBF24\] {
+  background-color: #FBBF24 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+/* Section Containers in Dark Mode - Absolute Onyx */
+html.dark main section>div.bg-white {
+  background-color: #0B0B0B !important;
+  border-color: #242424 !important;
+  box-shadow: 7px 7px 0px #000000 !important;
   color: var(--dark-text-primary) !important;
 }
 
@@ -190,260 +219,529 @@ html.dark p {
   color: var(--dark-text-secondary);
 }
 
-/* Folder Tabs */
+/* Folder Tabs - Retain vibrant scrapbook identities with crisp brutalist borders */
 html.dark .folder-tab {
-  background-color: var(--dark-bg-elevated) !important;
-  color: var(--dark-text-primary) !important;
-  border-color: var(--dark-border-strong) !important;
-  box-shadow: 0 -2px 0 0 var(--dark-border-strong);
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2.5px -2.5px 0px 0px #000000 !important;
 }
 
 /* Hero Section */
 html.dark #hero h1 {
-  color: var(--dark-text-primary) !important;
+  color: #F8FAFC !important;
   text-shadow: none;
-  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.7));
+  /* Exactly one single crisp drop shadow matching light mode with gentle warm luminescence */
+  filter: drop-shadow(5px 5px 0px rgba(245, 158, 11, 0.9)) !important;
+  letter-spacing: -0.05em;
 }
+
+@media (min-width: 640px) {
+  html.dark #hero h1 {
+    filter: drop-shadow(8px 8px 0px rgba(245, 158, 11, 0.9)) !important;
+  }
+}
+
 html.dark #hero p {
-  color: var(--dark-text-primary);
+  color: #E2E8F0;
 }
 
-/* About Section */
+/* About Section - Sleek Obsidian Polaroid & Ruled Card */
 html.dark .polaroid {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
-  box-shadow: var(--dark-shadow-md) !important;
-  color: var(--dark-text-primary) !important;
-}
-html.dark .polaroid span {
-  color: var(--dark-text-primary) !important;
-}
-html.dark .polaroid .bg-\[\#FEF08A\] {
-  background-color: var(--dark-bg-subtle) !important;
-  border-color: var(--dark-border-subtle) !important;
-}
-html.dark #about .bg-\[\#FFFDF7\] {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
-  color: var(--dark-text-primary) !important;
-}
-html.dark #about .bg-\[\#FFFDF7\] p {
+  background-color: #121212 !important;
+  border: 2.5px solid #282828 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
   color: var(--dark-text-primary) !important;
 }
 
-/* Philosophy Section (Manifesto Cards) */
+html.dark .polaroid .bg-\[\#FEF08A\] {
+  background-color: #080808 !important;
+  border-color: #222222 !important;
+}
+
+html.dark #about .bg-\[\#FFFDF7\] {
+  background-color: #121212 !important;
+  border: 2.5px solid #282828 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  color: var(--dark-text-primary) !important;
+}
+
+html.dark #about .bg-\[\#FFFDF7\] p {
+  color: #F1F5F9 !important;
+}
+
+/* Philosophy Section (Manifesto Cards) - Vibrant Scrapbook Aesthetic */
 html.dark #philosophy .bg-white {
   background-color: var(--dark-bg-surface) !important;
   border-color: var(--dark-border-strong) !important;
 }
-html.dark #philosophy div[class*="rounded-xl"] {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
-  color: var(--dark-text-primary) !important;
-  box-shadow: var(--dark-shadow-md) !important;
+
+html.dark #philosophy h2 {
+  color: #F8FAFC !important;
+  filter: drop-shadow(4px 4px 0px rgba(245, 158, 11, 0.9)) !important;
 }
-html.dark #philosophy span[class*="font-mono"] {
+
+html.dark #philosophy .washi-tape {
+  background-color: #FDE047 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+}
+
+/* Card 01 - Amber / First Principles */
+html.dark #philosophy .manifesto-card-1 {
+  background: linear-gradient(145deg, #2A200B 0%, #191306 100%) !important;
+  border: 2.5px solid #FBBF24 !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-1:hover {
+  box-shadow: 6px 6px 0px #FBBF24 !important;
+}
+
+html.dark #philosophy .manifesto-card-1 .manifesto-washi {
+  background-color: #FDE68A !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-1 .manifesto-sticker {
+  background-color: #FBBF24 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-1 .manifesto-pill {
+  background-color: #FBBF24 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-1 .manifesto-desc {
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-1 .manifesto-footer {
+  border-top-color: rgba(251, 191, 36, 0.25) !important;
+}
+
+html.dark #philosophy .manifesto-card-1 .manifesto-subtag {
+  background-color: #382A0E !important;
+  color: #FDE68A !important;
+  border-color: #FBBF24 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-1 .manifesto-rule {
+  color: #FBBF24 !important;
+}
+
+/* Card 02 - Mint / Edge Cases */
+html.dark #philosophy .manifesto-card-2 {
+  background: linear-gradient(145deg, #0D2B1E 0%, #061911 100%) !important;
+  border: 2.5px solid #34D399 !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-2:hover {
+  box-shadow: 6px 6px 0px #34D399 !important;
+}
+
+html.dark #philosophy .manifesto-card-2 .manifesto-washi {
+  background-color: #A7F3D0 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-2 .manifesto-sticker {
+  background-color: #34D399 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-2 .manifesto-pill {
+  background-color: #34D399 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-2 .manifesto-desc {
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-2 .manifesto-footer {
+  border-top-color: rgba(52, 211, 153, 0.25) !important;
+}
+
+html.dark #philosophy .manifesto-card-2 .manifesto-subtag {
+  background-color: #123C2B !important;
+  color: #6EE7B7 !important;
+  border-color: #34D399 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-2 .manifesto-rule {
+  color: #34D399 !important;
+}
+
+/* Card 03 - Coral Rose / Messy Problems */
+html.dark #philosophy .manifesto-card-3 {
+  background: linear-gradient(145deg, #32131F 0%, #1A0910 100%) !important;
+  border: 2.5px solid #FB7185 !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-3:hover {
+  box-shadow: 6px 6px 0px #FB7185 !important;
+}
+
+html.dark #philosophy .manifesto-card-3 .manifesto-washi {
+  background-color: #FECDD3 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-3 .manifesto-sticker {
+  background-color: #FB7185 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-3 .manifesto-pill {
+  background-color: #FB7185 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-3 .manifesto-desc {
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-3 .manifesto-footer {
+  border-top-color: rgba(251, 113, 133, 0.25) !important;
+}
+
+html.dark #philosophy .manifesto-card-3 .manifesto-subtag {
+  background-color: #421828 !important;
+  color: #FDA4AF !important;
+  border-color: #FB7185 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-3 .manifesto-rule {
+  color: #FB7185 !important;
+}
+
+/* Card 04 - Lavender / Clarity */
+html.dark #philosophy .manifesto-card-4 {
+  background: linear-gradient(145deg, #241642 0%, #120A22 100%) !important;
+  border: 2.5px solid #A78BFA !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-4:hover {
+  box-shadow: 6px 6px 0px #A78BFA !important;
+}
+
+html.dark #philosophy .manifesto-card-4 .manifesto-washi {
+  background-color: #DDD6FE !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-4 .manifesto-sticker {
+  background-color: #A78BFA !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-4 .manifesto-pill {
+  background-color: #A78BFA !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-4 .manifesto-desc {
+  color: #F1F5F9 !important;
+}
+
+html.dark #philosophy .manifesto-card-4 .manifesto-footer {
+  border-top-color: rgba(167, 139, 250, 0.25) !important;
+}
+
+html.dark #philosophy .manifesto-card-4 .manifesto-subtag {
+  background-color: #311E59 !important;
+  color: #C4B5FD !important;
+  border-color: #A78BFA !important;
+  box-shadow: 1.5px 1.5px 0px #000000 !important;
+}
+
+html.dark #philosophy .manifesto-card-4 .manifesto-rule {
+  color: #A78BFA !important;
+}
+
+/* Experience Section (Logbook) - Deep Obsidian & Pitch Black */
+html.dark #experience>div.bg-white {
+  background-color: #0B0B0B !important;
+  border-color: #242424 !important;
   color: var(--dark-text-primary) !important;
 }
 
-/* Experience Section (Logbook) */
-html.dark #experience > div.bg-white {
-  background-color: var(--dark-bg-surface) !important;
-  border-color: var(--dark-border-strong) !important;
+html.dark #experience .bg-\[\#F5F3FF\] {
+  background-color: #0E0720 !important;
+  border-color: #242424 !important;
+  border-left-color: #A78BFA !important;
   color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-md) !important;
 }
+
 html.dark #experience .bg-\[\#ECFDF5\] {
-  background-color: #12211C !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #06130C !important;
+  border-color: #242424 !important;
   border-left-color: var(--dark-accent-mint) !important;
   color: var(--dark-text-primary) !important;
   box-shadow: var(--dark-shadow-md) !important;
 }
+
 html.dark #experience .bg-\[\#FFFDF5\] {
-  background-color: #211E15 !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #150E03 !important;
+  border-color: #242424 !important;
   border-left-color: var(--dark-accent-amber) !important;
   color: var(--dark-text-primary) !important;
   box-shadow: var(--dark-shadow-md) !important;
 }
+
 html.dark #experience .bg-\[\#F0F9FF\] {
-  background-color: #13202E !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #050E17 !important;
+  border-color: #242424 !important;
   border-left-color: var(--dark-accent-sky) !important;
   color: var(--dark-text-primary) !important;
   box-shadow: var(--dark-shadow-md) !important;
 }
+
 html.dark #experience .bg-white,
 html.dark #experience .bg-white\/95 {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #121212 !important;
+  border-color: #242424 !important;
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #experience ul li {
-  background-color: var(--dark-bg-surface) !important;
-  border-color: var(--dark-border-subtle) !important;
+  background-color: #080808 !important;
+  border-color: #1F1F1F !important;
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #experience .bg-\[\#FAF8F3\] {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #141414 !important;
+  border-color: #242424 !important;
   color: var(--dark-text-primary) !important;
 }
 
 /* Projects Section */
 html.dark #projects .project-card {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
-  color: var(--dark-text-primary) !important;
-  box-shadow: var(--dark-shadow-md) !important;
+  box-shadow: 6px 6px 0px #000000 !important;
 }
-html.dark #projects .project-card h3 {
-  color: var(--dark-text-primary) !important;
+
+html.dark #projects>div.bg-white {
+  background-color: #0A0A0A !important;
+  border-color: #222222 !important;
+  box-shadow: 8px 8px 0px #000000 !important;
 }
-html.dark #projects .project-card p {
-  color: var(--dark-text-secondary) !important;
-}
-html.dark #projects .project-card .bg-white\/80 {
-  background-color: var(--dark-bg-subtle) !important;
-  border-color: var(--dark-border-subtle) !important;
-  color: var(--dark-text-primary) !important;
-}
-html.dark #projects .project-card span[class*="bg-\[\#FEF08A\]"] {
-  background-color: var(--dark-bg-hover) !important;
-  border-color: var(--dark-border-strong) !important;
-  color: var(--dark-text-primary) !important;
-}
-html.dark #projects button[class*="bg-white"] {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
-  color: var(--dark-text-primary) !important;
-}
+
 
 /* Skills Section Bento Tiles */
 html.dark #skills .skill-tile {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
+  box-shadow: 3.5px 3.5px 0px #000000 !important;
   color: var(--dark-text-primary) !important;
-  box-shadow: var(--dark-shadow-sm) !important;
 }
+
 html.dark #skills .skill-tile:hover {
-  background-color: var(--dark-bg-hover) !important;
-  border-color: var(--dark-accent-sky) !important;
-  box-shadow: var(--dark-shadow-md) !important;
+  box-shadow: 5px 5px 0px #000000 !important;
 }
+
+/* +15 Expand Sticker Button in Dark Mode: Keep vibrant gold with crisp black text */
+html.dark #skills .skill-tile[class*="bg-\\[\\#FDE047\\]"],
+html.dark #skills .skill-tile[class*="dark:bg-\\[\\#FBBF24\\]"] {
+  background-color: #FBBF24 !important;
+  border-color: #000000 !important;
+  box-shadow: 3.5px 3.5px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+html.dark #skills .skill-tile[class*="bg-\\[\\#FDE047\\]"]:hover,
+html.dark #skills .skill-tile[class*="dark:bg-\\[\\#FBBF24\\]"]:hover {
+  background-color: #F59E0B !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+}
+
+html.dark #skills .skill-tile[class*="bg-\\[\\#FDE047\\]"] *,
+html.dark #skills .skill-tile[class*="dark:bg-\\[\\#FBBF24\\]"] * {
+  color: #000000 !important;
+}
+
 html.dark #skills .skill-tile span {
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #skills .skill-tile img {
   filter: brightness(0.95);
 }
+
+/* Ensure monochrome SVG logos (Ollama, Groq) with fill="currentColor" pop with bright white contrast */
+html.dark #skills img[src*="ollama"],
+html.dark #skills img[src*="groq"] {
+  filter: invert(1) brightness(1.2) !important;
+}
+
 html.dark #skills .overflow-hidden .bg-\[\#FAF8F3\] {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-subtle) !important;
+  background-color: #121212 !important;
+  border-color: #2C2C2C !important;
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #skills .overflow-hidden .group\/chip {
-  background-color: var(--dark-bg-hover) !important;
-  border-color: var(--dark-border-strong) !important;
-  color: var(--dark-text-primary) !important;
+  background-color: #181818 !important;
+  border-color: #2E2E2E !important;
+  color: #F1F5F9 !important;
 }
+
 html.dark #skills .overflow-hidden .group\/chip span {
-  color: var(--dark-text-primary) !important;
+  color: #F1F5F9 !important;
 }
 
 /* Credentials Section */
 html.dark #credentials h2 {
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #credentials .section-subhead {
   color: var(--dark-text-secondary) !important;
 }
+
 html.dark #credentials .section-label {
   color: var(--dark-text-muted) !important;
 }
+
 html.dark .timeline-card {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #121212 !important;
+  border-color: #242424 !important;
   color: var(--dark-text-primary) !important;
 }
+
 html.dark .timeline-card h3 {
   color: var(--dark-text-primary) !important;
 }
+
 html.dark .timeline-card p {
   color: var(--dark-text-secondary) !important;
 }
+
 html.dark .cert-tile {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
-  box-shadow: var(--dark-shadow-sm) !important;
+  background-color: #121212 !important;
+  border-color: #242424 !important;
+  box-shadow: 3px 3px 0px #000000 !important;
   color: var(--dark-text-primary) !important;
 }
+
 html.dark .cert-tile:hover {
   border-color: var(--dark-accent-sky) !important;
-  box-shadow: var(--dark-shadow-md) !important;
+  box-shadow: 4.5px 4.5px 0px #000000 !important;
 }
+
 html.dark .cert-tile h4 {
   color: var(--dark-text-primary) !important;
 }
 
 /* Contact Section (Manila Envelope) */
 html.dark #contact .bg-\[\#FEF9C3\] {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #121212 !important;
+  border-color: #262626 !important;
   box-shadow: var(--dark-shadow-lg) !important;
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #contact .bg-\[\#FEF9C3\] p,
 html.dark #contact .bg-\[\#FEF9C3\] h4 {
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #contact .bg-\[\#FEF9C3\] div.bg-white {
-  background-color: var(--dark-bg-subtle) !important;
-  border-color: var(--dark-border-strong) !important;
+  background-color: #080808 !important;
+  border-color: #222222 !important;
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #contact #email-address {
   color: var(--dark-text-primary) !important;
 }
+
 html.dark #contact .bg-\[\#FAF8F3\] {
-  background-color: var(--dark-bg-elevated) !important;
-  border-color: var(--dark-border-subtle) !important;
+  background-color: #141414 !important;
+  border-color: #222222 !important;
   color: var(--dark-text-primary) !important;
 }
 
 /* Project Modal */
 html.dark .modal-content-box,
-html.dark div[role="dialog"] > div {
-  background-color: var(--dark-bg-surface) !important;
-  border-color: var(--dark-border-strong) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px #3D4F6E !important;
+html.dark div[role="dialog"]>div {
+  background-color: #0E0E0E !important;
+  border-color: #2C2C2C !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px #2C2C2C !important;
   color: var(--dark-text-primary) !important;
 }
 
-/* Washi Tapes (comfortably muted luminescence in dark mode) */
+
+/* Washi Tapes in Dark Mode */
 html.dark .washi-tape {
-  background: rgba(48, 40, 20, 0.88);
-  border-left-color: rgba(245, 184, 56, 0.4);
-  border-right-color: rgba(245, 184, 56, 0.4);
-  color: var(--dark-text-primary);
+  background: rgba(251, 191, 36, 0.22) !important;
+  border-left: 2.5px dashed #FBBF24 !important;
+  border-right: 2.5px dashed #FBBF24 !important;
+  color: #FBBF24 !important;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.2);
 }
+
 html.dark .washi-tape-pink {
-  background: rgba(54, 22, 38, 0.88);
-  border-left-color: rgba(244, 114, 182, 0.4);
-  border-right-color: rgba(244, 114, 182, 0.4);
-  color: var(--dark-text-primary);
+  background: rgba(244, 114, 182, 0.22) !important;
+  border-left: 2.5px dashed #F472B6 !important;
+  border-right: 2.5px dashed #F472B6 !important;
+  color: #F472B6 !important;
+  text-shadow: 0 0 10px rgba(244, 114, 182, 0.6);
+  box-shadow: 0 0 16px rgba(244, 114, 182, 0.2);
 }
+
 html.dark .washi-tape-mint {
-  background: rgba(18, 44, 34, 0.88);
-  border-left-color: rgba(52, 211, 153, 0.4);
-  border-right-color: rgba(52, 211, 153, 0.4);
-  color: var(--dark-text-primary);
+  background: rgba(52, 211, 153, 0.22) !important;
+  border-left: 2.5px dashed #34D399 !important;
+  border-right: 2.5px dashed #34D399 !important;
+  color: #34D399 !important;
+  text-shadow: 0 0 10px rgba(52, 211, 153, 0.6);
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.2);
 }
+
 html.dark .washi-tape-blue {
-  background: rgba(24, 42, 64, 0.88);
-  border-left-color: rgba(56, 189, 248, 0.4);
-  border-right-color: rgba(56, 189, 248, 0.4);
-  color: var(--dark-text-primary);
+  background: rgba(56, 189, 248, 0.22) !important;
+  border-left: 2.5px dashed #38BDF8 !important;
+  border-right: 2.5px dashed #38BDF8 !important;
+  color: #38BDF8 !important;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
 }
 
 /* Subtle image/logo glare softening in dark mode */
@@ -538,6 +836,7 @@ html.dark img:not([src$=".svg"]):not([class*="dark:invert"]) {
 /* RESPONSIVE: mobile (<= 767px)                                             */
 /* ========================================================================= */
 @media (max-width: 767px) {
+
   /* Prevent horizontal scroll leakage */
   html,
   body {
@@ -575,6 +874,7 @@ html.dark img:not([src$=".svg"]):not([class*="dark:invert"]) {
 /* RESPONSIVE: tablet (768px to 1024px)                                      */
 /* ========================================================================= */
 @media (min-width: 768px) and (max-width: 1024px) {
+
   /* Overflow protection */
   html,
   body {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import CharacterCard from './CharacterCard';
 import { LINKS } from '../data/links';
 import { SiGithub, SiLeetcode } from 'react-icons/si';
 import { FaLinkedinIn } from 'react-icons/fa6';
@@ -37,29 +36,31 @@ export const ContactSection: React.FC = () => {
         OUTBOX 06 // DISPATCH
       </div>
 
-      <div className="bg-white border-[3px] border-black shadow-brutal-xl p-6 sm:p-10 md:p-14 relative overflow-hidden text-center flex flex-col items-center transition-colors">
-        {/* Animated Floating Mascot Character Card */}
+      <div className="bg-white dark:bg-[#0A0A0A] border-[3px] border-black dark:border-[#222222] shadow-brutal-xl dark:shadow-[8px_8px_0px_#000000] p-6 sm:p-10 md:p-14 relative overflow-hidden text-center flex flex-col items-center transition-colors">
+        {/* Static Profile Photo */}
         <div className="mb-4">
-          <CharacterCard
-            size={120}
-            bgColor="#FDE047"
-            glowColor="rgba(251, 191, 36, 0.65)"
-            floatAmplitude={10}
-            floatDuration={3}
-            alt="Nikita's mascot character"
-          />
+          <div
+            className="w-[140px] h-[140px] rounded-full border-[3.5px] border-black dark:border-transparent shadow-brutal dark:shadow-none overflow-hidden"
+          >
+            <img
+              src="/log.jpeg"
+              alt="Nikita profile photo"
+              draggable={false}
+              className="w-full h-full object-cover select-none"
+            />
+          </div>
         </div>
 
-        <h2 className="font-syne font-black text-4xl sm:text-7xl md:text-8xl tracking-tight text-black uppercase">
+        <h2 className="font-syne font-black text-4xl sm:text-7xl md:text-8xl tracking-tight text-black dark:text-[#F8FAFC] uppercase">
           LET&apos;S CONNECT
         </h2>
 
-        <p className="font-grotesk text-base sm:text-xl font-medium max-w-lg mt-2 text-black/85 leading-relaxed">
+        <p className="font-grotesk text-base sm:text-xl font-medium max-w-lg mt-2 text-black/85 dark:text-[#CBD5E1] leading-relaxed">
           Whether you have an ambitious project, an AI research question, an internship opportunity, or simply want to chat about models—my inbox is always open.
         </p>
 
         {/* Pinned Manila Envelope / Note with washi tape at all 4 corners */}
-        <div className="w-full max-w-xl bg-[#FEF9C3] border-[3px] border-black p-5 sm:p-8 rounded-2xl shadow-brutal-lg my-8 relative text-black">
+        <div className="w-full max-w-xl bg-[#FEF9C3] dark:bg-[#141414] border-[3px] border-black dark:border-[#2C2C2C] p-5 sm:p-8 rounded-2xl shadow-brutal-lg dark:shadow-[6px_6px_0px_#000000] my-8 relative text-black dark:text-[#F1F5F9]">
           {/* 4 Washi Tapes at corners */}
           <div className="washi-tape-mint absolute -top-3 -left-3 px-4 py-0.5 text-[9px] font-mono font-bold rotate-[-12deg] select-none text-black">
             AIRMAIL
@@ -74,15 +75,15 @@ export const ContactSection: React.FC = () => {
             CONFIDENTIAL
           </div>
 
-          <div className="font-mono text-xs font-black text-black/70 uppercase mb-3 tracking-wider">
+          <div className="font-mono text-xs font-black text-black/70 dark:text-[#94A3B8] uppercase mb-3 tracking-wider">
             // DIRECT INBOX DISPATCH
           </div>
 
           {/* Email display & Action Buttons Box */}
-          <div className="bg-white border-[2.5px] border-black p-3.5 sm:p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-brutal-sm text-black">
+          <div className="bg-white dark:bg-[#0A0A0A] border-[2.5px] border-black dark:border-[#2C2C2C] p-3.5 sm:p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-brutal-sm text-black dark:text-[#F1F5F9]">
             <span 
               id="email-address"
-              className="font-mono text-xs sm:text-sm md:text-base font-black text-black select-all break-all sm:break-normal text-center sm:text-left"
+              className="font-mono text-xs sm:text-sm md:text-base font-black text-black dark:text-[#F1F5F9] select-all break-all sm:break-normal text-center sm:text-left"
             >
               {email}
             </span>
@@ -101,7 +102,7 @@ export const ContactSection: React.FC = () => {
 
               <a
                 href={`mailto:${email}?subject=Hello%20Nikita%20—%20Let's%20Connect`}
-                className="brutal-btn bg-black text-white hover:bg-neutral-800 font-mono font-black text-xs px-4 py-2.5 min-h-[44px] rounded-lg flex-1 sm:flex-initial flex items-center justify-center text-center border-[2px] border-black"
+                className="brutal-btn bg-black text-white hover:bg-neutral-800 dark:bg-[#181818] dark:border-[#383838] dark:text-[#F1F5F9] font-mono font-black text-xs px-4 py-2.5 min-h-[44px] rounded-lg flex-1 sm:flex-initial flex items-center justify-center text-center border-[2px] border-black"
               >
                 SEND EMAIL ↗
               </a>
@@ -110,7 +111,7 @@ export const ContactSection: React.FC = () => {
 
           <p 
             id="copy-notification"
-            className={`font-mono text-xs font-black text-[#059669] mt-2.5 h-4 transition-opacity duration-200 ${
+            className={`font-mono text-xs font-black text-[#059669] dark:text-[#34D399] mt-2.5 h-4 transition-opacity duration-200 ${
               copied ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -132,7 +133,7 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Nikita on GitHub"
-              className="brutal-btn bg-black text-white hover:bg-neutral-800 font-mono font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 border-[2.5px] border-black shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all"
+              className="brutal-btn bg-black text-white hover:bg-neutral-800 dark:bg-[#181818] dark:border-[#383838] dark:text-[#F1F5F9] font-mono font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl flex items-center gap-2 border-[2.5px] border-black shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all"
             >
               <SiGithub className="w-4 h-4 shrink-0" />
               <span>GITHUB</span>
@@ -166,12 +167,12 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* Footer Colophon Credits */}
-        <div className="mt-12 pt-6 border-t-2 border-black/20 w-full flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-black/75 gap-2">
+        <div className="mt-12 pt-6 border-t-2 border-black/20 dark:border-white/10 w-full flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-black/75 dark:text-[#94A3B8] gap-2">
           <div className="font-bold">
             Nikita Sachan · AI · ML · Data · Systems
           </div>
           {visits !== null && (
-            <div className="flex items-center gap-1.5 bg-[#FAF8F3] dark:bg-[#1A1F2C] text-black dark:text-white border border-black/20 px-2.5 py-0.5 rounded-full select-none text-[11px] font-bold">
+            <div className="flex items-center gap-1.5 bg-[#FAF8F3] dark:bg-[#141414] text-black dark:text-white border border-black/20 dark:border-[#2C2C2C] px-2.5 py-0.5 rounded-full select-none text-[11px] font-bold">
               <span>👁</span>
               <span>{visits.toLocaleString()} visits</span>
             </div>
@@ -184,3 +185,4 @@ export const ContactSection: React.FC = () => {
     </section>
   );
 };
+

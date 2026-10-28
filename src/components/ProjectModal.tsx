@@ -55,7 +55,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       }}
     >
       <div 
-        className="bg-[#FFFDF9] dark:bg-[#131722] border-[3.5px] border-black dark:border-white/80 rounded-2xl shadow-brutal-xl dark:shadow-[8px_8px_0px_#FBBF24] max-w-2xl w-full relative max-h-[92vh] max-h-[92dvh] flex flex-col overflow-hidden animate-scaleUp select-none"
+        className="bg-[#FFFDF9] dark:bg-[#0E0E0E] border-[3.5px] border-black dark:border-[#2C2C2C] rounded-2xl shadow-brutal-xl dark:shadow-[8px_8px_0px_#000000] max-w-2xl w-full relative max-h-[92vh] max-h-[92dvh] flex flex-col overflow-hidden animate-scaleUp select-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Bold Themed Header Banner in Project's Accent Color */}
@@ -73,10 +73,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <span className="font-mono text-xs font-black bg-black text-white px-2.5 py-0.5 rounded shadow-2xs">
               {project.number}
             </span>
-            <span className="font-mono text-xs font-black bg-white text-black border-[1.5px] border-black px-2.5 py-0.5 rounded-full shadow-2xs rotate-[-1deg]">
+            <span className="font-mono text-xs font-black bg-white dark:bg-[#1A1A1A] text-black dark:text-[#F1F5F9] border-[1.5px] border-black dark:border-[#333333] px-2.5 py-0.5 rounded-full shadow-2xs rotate-[-1deg]">
               ★ {project.badge}
             </span>
-            <span className="font-mono text-[11px] font-bold text-black/75">
+            <span className="font-mono text-[11px] font-bold text-black/75 dark:text-[#94A3B8]">
               // {project.tagline}
             </span>
           </div>
@@ -84,7 +84,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Bold Project Title */}
           <h3 
             id="modal-title" 
-            className="font-syne font-black text-2xl xs:text-3xl sm:text-4xl text-black tracking-tight leading-tight relative z-10 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.7)] pr-14"
+            className="font-syne font-black text-2xl xs:text-3xl sm:text-4xl text-black dark:text-[#FBBF24] tracking-tight leading-tight relative z-10 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.7)] dark:drop-shadow-[1px_1px_0px_rgba(0,0,0,0.9)] pr-14"
           >
             {project.title}
           </h3>
@@ -120,10 +120,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <button
               type="button"
               onClick={() => setActiveTab('overview')}
-              className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#3D4F6E] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
+              className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#2C2C2C] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
                 activeTab === 'overview'
-                  ? 'bg-black text-white dark:bg-[#F5B838] dark:text-[#0F141C] scale-[1.02]'
-                  : 'bg-white dark:bg-[#1E283A] text-black dark:text-[#E8EDF5] hover:bg-[#FEF08A] hover:text-black dark:hover:bg-[#26334A]'
+                  ? 'bg-black text-white dark:bg-[#FBBF24] dark:text-black scale-[1.02]'
+                  : 'bg-white dark:bg-[#161616] text-black dark:text-[#E2E8F0] hover:bg-[#FEF08A] hover:text-black dark:hover:bg-[#202020]'
               }`}
             >
               OVERVIEW &amp; IMPACT
@@ -132,10 +132,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <button
                 type="button"
                 onClick={() => setActiveTab('architecture')}
-                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#3D4F6E] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
+                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#2C2C2C] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
                   activeTab === 'architecture'
-                    ? 'bg-[#38BDF8] text-black dark:bg-[#38BDF8] dark:text-[#0F141C] scale-[1.02]'
-                    : 'bg-white dark:bg-[#1E283A] text-black dark:text-[#E8EDF5] hover:bg-[#38BDF8] hover:text-black dark:hover:bg-[#26334A]'
+                    ? 'bg-[#38BDF8] text-black dark:bg-[#38BDF8] dark:text-black scale-[1.02]'
+                    : 'bg-white dark:bg-[#161616] text-black dark:text-[#E2E8F0] hover:bg-[#38BDF8] hover:text-black dark:hover:bg-[#202020]'
                 }`}
               >
                 ARCHITECTURE PIPELINE
@@ -145,10 +145,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <button
                 type="button"
                 onClick={() => setActiveTab('code')}
-                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#3D4F6E] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
+                className={`font-mono text-xs font-black px-3.5 py-1.5 border-[2px] border-black dark:border-[#2C2C2C] rounded-lg transition-all cursor-pointer shadow-brutal-sm ${
                   activeTab === 'code'
-                    ? 'bg-[#34D399] text-black dark:bg-[#34D399] dark:text-[#0F141C] scale-[1.02]'
-                    : 'bg-white dark:bg-[#1E283A] text-black dark:text-[#E8EDF5] hover:bg-[#34D399] hover:text-black dark:hover:bg-[#26334A]'
+                    ? 'bg-[#34D399] text-black dark:bg-[#34D399] dark:text-black scale-[1.02]'
+                    : 'bg-white dark:bg-[#161616] text-black dark:text-[#E2E8F0] hover:bg-[#34D399] hover:text-black dark:hover:bg-[#202020]'
                 }`}
               >
                 SAMPLE CODE ⌨
@@ -160,32 +160,32 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {activeTab === 'overview' && (
             <div className="space-y-4">
               {/* Problem Statement Card */}
-              <div className="p-4 sm:p-5 bg-[#FFF1F2] dark:bg-[#251216] border-[2.5px] border-black dark:border-rose-400/50 rounded-xl shadow-brutal-sm">
+              <div className="p-4 sm:p-5 bg-[#FFF1F2] dark:bg-[#1A0A0F] border-[2.5px] border-black dark:border-[#FB7185]/60 rounded-xl shadow-brutal-sm">
                 <span className="font-mono text-[11px] font-black uppercase bg-[#F43F5E] text-white px-2.5 py-0.5 rounded border border-black shadow-2xs rotate-[-1deg] inline-block mb-1.5">
                   ⚠️ PROBLEM STATEMENT &amp; INTENT
                 </span>
-                <p className="font-grotesk text-sm sm:text-base text-black dark:text-[#F3F4F6] font-semibold mt-1 leading-relaxed">
+                <p className="font-grotesk text-sm sm:text-base text-black dark:text-[#FECDD3] font-semibold mt-1 leading-relaxed">
                   {project.problem}
                 </p>
               </div>
 
               {/* Engineering Approach Card */}
-              <div className="p-4 sm:p-5 bg-[#EFF6FF] dark:bg-[#0E1E38] border-[2.5px] border-black dark:border-blue-400/50 rounded-xl shadow-brutal-sm">
+              <div className="p-4 sm:p-5 bg-[#EFF6FF] dark:bg-[#071626] border-[2.5px] border-black dark:border-[#38BDF8]/60 rounded-xl shadow-brutal-sm">
                 <span className="font-mono text-[11px] font-black uppercase bg-[#3B82F6] text-white px-2.5 py-0.5 rounded border border-black shadow-2xs rotate-[1deg] inline-block mb-1.5">
                   ⚡ ENGINEERING APPROACH &amp; PIPELINE
                 </span>
-                <p className="font-grotesk text-sm sm:text-base text-black dark:text-[#F3F4F6] font-semibold mt-1 leading-relaxed">
+                <p className="font-grotesk text-sm sm:text-base text-black dark:text-[#BAE6FD] font-semibold mt-1 leading-relaxed">
                   {project.approach}
                 </p>
               </div>
 
               {/* Quantified Impact Card */}
               {project.impactMetrics && project.impactMetrics.length > 0 && (
-                <div className="p-4 sm:p-5 bg-[#ECFDF5] dark:bg-[#062A1D] border-[2.5px] border-black dark:border-emerald-400/50 rounded-xl shadow-brutal-sm">
+                <div className="p-4 sm:p-5 bg-[#ECFDF5] dark:bg-[#061A10] border-[2.5px] border-black dark:border-[#34D399]/60 rounded-xl shadow-brutal-sm">
                   <span className="font-mono text-[11px] font-black uppercase bg-[#10B981] text-black px-2.5 py-0.5 rounded border border-black shadow-2xs inline-block mb-2.5">
                     📈 QUANTIFIED IMPACT &amp; VALIDATION
                   </span>
-                  <ul className="space-y-2 text-xs sm:text-sm font-grotesk font-bold text-black dark:text-[#E2E8F0]">
+                  <ul className="space-y-2 text-xs sm:text-sm font-grotesk font-bold text-black dark:text-[#A7F3D0]">
                     {project.impactMetrics.map((metric, mIdx) => (
                       <li key={mIdx} className="flex items-start gap-2.5">
                         <span className="bg-[#10B981] text-black border border-black rounded-full w-5 h-5 flex items-center justify-center font-black text-xs shadow-2xs shrink-0 mt-0.5">
@@ -202,7 +202,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Tab 2: Architecture Pipeline */}
           {activeTab === 'architecture' && project.architectureFlow && (
-            <div className="p-4 sm:p-5 bg-[#F0FDF4] dark:bg-[#0E2319] border-[2.5px] border-black dark:border-emerald-400/50 rounded-xl shadow-brutal-sm">
+            <div className="p-4 sm:p-5 bg-[#F0FDF4] dark:bg-[#061A10] border-[2.5px] border-black dark:border-[#34D399]/60 rounded-xl shadow-brutal-sm">
               <span className="font-mono text-[11px] font-black uppercase bg-[#22C55E] text-black px-2.5 py-0.5 rounded border border-black shadow-2xs inline-block mb-3">
                 // DATA &amp; INFERENCE PIPELINE
               </span>
@@ -212,7 +212,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                     <span className="font-mono text-xs bg-[#FBBF24] text-black border-[1.5px] border-black px-2.5 py-1 rounded font-black shrink-0 shadow-2xs">
                       0{idx + 1}
                     </span>
-                    <div className="bg-white dark:bg-[#1A202C] border-[2px] border-black dark:border-white/30 p-3 rounded-lg text-xs sm:text-sm font-grotesk font-bold flex-1 shadow-2xs text-black dark:text-white leading-relaxed">
+                    <div className="bg-white dark:bg-[#121212] border-[2px] border-black dark:border-[#2C2C2C] p-3 rounded-lg text-xs sm:text-sm font-grotesk font-bold flex-1 shadow-2xs text-black dark:text-[#F1F5F9] leading-relaxed">
                       {step}
                     </div>
                   </div>
@@ -223,9 +223,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Tab 3: Sample Code */}
           {activeTab === 'code' && project.sampleCode && (
-            <div className="bg-[#0B0F19] text-[#34D399] border-[2.5px] border-black rounded-xl overflow-hidden shadow-brutal-sm">
+            <div className="bg-[#0B0F19] dark:bg-[#0A0A0A] text-[#34D399] border-[2.5px] border-black dark:border-[#2C2C2C] rounded-xl overflow-hidden shadow-brutal-sm">
               {/* Terminal Window Header Bar */}
-              <div className="bg-[#1A202C] px-4 py-2.5 flex justify-between items-center border-b-[2px] border-black text-white/80">
+              <div className="bg-[#1A202C] dark:bg-[#161616] px-4 py-2.5 flex justify-between items-center border-b-[2px] border-black dark:border-[#2C2C2C] text-white/80">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-[#EF4444] border border-black/60 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-[#F59E0B] border border-black/60 inline-block" />
@@ -257,7 +257,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {project.tags.map((tag, tIdx) => (
                 <span
                   key={tIdx}
-                  className="bg-[#FEF08A] dark:bg-[#263248] text-black dark:text-[#E8EDF5] border-[2px] border-black dark:border-[#3D4F6E] px-3 py-1 text-xs font-mono font-black shadow-brutal-sm rounded-md hover:-translate-y-0.5 transition-transform"
+                  className="bg-[#FEF08A] dark:bg-[#1A1A1A] text-black dark:text-[#F1F5F9] border-[2px] border-black dark:border-[#333333] px-3 py-1 text-xs font-mono font-black shadow-brutal-sm rounded-md hover:-translate-y-0.5 transition-transform"
                 >
                   {tag}
                 </span>
@@ -279,7 +279,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutal-btn bg-[#34D399] hover:bg-[#10B981] text-black font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm"
+                className="brutal-btn bg-[#34D399] hover:bg-[#10B981] text-black font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black shadow-brutal-sm"
               >
                 <span>🌐 Live Website</span>
                 <span>↗</span>
@@ -292,7 +292,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutal-btn bg-[#FF0000] hover:bg-[#DC2626] text-white font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm"
+                className="brutal-btn bg-[#FF0000] hover:bg-[#DC2626] text-white font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black shadow-brutal-sm"
               >
                 <span>▶ Watch Demo (YouTube)</span>
               </a>
@@ -304,7 +304,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brutal-btn bg-black hover:bg-neutral-800 text-white dark:bg-[#1E283A] dark:text-[#E8EDF5] dark:hover:bg-[#26334A] font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm"
+                className="brutal-btn bg-black hover:bg-neutral-800 text-white dark:bg-[#181818] dark:text-[#F1F5F9] dark:hover:bg-[#252525] font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 border-[2px] border-black dark:border-[#333333] shadow-brutal-sm"
               >
                 <SiGithub className="w-3.5 h-3.5 shrink-0" />
                 <span>GitHub Code</span>
@@ -316,7 +316,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <button
               type="button"
               onClick={onClose}
-              className="brutal-btn bg-[#FBBF24] hover:bg-[#F59E0B] text-black dark:bg-[#F5B838] dark:text-[#0F141C] dark:hover:bg-[#FBBF24] font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1 border-[2px] border-black dark:border-[#3D4F6E] shadow-brutal-sm cursor-pointer"
+              className="brutal-btn bg-[#FBBF24] hover:bg-[#F59E0B] text-black dark:bg-[#FBBF24] dark:text-black dark:hover:bg-[#F59E0B] font-mono font-black text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1 border-[2px] border-black shadow-brutal-sm cursor-pointer"
             >
               ✕ Close
             </button>
